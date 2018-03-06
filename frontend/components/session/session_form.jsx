@@ -45,8 +45,16 @@ class SessionForm extends React.Component{
                 }) : null }
               </ul>
 
-              <div className='session'>
                 <form onSubmit={this.handleSubmit} className="session-form">
+                  <div classname="login-header">
+                    <h1>
+                      Log In to Kelp
+                    </h1>
+                  </div>
+
+                  <h3 classname="login-header">
+                    New to Kelp? {this.props.navLink}
+                  </h3>
 
                   <input className="session-email" placeholder="Email" type="text" value={ this.state.email } onChange={ this.updateEmail } />
 
@@ -59,7 +67,7 @@ class SessionForm extends React.Component{
                   </div>
 
                 </form>
-              </div>
+
 
             </div>
 
