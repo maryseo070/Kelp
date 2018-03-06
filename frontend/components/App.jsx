@@ -8,7 +8,6 @@ import { AuthRoute } from '../util/route_util.jsx';
 const App = () => {
   return(
     <div>
-
       <div className="signup-login-buttons">
       </div>
 
