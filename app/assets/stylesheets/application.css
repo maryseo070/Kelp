@@ -13,3 +13,68 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background: #f5f5f5
+}
+ /*  SESSION FORM -----------------------------*/ /* TODO:  */
+.welcome-logo {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-decoration: none;
+  background: #d32323;
+  cursor: pointer;
+  font-style: "Helvetica Neue";
+  /* font-size: 50px; */
+}
+
+.main-header-wrapper {
+  display: block;
+  background: #d32323;
+  height: 64px;
+  position: relative;
+  margin: 0 auto 0;
+  padding-top: 0
+}
+
+.entire-session-form {
+  display:flex;
+  align-items: center;
+  margin: auto;
+}
+
+.session-form {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.session-email {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 9px;
+  height: 30px;
+  width: 300px;
+  margin: 0 0 18px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  font-size: 14px;
+  border: 1px solid #999;
+}
+
+.session-password {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 9px;
+  height: 30px;
+  width: 300px;
+  margin: 0 0 18px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  font-size: 14px;
+  border: 1px solid #999;
+}
+
+.session {
+  
+}
