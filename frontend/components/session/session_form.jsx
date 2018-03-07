@@ -42,7 +42,7 @@ class SessionForm extends React.Component{
       );
     }
 
-  render(props) {
+  render(props) { 
     let title;
     let question;
 
