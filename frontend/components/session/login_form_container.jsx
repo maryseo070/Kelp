@@ -5,17 +5,18 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = ({errors}) => {
   return ({
     formType: 'login',
-    errors: state.errors.session,
+    errors: errors.session,
     navLink: <Link to="/signup">Sign Up</Link>
   });
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return({
-    processForm: (user) => dispatch(login(user))
+    processForm: (user) => dispatch(login(user)),
+    guestLogin: () => dispatch(login({email: "guest@gmail.com", password: "starwars"}))
   });
 };
 

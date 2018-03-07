@@ -29,6 +29,19 @@ class SessionForm extends React.Component{
     this.setState({password: e.currentTarget.value});
   }
 
+  renderErrors() {
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li className="rendered-errors" key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+
+
   render() {
     // console.log(this.props.errors.session);
     if (this.props.formType === 'login') {
@@ -39,43 +52,78 @@ class SessionForm extends React.Component{
           </div>
 
           <div className='entire-session-form'>
-            <ul>
-              { this.props.errors.session ? this.props.errors.session.map((error)=>{
-                <li>{error}</li>;
-                }) : null }
-              </ul>
+            <form onSubmit={this.handleSubmit} className="session-form">
+              <div className="login-header">
+                <h1>
+                  Log In to Kelp
+                </h1>
+              </div>
 
-                <form onSubmit={this.handleSubmit} className="session-form">
-                  <div classname="login-header">
-                    <h1>
-                      Log In to Kelp
-                    </h1>
-                  </div>
+              <h3 className="login-header2">
+                New to Kelp? {this.props.navLink}
+              </h3>
 
-                  <h3 classname="login-header">
-                    New to Kelp? {this.props.navLink}
-                  </h3>
+              <input className="session-email" placeholder="Email" type="text" value={ this.state.email } onChange={ this.updateEmail } />
 
-                  <input className="session-email" placeholder="Email" type="text" value={ this.state.email } onChange={ this.updateEmail } />
+              <input className="session-password" placeholder="Password" type="password" value={ this.state.password } onChange={ this.updatePassword } />
 
-                  <input className="session-password" placeholder="Password" type="password" value={ this.state.password } onChange={ this.updatePassword } />
+              <input className="login-button" type="submit" value="Log In" ></input>
 
-                  <input type="submit" value={this.props.formType} ></input>
+              <div className="signup-link">
+                New to Kelp?  {this.props.navLink}
+              </div>
 
-                  <div className="signup-link">
-                    New to Kelp? {this.props.navLink}
-                  </div>
+              <div>
+                {this.renderErrors()}
+              </div>
 
-                </form>
+              <button className="guest" onClick={this.props.guestLogin}>Guest Login</button>
 
+            </form>
+
+            <img src="https://img.etsystatic.com/il/8dfe65/588919113/il_570xN.588919113_n9xk.jpg" alt="reef-illustration" className="login-image" />
 
             </div>
 
           </div>
       );
-    } else {
+    } else if (this.props.formType === 'signup') {
       return (
-        "work on login first"
+        <div>
+          <div className="main-header-wrapper">
+            <a href="/" className="welcome-logo">Kelp</a>
+          </div>
+
+          <div className='entire-session-form'>
+            <form onSubmit={this.handleSubmit} className="session-form">
+              <div className="login-header">
+                <h1>
+                  Sign Up for Kelp
+                </h1>
+              </div>
+
+              <h3 className="login-header2">
+                Already on Kelp? {this.props.navLink}
+              </h3>
+
+
+
+              <input className="session-email" placeholder="Email" type="text" value={ this.state.email } onChange={ this.updateEmail } />
+
+              <input className="session-password" placeholder="Password" type="password" value={ this.state.password } onChange={ this.updatePassword } />
+
+              <input className="login-button" type="submit" value="Sign Up" ></input>
+
+              <div className="signup-link">
+                Already on Kelp?  {this.props.navLink}
+              </div>
+
+            </form>
+
+                <img src="https://img.etsystatic.com/il/8dfe65/588919113/il_570xN.588919113_n9xk.jpg" alt="reef-illustration" className="login-image" />
+
+            </div>
+          </div>
       );
     }
   }
@@ -83,3 +131,8 @@ class SessionForm extends React.Component{
 }
 
 export default SessionForm;
+
+
+// <span className="guest" onClick={this.props.guestLogin}>
+//   <div className="register-txt"> Guest Login </div>
+// </span>
