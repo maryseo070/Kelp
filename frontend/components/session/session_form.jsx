@@ -33,6 +33,7 @@ class SessionForm extends React.Component{
   renderErrors() {
       return(
         <ul>
+          <li>HELLO</li>
           {this.props.errors.map((error, i) => (
             <li className="rendered-errors" key={`error-${i}`}>
               {error}
@@ -42,16 +43,19 @@ class SessionForm extends React.Component{
       );
     }
 
-  render(props) { 
+  render(props) {
     let title;
     let question;
+    let buttonVal;
 
     if (this.props.formType === 'login') {
       title = "Log In to Kelp";
       question = "New to Kelp?";
+      buttonVal = "Log In";
     } else if (this.props.formType === 'signup') {
         title = "Sign Up for Kelp";
         question = "Already on Kelp?";
+        buttonVal = "Sign Up";
     }
     return (
 
@@ -80,7 +84,7 @@ class SessionForm extends React.Component{
 
               <input className="session-input" placeholder="Password" type="password" value={ this.state.password } onChange={ this.updatePassword } />
 
-              <input className="login-button" type="submit" value="Log In" ></input>
+              <input className="login-button" type="submit" value={buttonVal} ></input>
 
               <div className="signup-link">
                 {question}  {this.props.navLink}
