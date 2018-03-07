@@ -36,28 +36,45 @@ time, mark, audio, video {
 
 body {
   font-family: sans-serif;
-  background: #f5f5f5,
+  background: #f5f5f5;
+  height: 100%;
+  width: 100%;
 }
+html{
+  height: 100%;
+  width: 100%;
+}
+
+#root{
+  height: 100%;
+  width: 100%;
+}
+
+.app-container {
+  height: 100%;
+  width: 100%;
+}
+
  /*  SESSION FORM -----------------------------*/ /* TODO:  */
 .welcome-logo {
   display: flex;
   justify-content: center;
   align-content: center;
   text-decoration: none;
-  background: #d32323;
   cursor: pointer;
   font-style: "Helvetica Neue";
-  font-size: 50px;
+  font-size: 40px;
   color: black;
 }
 
 .main-header-wrapper {
   display: block;
-  background: #d32323;
+  background-color: #d32323;
   height: 64px;
   position: relative;
   margin: 0 auto 0;
-  padding-top: 0
+  padding-top: 0;
+  background-image: url("https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c146b0884f6a/assets/img/structural/header_stars.png")
 }
 
 .entire-session-form {
@@ -72,23 +89,11 @@ body {
 .session-form {
   display: flex;
   flex-direction: column;
-  padding-right: 100px;
+  padding-right: 70px;
+  padding-left: 300px;
 }
 
-.session-email {
-  display: flex;
-  flex-direction: column;
-  padding: 5px 9px;
-  height: 30px;
-  width: 300px;
-  margin: 0 0 18px;
-  box-sizing: border-box;
-  border-radius: 3px;
-  font-size: 14px;
-  border: 1px solid #999;
-}
-
-.session-password {
+.session-input {
   display: flex;
   flex-direction: column;
   padding: 5px 9px;
@@ -143,16 +148,17 @@ body {
   height: 500px;
   width: 500px;
   border-radius: 500px;
-  padding: 50px;
+  padding: 100px;
 
 }
 
-.navlink {
+.navLink {
   text-decoration: none;
+  color: #0073bb
 }
 
 .rendered-errors{
-  list-style-type: none
+  list-style-type: none;
   justify-content: center;
   font-size: 12px;
 }
@@ -165,4 +171,102 @@ body {
   border-color: #8d0005;
   color: white; */
   padding: 5px;
+  margin-right: 70px;
+  margin-left: 300px;
+}
+
+.form-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* GREETING PAGE/ HOME PAGE -------------------------TODO */
+
+.greeting-page {
+  background-image: url("https://images.unsplash.com/photo-1517880917162-f95d325da5e8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fb3813f8e8ce7493801ee447bda199df&auto=format&fit=crop&w=1913&q=80");
+  background-size: 100%;
+  background-position: 0;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+.div-break {
+  padding-top: 30px;
+}
+.greeting-links-1 {
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.greeting-links-1:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.greeting-links-2 {
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  margin-right: 200px;
+  font-weight: bold;
+  border: 2px solid white;
+  border-radius: 4px;
+}
+
+.greeting-links-2:hover {
+  background-color: white;
+  color: #666;
+}
+
+.home-header-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.home-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding-top: 200px;
+  font-size: 40px;
+  font-border: black;
+  flex-direction: column;
+}
+
+
+.greeting-input {
+
+  padding: 5px 9px;
+  height: inherit;
+  width: 250px;
+  margin: 0 0 18px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  font-size: 14px;
+  border: 1px solid #999;
+}
+
+.greeting-form {
+  display: flex;
+  flex-direction: row;
+}
+
+.greeting-submit {
+  background: #d32323;
+  font-weight: bold;
+  background-color: #d32323;
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  border-color: #8d0005;
+  box-shadow: 0 1px 1px rgba(0,0,0,.3);
+  cursor: pointer;
+  height: 28px;
+  width: 100px;
+}
+.greeting-logo {
+  padding: 50px;
 }

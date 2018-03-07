@@ -7,15 +7,14 @@ import { AuthRoute } from '../util/route_util.jsx';
 
 const App = () => {
   return(
-    <div>
-      <div className="signup-login-buttons">
-      </div>
-
+    <div className="app-container">
+      <Route exact path="/" component={GreetingContainer}/>
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignUpFormContainer} />
-      <GreetingContainer className="greeting-container"/>
     </div>
   );
 };
 
 export default App;
+
+// <GreetingContainer className="greeting-container"/>
