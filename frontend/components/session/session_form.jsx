@@ -9,10 +9,14 @@ class SessionForm extends React.Component{
       email: "",
       password: ""
     };
-    const formType = props.formType;
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateEmail = this.updateEmail.bind(this);
     this.updatePassword = this.updatePassword.bind(this);
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   handleSubmit(e){
@@ -31,6 +35,7 @@ class SessionForm extends React.Component{
   }
 
   renderErrors() {
+    
       return(
         <ul>
           {this.props.errors.map((error, i) => (

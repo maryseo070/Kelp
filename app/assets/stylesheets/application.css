@@ -270,3 +270,54 @@ html{
 .greeting-logo {
   padding: 50px;
 }
+/*  ---------------------------REEF SHoW ---------------------TODO*/
+
+.show-header{
+  justify-content: center;
+}
+
+.top-top-header{
+  display: block;
+  background-color: #d32323;
+  height: 64px;
+  position: relative;
+  margin: 0 auto 0;
+  padding-top: 0;
+  background-image: url("https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c146b0884f6a/assets/img/structural/header_stars.png");
+}
+
+.kelp-logo{
+  display: flex;
+  justify-content: flex-start;
+  text-decoration: none;
+  cursor: pointer;
+  font-style: "Helvetica Neue";
+  font-size: 40px;
+  color: black;
+  float: left;
+}
+
+.show-submit {
+  background: #d32323;
+  font-weight: bold;
+  background-color: #d32323;
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  border-color: #8d0005;
+  box-shadow: 0 1px 1px rgba(0,0,0,.3);
+  cursor: pointer;
+  height: 28px;
+  width: 100px;
+}
+
+.show-input {
+  padding: 5px 9px;
+  height: inherit;
+  width: 250px;
+  margin: 0 0 18px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  font-size: 14px;
+  border: 1px solid #999;
+}
