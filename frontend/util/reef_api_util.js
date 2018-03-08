@@ -1,8 +1,7 @@
-export const fetchReefs = reefs => {
+export const fetchReefs = () => {
   return $.ajax({
     method: "GET",
-    url: '/api/reefs',
-    data: {reefs}
+    url: '/api/reefs'
   });
 };
 
@@ -14,4 +13,4 @@ export const fetchReef = id => {
 };
 
 
-//will need createReview 
+//will need createReview

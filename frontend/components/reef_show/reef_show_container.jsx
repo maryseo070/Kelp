@@ -1,16 +1,17 @@
-import React from 'react';
-import {connect} from 'react-redux';
-import {fetchReef} from '../../actions/reef_actions.js';
-import ReefShow from './reef_show';
+import React from "react";
+import { connect } from "react-redux";
+import { fetchReef } from "../../actions/reef_actions.js";
+import ReefShow from "./reef_show";
 
-const msp = (state, ownProps) =>{
+const msp = (state, ownProps) => {
   return {
-    bench: state.reef
+    reef: state.entities.reefs[ownProps.match.params.reefId],
+    currentUser: state.session.currentUser,
+    errors: state.errors.session
   };
 };
 
-
-const mdp = (dispatch) => {
+const mdp = dispatch => {
   return {
     fetchReef: id => dispatch(fetchReef(id))
   };

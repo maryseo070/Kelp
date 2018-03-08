@@ -279,7 +279,7 @@ html{
 .top-top-header{
   display: block;
   background-color: #d32323;
-  height: 64px;
+  height: 60px;
   position: relative;
   margin: 0 auto 0;
   padding-top: 0;
@@ -292,9 +292,10 @@ html{
   text-decoration: none;
   cursor: pointer;
   font-style: "Helvetica Neue";
-  font-size: 40px;
+  font-size: 25px;
   color: black;
   float: left;
+  padding-right: 10px;
 }
 
 .show-submit {
@@ -307,17 +308,111 @@ html{
   border-color: #8d0005;
   box-shadow: 0 1px 1px rgba(0,0,0,.3);
   cursor: pointer;
-  height: 28px;
+  height: 30px;
   width: 100px;
+  position: relative;
 }
 
+
 .show-input {
-  padding: 5px 9px;
+  padding: 8px 12px;
   height: inherit;
-  width: 250px;
+  width: 300px;
   margin: 0 0 18px;
   box-sizing: border-box;
   border-radius: 3px;
-  font-size: 14px;
+  font-size: 11px;
   border: 1px solid #999;
+}
+
+.show-form{
+  display: flex;
+  flex-direction: row;
+}
+
+.show-header {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.top-nav {
+  display: block;
+  height: 18px;
+  background-color: #bd1f1f;
+  min-width: 1020px;
+}
+
+.header {
+  display: block
+}
+
+.show-links {
+  text-decoration: none;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.top-nav {
+  list-style-type: none;
+}
+.show-link-holder {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+
+/* -------REEF SHOW ITEM ------- TODO */
+.reef-pic {
+  height: 250px;
+  width: 250px;
+}
+
+.show-title {
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 6px;
+  margin-top: 10px;
+  line-height: 1.16667em;
+  text-shadow: 0 1px rgba(255,255,255,0.7);
+  display: inline;
+}
+
+.biz-page-header {
+  display: flex;
+  padding-left: 20%;
+  padding-right: 20%;
+  justify-content: space-between;
+}
+
+.general-info-box {
+  display: flex;
+  justify-content: flex-start
+}
+
+.show-buttons {
+  display: flex;
+  float: right;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.review-button {
+  height: 40px;
+  width: 170px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.3);
+  font-weight: bold;
+  padding: 5px;
+  margin-right: 70px;
+  margin-left: 300px;
+  color: black;
+}
+
+.showcase-container {
+  padding-left: 20%;
+  padding-right: 20%;
 }

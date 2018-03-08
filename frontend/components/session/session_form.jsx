@@ -35,7 +35,7 @@ class SessionForm extends React.Component{
   }
 
   renderErrors() {
-    
+
       return(
         <ul>
           {this.props.errors.map((error, i) => (
@@ -102,7 +102,7 @@ class SessionForm extends React.Component{
             <button className="guest" onClick={this.props.guestLogin}>Guest Login</button>
         </div>
 
-        <img src="https://img.etsystatic.com/il/8dfe65/588919113/il_570xN.588919113_n9xk.jpg" alt="reef-illustration" className="login-image" />
+        <img src={window.reef} alt="reef-illustration" className="login-image" />
 
 
         </div>

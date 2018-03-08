@@ -1,5 +1,5 @@
 class Reef < ApplicationRecord
-  validates :lat, :lng, :name, presence: true
+  validates :lat, :lng, :name, presence: true, uniqueness: true
 
   has_many :reviews
   has_many :photos, as: :imageable
