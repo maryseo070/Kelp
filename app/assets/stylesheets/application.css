@@ -385,6 +385,7 @@ html{
   padding-left: 20%;
   padding-right: 20%;
   justify-content: space-between;
+  background: #e6e6e6;
 }
 
 .general-info-box {
@@ -410,9 +411,72 @@ html{
   margin-right: 70px;
   margin-left: 300px;
   color: black;
+  margin-top: 10px;
 }
 
 .showcase-container {
+  padding-left: 10%;
+  padding-right: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.reef-pic-small{
+  width: 200px;
+  height: 200px;
+}
+
+.reef-pic-big{
+  width: 200px;
+  height: 200px;
+  transition-duration: 0.3s;
+  transform: scale(1.1);
+  transition: all .2s ease-in-out;
+
+}
+
+.show-imgs{
+  display: flex;
+  float: right;
+  align-items: center;
+}
+
+.show-map {
+  display: flex;
+  border: 1px solid #ccc;
+  height: 300px;
+  width: 240px;
+  background-color: pink;
+}
+
+
+.show-bottom {
+  display: flex;
   padding-left: 20%;
   padding-right: 20%;
+  justify-content: space-between;
+}
+
+.rev-title{
+  padding-bottom: 20px;
+  padding-top: 50px;
+  padding-left: 20%;
+  padding-right: 20%;
+  display: flex;
+  font-weight: bold;
+  color: #d32323
+}
+
+.reef-right-nav {
+  display: flex;
+  width: 250px;
+  justify-content: center;
+}
+
+.review-index{
+  display: flex;
+
 }
