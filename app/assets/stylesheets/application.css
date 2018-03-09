@@ -378,19 +378,22 @@ html{
   line-height: 1.16667em;
   text-shadow: 0 1px rgba(255,255,255,0.7);
   display: inline;
+  padding-bottom: 20px;
+  color: #333
 }
 
 .biz-page-header {
   display: flex;
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-left: 24%;
+  padding-right: 24%;
   justify-content: space-between;
   background: #e6e6e6;
 }
 
 .general-info-box {
   display: flex;
-  justify-content: flex-start
+  justify-content: flex-start;
+  /* float: left; */
 }
 
 .show-buttons {
@@ -427,6 +430,7 @@ html{
 .reef-pic-small{
   width: 200px;
   height: 200px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
 
 .reef-pic-big{
@@ -435,7 +439,12 @@ html{
   transition-duration: 0.3s;
   transform: scale(1.1);
   transition: all .2s ease-in-out;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
+.reef-pic-default{
+  width: 230px;
+  height: 230px;
 }
 
 .show-imgs{
@@ -467,7 +476,8 @@ html{
   padding-right: 20%;
   display: flex;
   font-weight: bold;
-  color: #d32323
+  color: #d32323;
+  font-size: 20px;
 }
 
 .reef-right-nav {

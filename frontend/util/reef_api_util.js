@@ -12,5 +12,10 @@ export const fetchReef = id => {
   });
 };
 
-
-//will need createReview
+export const createReview = review => (
+  $.ajax({
+    method: 'POST',
+    url: 'api/reviews',
+    data: { review }
+  })
+);

@@ -4,6 +4,7 @@ import configureStore from './store/store.js';
 import Root from './components/root.jsx';
 import {login, signup} from './actions/session_actions.js';
 import {fetchReefs} from './actions/reef_actions.js';
+import {fetchReviews} from './actions/review_actions.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   // store = configureStore();
   window.fetchReefs = fetchReefs;
+  window.fetchReviews = fetchReviews;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 

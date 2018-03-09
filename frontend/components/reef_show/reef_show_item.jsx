@@ -1,31 +1,25 @@
 import React from 'react';
 import ReefShowContainer from './reef_show_container';
+import ReviewIndexContainer from '../review/review_index_container.jsx'
 
 class ReefShowItem extends React.Component {
   constructor(props){
     super(props)
     this.grow = this.grow.bind(this)
     this.shrink = this.shrink.bind(this)
-    this.state = {
-      hi: "pic-2"
-    };
+    this.reviewIndex = this.reviewIndex.bind(this)
   }
-
+  componentDidMount () {
+    // debugger
+  }
   grow(e) {
-    // debugger
     $(e.target).addClass("reef-pic-big");
-    this.setState({hi: e.target.hi})
-    // debugger
   }
 
   shrink(e){
-    // debugger
-    if (this.state.hi !== "pic-2") {
-      $(e.target).removeClass("reef-pic-big")
-      this.setState({hi: "pic-2"})
-    // debugger
-    }
+    $(e.target).removeClass("reef-pic-big")
   }
+
 
   reefRightNav () {
     return (
@@ -46,19 +40,20 @@ class ReefShowItem extends React.Component {
   reviewIndex () {
     return (
       <div className="review-index">
-        <h1>REVIEW INDEX</h1>
+        <ReviewIndexContainer reefId={this.props.reef.id} />
       </div>
     )
   }
 
   render () {
+    // debugger
     return (
       <div className="top-shelf">
 
       <div className="biz-page-header">
 
         <div className="general-info-box">
-          <h1 className="show-title">{reef.name}</h1>
+          <h1 className="show-title">{this.props.reef.name}</h1>
         </div>
 
         <div className="show-buttons">
@@ -72,9 +67,9 @@ class ReefShowItem extends React.Component {
         <div className='show-map'>
         </div>
         <div className='show-imgs'>
-          <img hi="pic-1" className="reef-pic-small" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={window.reef1} />
-          <img hi="pic-2" className="reef-pic-small" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={window.reef3} />
-          <img hi="pic-3" className="reef-pic-small" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={window.reef4} />
+          <img className="reef-pic-small" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={window.reef1} />
+          <img className="reef-pic-default" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={window.reef3} />
+          <img className="reef-pic-small" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={window.reef4} />
         </div>
       </div>
 
@@ -85,43 +80,11 @@ class ReefShowItem extends React.Component {
         <div>{this.reefRightNav()}</div>
       </div>
 
-
-
       </div>
     )
   }
 
 }
 
-// const ReefShowItem = ({reef}) => {
-//     return (
-//       <div className="top-shelf" >
-//
-//       <div className="biz-page-header">
-//
-//         <div className="general-info-box">
-//           <h1 className="show-title">{reef.name}</h1>
-//         </div>
-//
-//         <div className="show-buttons">
-//           <button className="review-button">Write A Review</button>
-//         </div>
-//
-//       </div>
-//
-//       <div className='show-map'>
-//         <div>
-//         </div>
-//       </div>
-//
-//       <div className="showcase-container" >
-//         <img className="reef-pic" src={window.reef1} />
-//         <img className="reef-pic" src={window.reef3} />
-//         <img className="reef-pic" src={window.reef4} />
-//       </div>
-//
-//       </div>
-//     )
-// }
 
 export default ReefShowItem;
