@@ -9,16 +9,18 @@ class ReefShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchReef(this.props.match.params.reefId)
+    // debugger
   }
 
   render () {
+    // debugger
     let reefShowItem
 
     if (this.props.reef) {
-      reefShowItem = <ReefShowItem reef={this.props.reef} />
+      reefShowItem = <ReefShowItem reef={this.props.reef} review={this.props.review} />
     }
     else {
-      reefShowItem = null;
+      reefShowItem = "";
     }
 
     return (

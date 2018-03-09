@@ -4,6 +4,20 @@ export const RECEIVE_REEF = "RECEIVE_REEF";
 export const RECEIVE_REEF_ERRORS = "RECEIVE_REEF_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
+export const receiveReview = ({review, avg_rating}) => {
+  return {
+    type: RECEIVE_REVIEW,
+    review,
+    avg_rating
+  }
+}
+
+export const createReview = (review) => dispatch => {
+  return ReefApiUtil.createReview(review).then(
+    (review) => dispatch(receiveReview(review)))
+};
+
+
 export const clearErrors = (errors) => {
   return {
     type: CLEAR_ERRORS,
@@ -25,10 +39,10 @@ export const receiveReefs = reefs => {
   };
 };
 
-export const receiveReef = reef => {
+export const receiveReef = payload => {
   return {
     type: RECEIVE_REEF,
-    reef
+    payload
   };
 };
 
@@ -41,5 +55,6 @@ export const fetchReefs = () => dispatch => {
 };
 
 export const fetchReef = id => dispatch => {
-  return ReefApiUtil.fetchReef(id).then(reef => dispatch(receiveReef(reef)));
+  return ReefApiUtil.fetchReef(id).then(
+    payload => dispatch(receiveReef(payload)));
 };

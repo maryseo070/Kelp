@@ -1,6 +1,6 @@
 import React from 'react';
 import ReefShowContainer from './reef_show_container';
-import ReviewIndexContainer from '../review/review_index_container.jsx'
+import ReviewIndex from './review_index'
 
 class ReefShowItem extends React.Component {
   constructor(props){
@@ -9,9 +9,7 @@ class ReefShowItem extends React.Component {
     this.shrink = this.shrink.bind(this)
     this.reviewIndex = this.reviewIndex.bind(this)
   }
-  componentDidMount () {
-    // debugger
-  }
+
   grow(e) {
     $(e.target).addClass("reef-pic-big");
   }
@@ -38,15 +36,16 @@ class ReefShowItem extends React.Component {
   }
 
   reviewIndex () {
+    // debugger
     return (
       <div className="review-index">
-        <ReviewIndexContainer reefId={this.props.reef.id} />
+        <ReviewIndex reefId={this.props.reef.id} reviews={this.props.reviews}/>
+
       </div>
     )
   }
 
   render () {
-    // debugger
     return (
       <div className="top-shelf">
 

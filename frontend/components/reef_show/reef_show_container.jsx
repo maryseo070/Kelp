@@ -5,10 +5,10 @@ import ReefShow from "./reef_show";
 
 const msp = (state, ownProps) => {
   return {
-    reef: state.entities.reefs[ownProps.match.params.reefId],
+    reef: state.entities.reefs,
     currentUser: state.session.currentUser,
     errors: state.errors.session,
-    hover: false
+    reviews: state.entities.reviews
   };
 };
 
