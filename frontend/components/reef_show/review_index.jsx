@@ -9,9 +9,13 @@ class ReviewIndex extends React.Component {
   }
 
   reviewIndexItem () {
-
+    // debugger
+    //props: reefID, reviews
     return (
-      <div>REVIEW INDEX ITEM RENDERING</div>
+      <div>
+        <div>REVIEW INDEX ITEM RENDERING</div>
+        <div>{this.props.reviews}</div>
+      </div>
     )
   }
   render () {
