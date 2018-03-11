@@ -1,5 +1,5 @@
 import React from 'react';
-import {createReview, fetchReef} from '../../actions/reef_actions.js';
+import {createReview, fetchReef, createPhoto} from '../../actions/reef_actions.js';
 import {connect} from 'react-redux';
 import ReviewForm from './review_form.jsx';
 
@@ -13,7 +13,8 @@ const msp = (state, ownProps) => {
 const mdp = (dispatch) => {
   return {
     fetchReef: (id) => dispatch(fetchReef(id)),
-    createReview: (review) => dispatch(createReview(review))
+    createReview: (review) => dispatch(createReview(review)),
+    createPhoto: (postData) => dispatch(createPhoto(postData))
   };
 };
 

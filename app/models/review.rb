@@ -12,5 +12,7 @@ class Review < ApplicationRecord
     foreign_key: :reef_id,
     class_name: "Reef"
 
-  has_many :photos
+  has_many :photos,
+    foreign_key: :review_id,
+    class_name: "Photo"
 end

@@ -44,7 +44,7 @@ class ReviewIndex extends React.Component {
       reviews = (this.props.reviews).map( (review) =>
 
       <ul className="review-all" key={Math.floor(Math.random() * 500)}>
-
+        <img src={review.image_url}/>
         <ul className="user-box">
           <img className="fish-profile" src={window.fish1} />
           <div className="user-snippet">
@@ -55,7 +55,7 @@ class ReviewIndex extends React.Component {
 
         <div className="rev-right">
           <ul className="rating-date">
-            <div className="rating">{this.ratingStars(review.rating)}</div>
+            <div className="rating-static">{this.ratingStars(review.rating)}</div>
 
             <div>{review.date}</div>
           </ul>

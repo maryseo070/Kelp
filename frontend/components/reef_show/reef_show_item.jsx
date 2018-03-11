@@ -1,6 +1,10 @@
 import React from 'react';
 import ReefShowContainer from './reef_show_container';
 import ReviewIndex from './review_index';
+import { Route } from 'react-router';
+import {Link} from 'react-router-dom';
+
+
 
 class ReefShowItem extends React.Component {
   constructor(props){
@@ -8,6 +12,10 @@ class ReefShowItem extends React.Component {
     this.grow = this.grow.bind(this);
     this.shrink = this.shrink.bind(this);
     this.reviewIndex = this.reviewIndex.bind(this);
+  }
+
+  componentDidMount() {
+    // console.log(this.props)
   }
 
   grow(e) {
@@ -34,6 +42,13 @@ class ReefShowItem extends React.Component {
       </div>
     );
   }
+  writeReviewButton() {
+    return(
+      <div className="show-buttons">
+        <Link to={`/reefs/${this.props.reefId}/writeReview`} className="review-button">Write a Review</Link>
+      </div>
+    );
+  }
 
   reviewIndex () {
     // debugger
@@ -51,6 +66,7 @@ class ReefShowItem extends React.Component {
 
   render () {
     // debuggers
+
     return (
       <div className="top-shelf">
 
@@ -60,9 +76,7 @@ class ReefShowItem extends React.Component {
           <h1 className="show-title">{this.props.reef.name}</h1>
         </div>
 
-        <div className="show-buttons">
-          <button className="review-button">Write A Review</button>
-        </div>
+      {this.writeReviewButton()}
 
       </div>
 

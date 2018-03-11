@@ -1,3 +1,256 @@
 // Place all the styles related to the api/reefs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// SHOW TODO
+
+.reef-pic {
+  height: 250px;
+  width: 250px;
+}
+
+.show-title {
+  color: #333;
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 6px;
+  margin-top: 10px;
+  line-height: 1.16667em;
+  text-shadow: 0 1px rgba(255,255,255,0.7);
+  display: inline;
+  padding-bottom: 20px;
+}
+
+.biz-page-header {
+  display: flex;
+  padding-left: 24%;
+  padding-right: 24%;
+  justify-content: space-between;
+  background: #e6e6e6;
+}
+
+.general-info-box {
+  display: flex;
+  justify-content: flex-start;
+  /* float: left; */
+}
+
+.show-buttons {
+  display: flex;
+  float: right;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.review-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#ed0008, #dd1600);
+  background: #d32323;
+  color: #fff;
+  border-color: #8d0005;
+  text-decoration: none;
+  height: 40px;
+  width: 170px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.3);
+  font-weight: bold;
+  padding: 5px;
+  margin-right: 70px;
+  margin-left: 300px;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.showcase-container {
+  padding-left: 10%;
+  padding-right: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.reef-pic-small{
+  width: 200px;
+  height: 200px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.reef-pic-big{
+  width: 200px;
+  height: 200px;
+  transition-duration: 0.3s;
+  transform: scale(1.1);
+  transition: all .2s ease-in-out;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.reef-pic-default{
+  width: 230px;
+  height: 230px;
+}
+
+.show-imgs{
+  display: flex;
+  float: right;
+  align-items: center;
+}
+
+.show-map {
+  display: flex;
+  border: 1px solid #ccc;
+  height: 300px;
+  width: 240px;
+  background-color: pink;
+}
+
+
+.show-bottom {
+  display: flex;
+  padding-left: 20%;
+  padding-right: 20%;
+  justify-content: space-between;
+}
+
+.rev-title{
+  padding-bottom: 20px;
+  padding-top: 50px;
+  padding-left: 20%;
+  padding-right: 20%;
+  display: flex;
+  font-weight: bold;
+  color: #d32323;
+  font-size: 20px;
+}
+
+.reef-right-nav {
+  display: flex;
+  width: 250px;
+  justify-content: center;
+  padding-left: 30px;
+  margin-left: 30px;
+  border-left: 1px solid #ccc
+}
+
+.review-index{
+  display: flex;
+}
+
+.fish-profile {
+  height: 60px;
+  width: 60px;
+  border-radius: 4px;
+}
+
+.review-all {
+  list-style: none;
+  border-top: 1px solid #ccc;
+  display: flex;
+  color: #333;
+  font-size: 15px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  /* flex-direction: row; */
+}
+
+.user-box {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  width: 200px;
+}
+.username {
+  display: flex;
+  color: #0073bb;
+  font-weight: bold;
+}
+
+.user-location {
+  color: #333;
+  font-size: 13px;
+  font-weight: bold;
+  padding-top: 7px;
+}
+
+.user-snippet {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+}
+.rating-date {
+  display: flex;
+  list-style: none;
+  float: right;
+  flex-direction: row;
+  color: #666;
+}
+
+.rating-static {
+  padding-right: 7px;
+}
+.rev-right{
+  display: flex;
+  flex-direction: column;
+  padding-left: 60px;
+}
+
+.rev-body {
+  width: 450px;
+  padding-top: 20px;
+}
+
+[class*="icon-"] {
+  display: inline-block;
+  background-image: url("https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png");
+  background-size: 135px 561px;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  overflow: hidden;
+  height: 14px;
+  width: 85px;
+  /* padding-top: 21px; */
+}
+.icon-five {
+  background-position: 0 -547px;
+}
+.icon-four {
+  background-position: 0 -519px;
+}
+
+.icon-three {
+  background-position: 0 -491px;
+}
+
+.icon-two {
+  background-position: 0 -463px;
+}
+
+.icon-one {
+  background-position: 0 -435px;
+}
+
+
+.right-nav-title {
+  font-weight: bold;
+  color: #d32323;
+  padding-bottom: 20px;
+}
+
+.right-nav {
+  padding-left: 20px;
+}
+
+.right-nav-list {
+  list-style: none;
+  color: #333;
+  font-size: 15px;
+}
+
+.right-nav-list-items {
+  padding-bottom: 10px;
+}
