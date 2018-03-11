@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :destroy]
     resource :session, only: [:create, :destroy]
     resources :reviews, only: [:create, :index, :show]
+    resources :photos, only: [:create, :show, :index]
     resources :reefs, only: [:index, :show, :create] do
       get "search", on: :collection
     end

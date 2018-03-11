@@ -9,6 +9,15 @@ class ReviewIndex extends React.Component {
     this.ratingStars = this.ratingStars.bind(this);
   }
 
+  // this.props.reviews.map((review) => (Array(review.photos).map(
+  //   (photo) => console.log(photo.image_url))));
+  componentDidMount() {
+    let pic
+    this.props.reviews.map((review) => (Array(review.photos).map(
+      (photo) => pic = ( <img scr={photo.image_url} />))));
+
+  }
+
   ratingStars (n) {
     if (n === 5) {
       return (
@@ -44,7 +53,6 @@ class ReviewIndex extends React.Component {
       reviews = (this.props.reviews).map( (review) =>
 
       <ul className="review-all" key={Math.floor(Math.random() * 500)}>
-        <img src={review.image_url}/>
         <ul className="user-box">
           <img className="fish-profile" src={window.fish1} />
           <div className="user-snippet">
@@ -62,6 +70,11 @@ class ReviewIndex extends React.Component {
 
           <div className='rev-body'>{review.body}</div>
         </div>
+        {
+          Array(review.photos).map((photo) =>
+          <img className="rev-pic" key={Math.floor(Math.random() * 500)} src={photo.image_url} /> )
+
+        }
 
       </ul>
     );
