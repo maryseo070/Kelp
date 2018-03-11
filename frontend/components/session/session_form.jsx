@@ -7,12 +7,16 @@ class SessionForm extends React.Component{
     super(props);
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      firstName: "",
+      lastName: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateEmail = this.updateEmail.bind(this);
     this.updatePassword = this.updatePassword.bind(this);
+    this.updateFirstName = this.updateFirstName.bind(this);
+    this.updateLastName = this.updateLastName.bind(this);
   }
 
   componentWillUnmount() {
@@ -34,6 +38,14 @@ class SessionForm extends React.Component{
     this.setState({password: e.currentTarget.value});
   }
 
+  updateFirstName(e){
+    this.setState({firstName: e.currentTarget.value});
+  }
+
+  updateLastName(e){
+    this.setState({lastName: e.currentTarget.value});
+  }
+
   renderErrors() {
 
       return(
@@ -51,15 +63,21 @@ class SessionForm extends React.Component{
     let title;
     let question;
     let buttonVal;
+    let firstName;
+    let lastName;
 
     if (this.props.formType === 'login') {
       title = "Log In to Kelp";
       question = "New to Kelp?";
       buttonVal = "Log In";
+      firstName = "";
+      lastName = "";
     } else if (this.props.formType === 'signup') {
         title = "Sign Up for Kelp";
         question = "Already on Kelp?";
         buttonVal = "Sign Up";
+        firstName = <input className="session-input" placeholder="First Name" type="text" value={ this.state.firstName } onChange={ this.updateFirstName } />;
+        lastName = <input className="session-input" placeholder="Last Name" type="text" value={ this.state.lastName } onChange={ this.updateLastName } />;
     }
     return (
 
@@ -84,6 +102,8 @@ class SessionForm extends React.Component{
                 {question} {this.props.navLink}
               </h3>
 
+              {firstName}
+              {lastName}
               <input className="session-input" placeholder="Email" type="text" value={ this.state.email } onChange={ this.updateEmail } />
 
               <input className="session-input" placeholder="Password" type="password" value={ this.state.password } onChange={ this.updatePassword } />

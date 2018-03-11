@@ -8,7 +8,7 @@ const reefsReducer = (state = {}, action) => {
     case RECEIVE_REEFS:
       return merge({}, state, action.reefs);
     case RECEIVE_REEF:
-      return action.payload.reef;
+      return {[action.payload.reef.id]: action.payload.reef};
     default:
       return state;
   }

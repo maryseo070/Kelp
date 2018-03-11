@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-  validates :title, :body, :date, presence: true
+  validates :body, :date, presence: true
 
   validates :rating, inclusion: { in: (1..5) }
 
@@ -11,4 +11,6 @@ class Review < ApplicationRecord
   belongs_to :reef,
     foreign_key: :reef_id,
     class_name: "Reef"
+
+  has_many :photos
 end

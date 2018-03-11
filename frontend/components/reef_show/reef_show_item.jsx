@@ -1,13 +1,13 @@
 import React from 'react';
 import ReefShowContainer from './reef_show_container';
-import ReviewIndex from './review_index'
+import ReviewIndex from './review_index';
 
 class ReefShowItem extends React.Component {
   constructor(props){
-    super(props)
-    this.grow = this.grow.bind(this)
-    this.shrink = this.shrink.bind(this)
-    this.reviewIndex = this.reviewIndex.bind(this)
+    super(props);
+    this.grow = this.grow.bind(this);
+    this.shrink = this.shrink.bind(this);
+    this.reviewIndex = this.reviewIndex.bind(this);
   }
 
   grow(e) {
@@ -15,37 +15,42 @@ class ReefShowItem extends React.Component {
   }
 
   shrink(e){
-    $(e.target).removeClass("reef-pic-big")
+    $(e.target).removeClass("reef-pic-big");
   }
 
 
   reefRightNav () {
     return (
-      <div className="reef-right-nav">
-        <h1>REEF RIGHT NAV</h1>
-        <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
+      <div className="right-nav">
+        <h1 className="right-nav-title">More Reef Info</h1>
+        <ul className="right-nav-list">
+          <li className="right-nav-list-items">Takes Reservations</li>
+          <li className="right-nav-list-items">Accepts Credit Cards</li>
+          <li className="right-nav-list-items">Gender Inclusive Bathrooms</li>
+          <li className="right-nav-list-items">Happy Hour</li>
+          <li className="right-nav-list-items">Wi-Fi</li>
+          <li className="right-nav-list-items">Has Pool Table</li>
         </ul>
       </div>
-    )
+    );
   }
 
   reviewIndex () {
     // debugger
+    let reviews;
+
+    if (this.props.reviews) {
+      reviews = Object.values(this.props.reviews);
+    }
     return (
       <div className="review-index">
-        <ReviewIndex reefId={this.props.reef.id} reviews={this.props.reviews}/>
-
+        <ReviewIndex reef={this.props.reef} reviews={reviews} key={this.props.reef.id}/>
       </div>
-    )
+    );
   }
 
   render () {
+    // debuggers
     return (
       <div className="top-shelf">
 
@@ -76,11 +81,11 @@ class ReefShowItem extends React.Component {
 
       <div className="show-bottom">
         <div>{this.reviewIndex()}</div>
-        <div>{this.reefRightNav()}</div>
+        <div className="reef-right-nav">{this.reefRightNav()}</div>
       </div>
 
       </div>
-    )
+    );
   }
 
 }

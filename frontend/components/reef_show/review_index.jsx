@@ -4,28 +4,80 @@ import {Link} from 'react-router-dom';
 
 class ReviewIndex extends React.Component {
   constructor(props) {
-    super(props)
-    // this.reviewIndexItem = this.reviewIndexItem.bind(this)
+    super(props);
+    this.reviewIndexItem = this.reviewIndexItem.bind(this);
+    this.ratingStars = this.ratingStars.bind(this);
+  }
+
+  ratingStars (n) {
+    if (n === 5) {
+      return (
+        <div className='icon-five'></div>
+      );
+    }
+    else if (n === 4) {
+      return (
+        <div className='icon-four'></div>
+      );
+    }
+    else if (n === 3) {
+      return (
+        <div className='icon-three'></div>
+      );
+    }
+    else if (n === 2) {
+      return (
+        <div className='icon-two'></div>
+      );
+    }
+    else if (n === 1) {
+      return (
+        <div className='icon-one'></div>
+      );
+    }
   }
 
   reviewIndexItem () {
-    // debugger
-    //props: reefID, reviews
-    return (
-      <div>
-        <div>REVIEW INDEX ITEM RENDERING</div>
-        <div>{this.props.reviews}</div>
-      </div>
-    )
+
+    let reviews;
+    if (this.props.reef) {
+      reviews = (this.props.reviews).map( (review) =>
+
+      <ul className="review-all" key={Math.floor(Math.random() * 500)}>
+
+        <ul className="user-box">
+          <img className="fish-profile" src={window.fish1} />
+          <div className="user-snippet">
+            <li className="username">{review.author.first_name}</li>
+            <div className="user-location">New York, NY</div>
+          </div>
+        </ul>
+
+        <div className="rev-right">
+          <ul className="rating-date">
+            <div className="rating">{this.ratingStars(review.rating)}</div>
+
+            <div>{review.date}</div>
+          </ul>
+
+          <div className='rev-body'>{review.body}</div>
+        </div>
+
+      </ul>
+    );
   }
+
+    return (
+      <div>{reviews}</div>
+    );
+  }
+
   render () {
     return (
-      <div>
-        <div>{this.reviewIndexItem()}</div>
-      </div>
-    )
+      <div key={Math.floor(Math.random() * 500)}>{this.reviewIndexItem()}</div>
+    );
   }
 }
-// {this.reviewIndexItem()}
+
 
 export default ReviewIndex;

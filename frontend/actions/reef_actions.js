@@ -4,17 +4,16 @@ export const RECEIVE_REEF = "RECEIVE_REEF";
 export const RECEIVE_REEF_ERRORS = "RECEIVE_REEF_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
-export const receiveReview = ({review, avg_rating}) => {
+export const receiveReview = (review) => {
   return {
     type: RECEIVE_REVIEW,
-    review,
-    avg_rating
-  }
-}
+    review
+  };
+};
 
 export const createReview = (review) => dispatch => {
   return ReefApiUtil.createReview(review).then(
-    (review) => dispatch(receiveReview(review)))
+    (review) => dispatch(receiveReview(review)));
 };
 
 

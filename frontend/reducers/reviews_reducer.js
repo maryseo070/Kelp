@@ -9,6 +9,6 @@ const reviewsReducer = (state = {}, action) => {
     default:
       return state;
   }
-}
+};
 
 export default reviewsReducer;
