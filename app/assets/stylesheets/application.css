@@ -409,4 +409,11 @@ html{
 
 .right-nav-list-items {
   padding-bottom: 10px;
-} 
+}
+
+/* ----============Reef MAP TODO */
+
+#map-container {
+  height: 500px;
+  width: 500px;
+}

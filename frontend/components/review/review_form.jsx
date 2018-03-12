@@ -121,9 +121,7 @@ class ReviewForm extends React.Component {
               <input type="file" onChange={this.updateFile}></input>
             </div>
 
-            <div className="rev-form-submit">
-              <input type="submit" value="Post Review"></input>
-            </div>
+            <input className="rev-form-submit" type="submit" value="Post Review"></input>
 
           </form>
 
