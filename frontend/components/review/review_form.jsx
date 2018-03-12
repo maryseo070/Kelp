@@ -69,7 +69,7 @@ class ReviewForm extends React.Component {
   ratingStars() {
 
       return (
-        <div className={`rating-rating-5`}>
+        <div className="rating-stars">
           <option onClick={this.updateField("rating")} className="star-1" value="1" >★</option>
           <option onClick={this.updateField("rating")} className="star-2" value="2" >★</option>
           <option onClick={this.updateField("rating")} className="star-3" value="3" >★</option>
@@ -103,20 +103,25 @@ class ReviewForm extends React.Component {
           </div>
         </div>
 
-        <Link to={`/reefs/${reefId}`} className="rev-reef-title">{reefName}</Link>
+        <div className="rev-body">
+          <div className="rev-reef-title">
+            <Link className="reef-name" to={`/reefs/${reefId}`}>{reefName}</Link>
+          </div>
 
-        <form onSubmit={this.handleSubmit}>
+          <form className="rev-form" onSubmit={this.handleSubmit}>
 
 
-          <input type="date" value={this.state.date} onChange={this.updateField("date")}/>
-          <input className="rev-text" type="textbox" value={this.state.body} onChange={this.updateField("body")}/>
+            {this.ratingStars()}
+            <input type="date" value={this.state.date} onChange={this.updateField("date")}/>
+            <input className="rev-text" type="textbox" value={this.state.body} onChange={this.updateField("body")}/>
             <div>
               <input type="file" onChange={this.updateFile}></input>
             </div>
-          <input type="submit" value="Post Review"></input>
-        </form>
+            <input type="submit" value="Post Review"></input>
+          </form>
 
-        {this.ratingStars()}
+        </div>
+
       </div>
     );
   }

@@ -79,9 +79,9 @@ class ReviewIndex extends React.Component {
           </ul>
 
           <div className='rev-body'>{review.body}</div>
+          {this.reviewPhotos(review)}
         </div>
 
-        {this.reviewPhotos(review)}
 
       </ul>
     );

@@ -1,6 +1,9 @@
 // Place all the styles related to the Reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// REVIEW INDEX
+
 .rev-header-wrapper {
   display: flex;
   background-color: #d32323;
@@ -12,9 +15,11 @@
 }
 
 .rev-pic {
-  height: 100px;
-  width: 100px;
+  height: 168px;
+  width: 168px;
   border-radius: 5px;
+  display: inline-block;
+  margin-top: 15px;
 }
 
 .rev-form-logo {
@@ -92,20 +97,30 @@
   height: 340px;
 }
 
-.rev-reef-title {
+.reef-name {
   color: #0073bb;
   text-decoration: none;
   font-size: 30px;
   font-weight: bold;
 }
 
+.rev-reef-title {
+  display: block;
+}
+
 .rev-reef-title:hover {
   text-decoration: underline;
 }
 
+.rating-stars{
+  display: flex;
+  flex-direction: row;
+}
 
-.rating i {
-  display: inline-block;
+.rating-stars:hover {
+  background-color: red;
+}
+.rating-stars option {
   width: 0;
   height: 1.5em;
   border-width: 0 ( 1.5em / 2 );
@@ -161,3 +176,16 @@
 //     }
 //   }
 // }
+
+
+// REVIEW FORM
+
+.rev-body {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 370px 0 370px;
+  flex-direction: column;
+}
+.rev-text {
+  border: 1px solid #ccc;
+}
