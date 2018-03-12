@@ -103,7 +103,7 @@ class ReviewForm extends React.Component {
           </div>
         </div>
 
-        <div className="rev-body">
+        <div className="rev-form-body">
           <div className="rev-reef-title">
             <Link className="reef-name" to={`/reefs/${reefId}`}>{reefName}</Link>
           </div>
@@ -112,12 +112,19 @@ class ReviewForm extends React.Component {
 
 
             {this.ratingStars()}
-            <input type="date" value={this.state.date} onChange={this.updateField("date")}/>
+            <div className="rev-form-date">
+              <input autoComplete="on" type="date" value={this.state.date} onChange={this.updateField("date")}/>
+            </div>
+
             <input className="rev-text" type="textbox" value={this.state.body} onChange={this.updateField("body")}/>
             <div>
               <input type="file" onChange={this.updateFile}></input>
             </div>
-            <input type="submit" value="Post Review"></input>
+
+            <div className="rev-form-submit">
+              <input type="submit" value="Post Review"></input>
+            </div>
+
           </form>
 
         </div>

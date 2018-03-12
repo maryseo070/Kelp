@@ -106,6 +106,7 @@
 
 .rev-reef-title {
   display: block;
+  margin: 24px 0 12px 0;
 }
 
 .rev-reef-title:hover {
@@ -117,18 +118,20 @@
   flex-direction: row;
 }
 
-.rating-stars:hover {
-  background-color: red;
+.rating-stars option:hover {
+  border-color: red;
+  background: red;
 }
+
 .rating-stars option {
   width: 0;
   height: 1.5em;
   border-width: 0 ( 1.5em / 2 );
   border-style: solid;
-  border-color: #eee;
+  border-color: #d3d3d3;
   border-radius: .22em;
   color: white;
-  background: #eee;
+  background: #d3d3d3;
   font-style: normal;
   line-height: 1.5em + 0.1em;
   text-indent: -0.5em;
@@ -140,47 +143,10 @@
   font-size: 20px;
 }
 
-@function stars-color($num) {
-  @if $num == 5 {
-    @return #dd050b;
-  } @else if $num == 4 {
-    @return #f26a2c;
-  } @else if $num == 3 {
-    @return #f0991e;
-  } @else if $num == 2 {
-    @return #dcb228;
-  } @else if $num == 1 {
-    @return #cc8b1f;
-  }
-}
-
-
-@for $i from 1 through 5 {
-  @for $j from 1 through $i {
-    .rating-#{$i} .star-#{$j}{
-      border-color: stars-color($i);
-      background: stars-color($i);
-    }
-  }
-}
-
-// .r{
-//   background-color: #dd050b;
-//   height: 500px;
-// }
-// @media print {
-//   .rating {
-//     -webkit-print-color-adjust: exact;
-//     i {
-//       text-shadow: none;
-//     }
-//   }
-// }
-
 
 // REVIEW FORM
 
-.rev-body {
+.rev-form-body {
   display: flex;
   justify-content: flex-start;
   margin: 0 370px 0 370px;
@@ -188,4 +154,21 @@
 }
 .rev-text {
   border: 1px solid #ccc;
+}
+
+.rev-form{
+  display:flex;
+  flex-direction: column;
+}
+
+.rev-form-date{
+  display: inline-block;
+
+}
+.rev-text {
+  margin: 12px 0 12px 0;
+}
+
+.rev-form-submit {
+
 }
