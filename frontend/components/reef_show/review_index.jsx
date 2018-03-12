@@ -11,12 +11,11 @@ class ReviewIndex extends React.Component {
 
   // this.props.reviews.map((review) => (Array(review.photos).map(
   //   (photo) => console.log(photo.image_url))));
-  componentDidMount() {
-    let pic
-    this.props.reviews.map((review) => (Array(review.photos).map(
-      (photo) => pic = ( <img scr={photo.image_url} />))));
-
-  }
+  // componentDidMount() {
+  //   let pic;
+  //   this.props.reviews.map((review) => (Array(review.photos).map(
+  //     (photo) => pic = ( <img scr={photo.image_url} />))));
+  // }
 
   ratingStars (n) {
     if (n === 5) {
@@ -73,7 +72,6 @@ class ReviewIndex extends React.Component {
         {
           Array(review.photos).map((photo) =>
           <img className="rev-pic" key={Math.floor(Math.random() * 500)} src={photo.image_url} /> )
-
         }
 
       </ul>
@@ -94,3 +92,8 @@ class ReviewIndex extends React.Component {
 
 
 export default ReviewIndex;
+
+// {
+  // Array(review.photos).map((photo) =>
+  // <img className="rev-pic" key={Math.floor(Math.random() * 500)} src={photo.image_url} /> )
+// }

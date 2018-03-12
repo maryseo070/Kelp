@@ -22,7 +22,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'figaro'
 gem 'paperclip', "5.0.0"
-gem 'aws-sdk', '~> 2.3'
+gem 'aws-sdk', '< 3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

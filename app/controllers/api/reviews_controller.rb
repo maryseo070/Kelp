@@ -8,20 +8,21 @@ class Api::ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.author_id = current_user.id
     if @review.save
-      byebug
       render template: "api/reefs/show.json.jbuilder"
     else
-      render json: @reivew, status: :unprocessable_entity
+      render json: @review, status: :unprocessable_entity
     end
   end
 
   def show
-    @review = Reivew.find(params[:id])
+    @review = Review.find(params[:id])
   end
 
 private
   def review_params
-    params.require(:review).permit(:body, :rating, :date, :reef_id, :photos)
+    params
+    .require(:review)
+    .permit(:body, :rating, :date, :reef_id, :photos_attributes => [:image])
   end
 
 end

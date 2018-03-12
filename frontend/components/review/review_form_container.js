@@ -14,7 +14,7 @@ const mdp = (dispatch) => {
   return {
     fetchReef: (id) => dispatch(fetchReef(id)),
     createReview: (review) => dispatch(createReview(review)),
-    createPhoto: (postData) => dispatch(createPhoto(postData))
+    createPhoto: (photo) => dispatch(createPhoto(photo))
   };
 };
 

@@ -14,5 +14,8 @@ class Review < ApplicationRecord
 
   has_many :photos,
     foreign_key: :review_id,
-    class_name: "Photo"
+    class_name: "Photo",
+    inverse_of: :review
+
+    accepts_nested_attributes_for :photos
 end

@@ -1,5 +1,6 @@
 class Api::PhotosController < ApplicationController
   def create
+    debugger
     @photo = Photo.new(photo_params)
     if @photo.save
       render :show
@@ -13,6 +14,6 @@ class Api::PhotosController < ApplicationController
   end
 
   def photo_params
-    params.require(:photo).permit(:image)
+    params.require(:photo).permit(:image, :review_id)
   end
 end

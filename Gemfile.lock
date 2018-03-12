@@ -218,7 +218,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
-  aws-sdk (~> 2.3)
+  aws-sdk (< 3.0)
   bcrypt (~> 3.1.7)
   better_errors
   binding_of_caller

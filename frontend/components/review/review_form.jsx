@@ -18,7 +18,6 @@ class ReviewForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateField = this.updateField.bind(this);
     this.updateRating = this.updateRating.bind(this);
-    this.imageUpload = this.imageUpload.bind(this);
     this.updateFile = this.updateFile.bind(this);
   }
 
@@ -27,14 +26,21 @@ class ReviewForm extends React.Component {
     // debugger
   }
 
-  // componentDidUpdate() {
-  //   console.log(this.props);
-  // }
+  componentDidUpdate() {
+    // debugger
+  }
 
   handleSubmit(e) {
     e.preventDefault();
+    const file = this.state.imageFile;
+    const review = new FormData();
+
     const reefId = this.props.reef.id;
-    const review = merge({}, this.state, {reef_id: reefId});
+    review.append("review[photos_attributes][][image]", file);
+    review.append("review[body]", this.state.body);
+    review.append("review[rating]", this.state.rating);
+    review.append("review[date]", this.state.date);
+    review.append("review[reef_id]", reefId);
     this.props.createReview(review).then( () => this.props.history.push('/'));
   }
 
@@ -55,21 +61,11 @@ class ReviewForm extends React.Component {
       this.setState({ imageUrl: reader.result, imageFile: file});
 
     if (file) {
+      // debugger
       reader.readAsDataURL(file);
     } else {
       this.setState({ imageUrl: "", imageFile: null });
     }
-  }
-
-  imageUpload(e) {
-    const file = this.state.imageFile;
-
-    const formData = new FormData();
-    formData.append("post[title]", title);
-    // our backend can't handle a null image, so why even
-    if (file) formData.append("post[image]", file);
-
-    ApiUtil.createPhoto(formData, this.resetForm);
   }
 
 
@@ -114,16 +110,13 @@ class ReviewForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <input type="date" value={this.state.date} onChange={this.updateField("date")}/>
           <input className="rev-text" type="textbox" value={this.state.body} onChange={this.updateField("body")}/>
-
+            <div>
+              <input type="file" onChange={this.updateFile}></input>
+            </div>
           <input type="submit" value="Post Review"></input>
         </form>
 
-        <form onSubmit={this.imageUpload}>
-          <div>
-            <input type="file" onChange={this.updateFile}></input>
-          </div>
 
-        </form>
 
       </div>
     );

@@ -4,20 +4,20 @@ export const RECEIVE_REEF = "RECEIVE_REEF";
 export const RECEIVE_REEF_ERRORS = "RECEIVE_REEF_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
-export const RECEIVE_POST = "RECEIVE_POST";
+export const RECEIVE_PHOTO = "RECEIVE_PHOTO";
 
-export const receivePost = (post) => {
+export const receivePhoto = (photo) => {
   return {
-    type: RECEIVE_POST,
-    data: {post}
+    type: RECEIVE_PHTOTO,
+    photo
   };
 };
 
 
-export const createPhoto = (formData) => dispatch => {
-  return ReefApiUtil.createPhoto(formData).then(
-    (post) => dispatch(receivePost(post)),
-    errors => dispatch(receiveErrors(errors.responseJSON)));
+export const createPhoto = (photo) => dispatch => {
+  // debugger
+  return ReefApiUtil.createPhoto(photo).then(
+    (photo) => dispatch(receivePhoto(photo)));
 };
 
 export const receiveReview = (review) => {
