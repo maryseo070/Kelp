@@ -5,6 +5,7 @@ class Api::ReefsController < ApplicationController
   end
 
   def show
+
     @reef = Reef.find(params[:id])
   end
 

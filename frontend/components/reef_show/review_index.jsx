@@ -7,6 +7,7 @@ class ReviewIndex extends React.Component {
     super(props);
     this.reviewIndexItem = this.reviewIndexItem.bind(this);
     this.ratingStars = this.ratingStars.bind(this);
+    this.reviewPhotos = this.reviewPhotos.bind(this);
   }
 
   // this.props.reviews.map((review) => (Array(review.photos).map(
@@ -45,9 +46,19 @@ class ReviewIndex extends React.Component {
     }
   }
 
+  reviewPhotos (review) {
+    let pics;
+    if (review.photos) {
+      pics = Array(review.photos).map((photo) =>
+        <img className="rev-pic" key={Math.floor(Math.random() * 500)} src={photo.image_url} /> );
+    }
+    return pics;
+  }
+
   reviewIndexItem () {
 
     let reviews;
+    // debugger
     if (this.props.reef) {
       reviews = (this.props.reviews).map( (review) =>
 
@@ -69,10 +80,8 @@ class ReviewIndex extends React.Component {
 
           <div className='rev-body'>{review.body}</div>
         </div>
-        {
-          Array(review.photos).map((photo) =>
-          <img className="rev-pic" key={Math.floor(Math.random() * 500)} src={photo.image_url} /> )
-        }
+
+        {this.reviewPhotos(review)}
 
       </ul>
     );
@@ -94,6 +103,6 @@ class ReviewIndex extends React.Component {
 export default ReviewIndex;
 
 // {
-  // Array(review.photos).map((photo) =>
-  // <img className="rev-pic" key={Math.floor(Math.random() * 500)} src={photo.image_url} /> )
+//   Array(review.photos).map((photo) =>
+//   <img className="rev-pic" key={Math.floor(Math.random() * 500)} src={photo.image_url} /> )
 // }

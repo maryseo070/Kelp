@@ -83,7 +83,9 @@ class SessionForm extends React.Component{
 
     <div>
       <div className="main-header-wrapper">
-        <a href="/" className="welcome-logo" >Kelp</a>
+        <a href="/" className="kelp-logo" >
+          <img className="thanks-elliot"src={window.logo} />
+        </a>
       </div>
 
 

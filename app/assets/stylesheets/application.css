@@ -86,6 +86,24 @@ html{
 
 }
 
+.thanks-elliot {
+  height: 49px;
+  width: 85px;
+}
+.thanks-elliot2 {
+  height: 59px;
+  width: 95px;
+}
+
+.kelp-logo{
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  float: left;
+  padding-right: 10px;
+}
+
 .session-form {
   display: flex;
   flex-direction: column;
@@ -286,18 +304,6 @@ html{
   background-image: url("https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c146b0884f6a/assets/img/structural/header_stars.png");
 }
 
-.kelp-logo{
-  display: flex;
-  justify-content: flex-start;
-  text-decoration: none;
-  cursor: pointer;
-  font-style: "Helvetica Neue";
-  font-size: 25px;
-  color: black;
-  float: left;
-  padding-right: 10px;
-}
-
 .show-submit {
   background: #d32323;
   font-weight: bold;
@@ -315,8 +321,8 @@ html{
 
 
 .show-input {
-  padding: 8px 12px;
-  height: inherit;
+  padding: 15px 12px;
+  height: 30px;
   width: 300px;
   margin: 0 0 18px;
   box-sizing: border-box;

@@ -11,14 +11,18 @@ class ReviewForm extends React.Component {
     this.state = {
       body: "",
       date: "",
-      rating: "5",
+      rating: "",
       imageUrl: "",
       imageFile: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateField = this.updateField.bind(this);
-    this.updateRating = this.updateRating.bind(this);
     this.updateFile = this.updateFile.bind(this);
+    this.ratingStars = this.ratingStars.bind(this);
+  }
+
+  componentDidUpdate() {
+    console.log(this.state);
   }
 
   componentDidMount () {
@@ -26,9 +30,6 @@ class ReviewForm extends React.Component {
     // debugger
   }
 
-  componentDidUpdate() {
-    // debugger
-  }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -50,9 +51,6 @@ class ReviewForm extends React.Component {
     };
   }
 
-  updateRating(n) {
-    this.setState({rating: n});
-  }
 
   updateFile(e) {
     const reader = new FileReader();
@@ -61,7 +59,6 @@ class ReviewForm extends React.Component {
       this.setState({ imageUrl: reader.result, imageFile: file});
 
     if (file) {
-      // debugger
       reader.readAsDataURL(file);
     } else {
       this.setState({ imageUrl: "", imageFile: null });
@@ -69,26 +66,25 @@ class ReviewForm extends React.Component {
   }
 
 
-  ratingStars(n = 4) {
-      return (
-        <div className={`rating rating-${n}`}>
+  ratingStars() {
 
-          <div onClick={this.updateField("rating")} value="1" >
-            <i className="star-1" value="1">★</i>
-          </div>
+      return (
+        <div className={`rating-rating-5`}>
+          <option onClick={this.updateField("rating")} className="star-1" value="1" >★</option>
+          <option onClick={this.updateField("rating")} className="star-2" value="2" >★</option>
+          <option onClick={this.updateField("rating")} className="star-3" value="3" >★</option>
+          <option onClick={this.updateField("rating")} className="star-4" value="4" >★</option>
+          <option onClick={this.updateField("rating")} className="star-5" value="5" >★</option>
         </div>
       );
     }
 
-    // <i onClick={this.updateRating("rating")} value="2" onMouseEnter={this.colorChange} className="star-2">★</i>
-    // <i onClick={this.updateRating("rating")} value="3" onMouseEnter={this.colorChange} className="star-3">★</i>
-    // <i onClick={this.updateRating("rating")} value="4" onMouseEnter={this.colorChange} className="star-4">★</i>
-    // <i onClick={this.updateRating("rating")} value="5" onMouseEnter={this.colorChange} className="star-5">★</i>
 
   render () {
-    // debugger
+
     let reefName;
     let reefId;
+
     if (this.props.reef) {
       reefName = this.props.reef.name;
       reefId = this.props.reef.id;
@@ -96,7 +92,9 @@ class ReviewForm extends React.Component {
     return (
       <div>
         <div className="rev-header-wrapper">
-          <a href="/" className="rev-form-logo" >Kelp</a>
+          <a href="/" className="kelp-logo" >
+            <img className="thanks-elliot"src={window.logo} />
+          </a>
           <div className="rev-heading">Write a Review</div>
 
           <div className='rev-buttons'>
@@ -108,6 +106,8 @@ class ReviewForm extends React.Component {
         <Link to={`/reefs/${reefId}`} className="rev-reef-title">{reefName}</Link>
 
         <form onSubmit={this.handleSubmit}>
+
+
           <input type="date" value={this.state.date} onChange={this.updateField("date")}/>
           <input className="rev-text" type="textbox" value={this.state.body} onChange={this.updateField("body")}/>
             <div>
@@ -116,11 +116,19 @@ class ReviewForm extends React.Component {
           <input type="submit" value="Post Review"></input>
         </form>
 
-
-
+        {this.ratingStars()}
       </div>
     );
   }
 }
 
 export default withRouter(ReviewForm);
+
+
+
+  //   <i onClick={this.updateRating("rating")} value="2" onMouseEnter={this.colorChange} className="star-2">★</i>
+  //   <i onClick={this.updateRating("rating")} value="3" onMouseEnter={this.colorChange} className="star-3">★</i>
+  //   <i onClick={this.updateRating("rating")} value="4" onMouseEnter={this.colorChange} className="star-4">★</i>
+  //   <i onClick={this.updateRating("rating")} value="5" onMouseEnter={this.colorChange} className="star-5">★</i>
+  // </div>
+  // <i className="star-1" value="1">★</i>

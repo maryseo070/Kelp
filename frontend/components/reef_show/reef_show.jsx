@@ -32,7 +32,11 @@ class ReefShow extends React.Component {
       <div className="top-top-header">
 
         <div className="show-header">
-          <a href="/" className="kelp-logo" >Kelp</a>
+
+          <a href="/" className="kelp-logo" >
+            <img className="thanks-elliot"src={window.logo} />
+          </a>
+
             <form className="show-form">
               <input type="text" className="show-input" placeholder="Find Coral Reefs"></input>
               <input type="text" className="show-input" placeholder="Near..."></input>

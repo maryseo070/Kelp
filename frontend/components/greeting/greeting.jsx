@@ -27,7 +27,9 @@ class Greeting extends React.Component {
         </div>
 
         <div className="home-hero">
-          <h3 className="greeting-logo">Kelp</h3>
+          <a href="/" className="kelp-logo" >
+            <img className="thanks-elliot-2"src={window.logo} />
+          </a>
           <form className="greeting-form">
             <input type="text" className="greeting-input" placeholder="Find Coral Reefs"></input>
             <input type="text" className="greeting-input" placeholder="Near..."></input>
