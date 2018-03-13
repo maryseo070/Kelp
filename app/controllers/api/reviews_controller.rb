@@ -7,9 +7,9 @@ class Api::ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.author_id = current_user.id
-    @reef = @review.reef 
+    @reef = @review.reef
     if @review.save
-      render template: "api/reefs/show.json.jbuilder"
+      render template: "api/reviews/show.json.jbuilder"
     else
       render json: @review, status: :unprocessable_entity
     end

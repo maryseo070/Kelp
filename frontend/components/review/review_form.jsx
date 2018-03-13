@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import {merge} from 'lodash';
-// import * as ApiUtil from '../../util/reef_api_utils.js';
 
 
 class ReviewForm extends React.Component {
@@ -42,7 +41,8 @@ class ReviewForm extends React.Component {
     review.append("review[rating]", this.state.rating);
     review.append("review[date]", this.state.date);
     review.append("review[reef_id]", reefId);
-    this.props.createReview(review).then( () => this.props.history.push('/'));
+    review.append("review[author]", this.props.currentUser);
+    this.props.createReview(review).then( () => this.props.history.push(`/reefs/${reefId}`));
   }
 
   updateField(field){
@@ -133,12 +133,3 @@ class ReviewForm extends React.Component {
 }
 
 export default withRouter(ReviewForm);
-
-
-
-  //   <i onClick={this.updateRating("rating")} value="2" onMouseEnter={this.colorChange} className="star-2">★</i>
-  //   <i onClick={this.updateRating("rating")} value="3" onMouseEnter={this.colorChange} className="star-3">★</i>
-  //   <i onClick={this.updateRating("rating")} value="4" onMouseEnter={this.colorChange} className="star-4">★</i>
-  //   <i onClick={this.updateRating("rating")} value="5" onMouseEnter={this.colorChange} className="star-5">★</i>
-  // </div>
-  // <i className="star-1" value="1">★</i>

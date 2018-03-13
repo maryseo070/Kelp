@@ -9,7 +9,8 @@ const msp = (state, ownProps) => {
     reef: state.entities.reefs[ownProps.match.params.reefId],
     currentUser: state.session.currentUser,
     errors: state.errors.session,
-    reviews: state.entities.reviews
+    reviews: Object.values(state.entities.reviews),
+    authors: state.entities.authors
   };
 };
 

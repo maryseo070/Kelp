@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store.js';
 import Root from './components/root.jsx';
 import {login, signup} from './actions/session_actions.js';
-import {fetchReef} from './actions/reef_actions.js';
+import {fetchReef, fetchReefs} from './actions/reef_actions.js';
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
   // store = configureStore();
+  window.fetchReefs = fetchReefs;
   window.fetchReef = fetchReef;
   window.getState = store.getState;
   window.dispatch = store.dispatch;

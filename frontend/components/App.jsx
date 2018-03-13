@@ -15,7 +15,8 @@ const App = () => {
       <ProtectedRoute path="/reefs/:reefId/writeReview" component={ReviewFormContainer}/>
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignUpFormContainer} />
-      <Route exact path="/" component={SearchContainer}/>
+      <Route exact path="/" component={GreetingContainer}/>
+      <Route path="/map" component={SearchContainer} />
     </div>
   );
 };

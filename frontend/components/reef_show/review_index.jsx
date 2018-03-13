@@ -12,11 +12,10 @@ class ReviewIndex extends React.Component {
 
   // this.props.reviews.map((review) => (Array(review.photos).map(
   //   (photo) => console.log(photo.image_url))));
-  // componentDidMount() {
-  //   let pic;
-  //   this.props.reviews.map((review) => (Array(review.photos).map(
-  //     (photo) => pic = ( <img scr={photo.image_url} />))));
-  // }
+  componentDidMount() {
+    console.log(this.props)
+  }
+
 
   ratingStars (n) {
     if (n === 5) {
@@ -48,25 +47,27 @@ class ReviewIndex extends React.Component {
 
   reviewPhotos (review) {
     let pics;
-    if (review.photos) {
-      pics = Array(review.photos).map((photo) =>
-        <img className="rev-pic" key={Math.floor(Math.random() * 500)} src={photo.image_url} /> );
+    if (review.photos && review.photos.image_url === "") {
+      return ( <div></div> );
+
     }
-    return pics;
+    else if (review.photos) {
+      pics = Array(review.photos).map((photo) =>
+      <img className="rev-pic" key={Math.floor(Math.random() * 5000)} src={photo.image_url} /> );
+        return pics;
+    }
   }
 
   reviewIndexItem () {
-
     let reviews;
-    // debugger
-    if (this.props.reef) {
+    if (this.props.reef && this.props.reviews) {
       reviews = (this.props.reviews).map( (review) =>
 
       <ul className="review-all" key={Math.floor(Math.random() * 500)}>
         <ul className="user-box">
           <img className="fish-profile" src={window.fish1} />
           <div className="user-snippet">
-            <li className="username">{review.author.first_name}</li>
+            <li className="username">{(this.props.authors[review.author_id]).first_name}</li>
             <div className="user-location">New York, NY</div>
           </div>
         </ul>
@@ -102,7 +103,4 @@ class ReviewIndex extends React.Component {
 
 export default ReviewIndex;
 
-// {
-//   Array(review.photos).map((photo) =>
-//   <img className="rev-pic" key={Math.floor(Math.random() * 500)} src={photo.image_url} /> )
-// }
+            // <li className="username">{review.author.first_name}</li>

@@ -8,4 +8,8 @@ class Reef < ApplicationRecord
   has_many :photos,
     through: :reviews,
     source: :photos
+
+  has_many :reviewers,
+    through: :reviews,
+    source: :user
 end

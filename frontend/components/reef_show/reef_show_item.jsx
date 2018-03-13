@@ -59,7 +59,7 @@ class ReefShowItem extends React.Component {
     }
     return (
       <div className="review-index">
-        <ReviewIndex reef={this.props.reef} reviews={reviews} key={this.props.reef.id}/>
+        <ReviewIndex authors={this.props.authors} reef={this.props.reef} reviews={this.props.reviews} key={this.props.reef.id}/>
       </div>
     );
   }

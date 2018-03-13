@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router-dom';
-import MarkerManager from '../../util/marker_manager.js'
+import MarkerManager from '../../util/marker_manager.js';
 
 class ReefMap extends React.Component {
   constructor(props){
@@ -9,7 +9,7 @@ class ReefMap extends React.Component {
   }
   componentDidMount() {
     const mapOptions = {
-      center: { lat: 37.7758, lng: -122.435 },
+      center: { lat: 40.749138, lng: -73.986385 },
       zoom: 13
     };
     this.map = new google.maps.Map(this.mapNode, mapOptions);
@@ -18,11 +18,11 @@ class ReefMap extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.benches !== this.props.benches) {
+    if (prevProps.reefs !== this.props.reefs) {
       this.MarkerManager.updateMarkers();
     }
     else {
-      return
+      return;
     }
   }
 

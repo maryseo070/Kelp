@@ -1,5 +1,13 @@
 json.set! "reef" do
   json.partial! 'api/reefs/reef', reef: @reef
+  # json.array reef review id
+  json.set! "reviewIds" do
+    @reef.reviews.each do |review|
+      review_ids = []
+      review_ids.push(review.id)
+      json.array! review_ids
+    end
+  end
 end
 
 json.set! "reviews" do
@@ -7,9 +15,6 @@ json.set! "reviews" do
     json.set! review.id do
       json.partial! 'api/reefs/review', review: review
 
-      json.set! "author" do
-        json.partial! 'api/reefs/user', user: review.user
-      end
 
       review.photos.each do |photo|
         json.set! "photos" do
@@ -17,5 +22,14 @@ json.set! "reviews" do
         end
       end
     end
+  end
+end
+
+
+json.set! "authors" do
+  @reef.reviews.each do |review|
+    json.set! review.author.id do
+      json.partial! 'api/reefs/user', user: review.author
+    end 
   end
 end
