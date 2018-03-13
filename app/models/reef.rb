@@ -13,5 +13,12 @@ class Reef < ApplicationRecord
     through: :reviews,
     source: :user
 
-  
+  def self.find_average_ratings
+    return Reef.joins(:reviews).
+    group("reef_id").
+    select("reefs.*").
+    average("rating")
+  end
+
+
 end

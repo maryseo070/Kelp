@@ -4,7 +4,7 @@ import ReefIndex from './reef_index.jsx';
 
 const msp = (state) => {
   return {
-    reefs: state.entities.reefs
+    reefs: Object.values(state.entities.reefs)
   };
 };
 
