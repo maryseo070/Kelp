@@ -62,10 +62,8 @@ export const receiveReef = payload => {
 };
 
 export const fetchReefs = () => dispatch => {
-
   return ReefApiUtil.fetchReefs().then(
-    reefs => dispatch(receiveReefs(reefs)),
-    errors => console.log("could not fetch reefs ~ reef-actions")
+    reefs => dispatch(receiveReefs(reefs))
   );
 };
 

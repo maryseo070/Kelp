@@ -16,11 +16,7 @@ class IndexItem extends React.Component {
   render() {
     const { name, lat, lng } = this.props.reef;
     return (
-      <div
-        className="reef-index-item"
-        onClick={this.handleClick}
-      >
-
+      <div className="reef-index-item" onClick={this.handleClick}>
       </div>
     );
   }

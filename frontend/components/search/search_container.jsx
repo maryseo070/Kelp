@@ -4,12 +4,14 @@ import Search from './search';
 
 const mapStateToProps = state => {
   return {
-    reefs: Object.values(state.entities.reefs)
-  }
+    reefs: Array(state.entities.reefs)
+  };
 };
 
 const mapDispatchToProps = dispatch => {
-  // fetchReefs: () => dispatch(fetchReefs())
+  return {
+    fetchReefs: () => dispatch(fetchReefs())
+  };
 };
 
 export default connect(

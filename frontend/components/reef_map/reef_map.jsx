@@ -8,6 +8,7 @@ class ReefMap extends React.Component {
     super(props);
   }
   componentDidMount() {
+    console.log(this.props);
     const mapOptions = {
       center: { lat: 40.749138, lng: -73.986385 },
       zoom: 13

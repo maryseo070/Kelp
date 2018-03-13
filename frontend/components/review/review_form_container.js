@@ -6,7 +6,8 @@ import ReviewForm from './review_form.jsx';
 const msp = (state, ownProps) => {
   // debugger
   return {
-    reef: state.entities.reefs[ownProps.match.params.reefId]
+    reef: state.entities.reefs[ownProps.match.params.reefId],
+    currentUser: state.session.currentUser
   };
 };
 

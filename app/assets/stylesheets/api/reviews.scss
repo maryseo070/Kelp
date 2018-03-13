@@ -119,10 +119,18 @@
 }
 
 .rating-stars option:hover {
-  border-color: red;
-  background: red;
+  border-color: #d90007;
+  background: #d90007;
 }
 
+.rating-stars option:visited {
+  border-color: blue;
+  background: blue;
+}
+
+.rev-kelp-logo{
+  margin-left: 350px;
+}
 .rating-stars option {
   width: 0;
   height: 1.5em;

@@ -7,6 +7,7 @@ import { withRouter } from 'react-router-dom';
 const msp = (state, ownProps) => {
   return {
     reef: state.entities.reefs[ownProps.match.params.reefId],
+    reefs: state.entities.reefs,
     currentUser: state.session.currentUser,
     errors: state.errors.session,
     reviews: Object.values(state.entities.reviews),

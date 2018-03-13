@@ -3,6 +3,7 @@ import ReefShowContainer from './reef_show_container';
 import ReviewIndex from './review_index';
 import { Route } from 'react-router';
 import {Link} from 'react-router-dom';
+import SearchContainer from '../search/search.jsx';
 
 
 
@@ -82,8 +83,9 @@ class ReefShowItem extends React.Component {
 
 
       <div className="showcase-container" >
-        <div className='show-map'>
-        </div>
+
+        <SearchContainer className='show-map'reefs={this.props.reefs}/>
+
         <div className='show-imgs'>
           <img className="reef-pic-small" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={window.reef1} />
           <img className="reef-pic-default" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={window.reef3} />

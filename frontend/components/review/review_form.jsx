@@ -12,7 +12,8 @@ class ReviewForm extends React.Component {
       date: "",
       rating: "",
       imageUrl: "",
-      imageFile: ""
+      imageFile: "",
+      buttonColor: "#d90007"
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateField = this.updateField.bind(this);
@@ -65,11 +66,15 @@ class ReviewForm extends React.Component {
     }
   }
 
+  changeColor() {
+    this.setState({buttonColor: "purple" })
+  }
+
 
   ratingStars() {
 
       return (
-        <div className="rating-stars">
+        <div className="rating-stars" onClick={this.changeColor()}>
           <option onClick={this.updateField("rating")} className="star-1" value="1" >★</option>
           <option onClick={this.updateField("rating")} className="star-2" value="2" >★</option>
           <option onClick={this.updateField("rating")} className="star-3" value="3" >★</option>
@@ -84,22 +89,29 @@ class ReviewForm extends React.Component {
 
     let reefName;
     let reefId;
+    let buttons;
 
     if (this.props.reef) {
       reefName = this.props.reef.name;
       reefId = this.props.reef.id;
     }
+    if (!this.props.currentUser) {
+      buttons = (
+        <div>
+          <Link to="/login" className="rev-link1" >Log In</Link>
+          <Link to="/signup" className="rev-link2" >Sign Up</Link>
+        </div>);
+    }
     return (
       <div>
         <div className="rev-header-wrapper">
-          <a href="/" className="kelp-logo" >
+          <a href="/" className="rev-kelp-logo" >
             <img className="thanks-elliot"src={window.logo} />
           </a>
           <div className="rev-heading">Write a Review</div>
 
           <div className='rev-buttons'>
-            <Link to="/login" className="rev-link1" >Log In</Link>
-            <Link to="/signup" className="rev-link2" >Sign Up</Link>
+          {buttons}
           </div>
         </div>
 
