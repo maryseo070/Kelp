@@ -6,6 +6,7 @@ import SignUpFormContainer from './session/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util.jsx';
 import ReefShowContainer from './reef_show/reef_show_container';
 import ReviewFormContainer from './review/review_form_container';
+import SearchContainer from './search/search_container.jsx'
 
 const App = () => {
   return(
@@ -14,7 +15,7 @@ const App = () => {
       <ProtectedRoute path="/reefs/:reefId/writeReview" component={ReviewFormContainer}/>
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignUpFormContainer} />
-      <Route exact path="/" component={GreetingContainer}/>
+      <Route exact path="/" component={SearchContainer}/>
     </div>
   );
 };
