@@ -47,14 +47,15 @@ class ReviewIndex extends React.Component {
 
   reviewPhotos (review) {
     let pics;
+    let multiple_pics;
     if (review.photos && review.photos.image_url === "") {
       return ( <div></div> );
 
     }
     else if (review.photos) {
       pics = Array(review.photos).map((photo) =>
-      <img className="rev-pic" key={Math.floor(Math.random() * 5000)} src={photo.image_url} /> );
-        return pics;
+      multiple_pics = <img className="rev-pic" key={Math.floor(Math.random() * 5000)} src={photo.image_url} /> );
+        return multiple_pics;
     }
   }
 

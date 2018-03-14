@@ -30,6 +30,6 @@ json.set! "authors" do
   @reef.reviews.each do |review|
     json.set! review.author.id do
       json.partial! 'api/reefs/user', user: review.author
-    end 
+    end
   end
 end

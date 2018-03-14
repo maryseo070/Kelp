@@ -16,7 +16,7 @@ class ReefShowItem extends React.Component {
   }
 
   componentDidMount() {
-    // console.log(this.props)
+
   }
 
   grow(e) {
@@ -65,6 +65,27 @@ class ReefShowItem extends React.Component {
     );
   }
 
+  displayPhotos () {
+    let pics = [];
+    if (this.props.reviews) {
+      this.props.reviews.map( (review) => (
+        review.photos.image_url ? pics.push(review.photos.image_url) : null
+      ));
+    }
+      return (
+      <div className='show-imgs'>
+        <img className="reef-pic-small" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={pics[0]} />
+        <img className="reef-pic-default" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={pics[1]} />
+        <img className="reef-pic-small" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={pics[2]} />
+      </div>
+    );
+  }
+
+
+  // return pics.map((pic) => (
+  //   <img className="reef-pic-small" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={pic} />
+  // ))
+
   render () {
     // debuggers
 
@@ -86,11 +107,8 @@ class ReefShowItem extends React.Component {
 
         <SearchContainer className='show-map'reefs={this.props.reefs}/>
 
-        <div className='show-imgs'>
-          <img className="reef-pic-small" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={window.reef1} />
-          <img className="reef-pic-default" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={window.reef3} />
-          <img className="reef-pic-small" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={window.reef4} />
-        </div>
+          {this.displayPhotos()}
+
       </div>
 
       <h3 className="rev-title"> Recommended Reviews for the {this.props.reef.name}</h3>
@@ -108,3 +126,7 @@ class ReefShowItem extends React.Component {
 
 
 export default ReefShowItem;
+//
+// <img className="reef-pic-small" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={window.reef1} />
+// <img className="reef-pic-default" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={window.reef3} />
+// <img className="reef-pic-small" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={window.reef4} />

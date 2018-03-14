@@ -254,3 +254,97 @@
 .right-nav-list-items {
   padding-bottom: 10px;
 }
+
+
+// --------------------- REEF INDEX TODO
+.reef-index {
+  background-color: white;
+
+}
+
+.reef-map-index{
+  display: flex;
+  justify-content: flex-end;
+  margin: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.items-and-map {
+  display: flex;
+  flex-direction: row;
+}
+
+.ii-sample-pic {
+  height: 90px;
+  width: 90px;
+  border-radius: 4px;
+  float: left;
+  margin-right: 10px;
+}
+
+.blank-profile-pic {
+  height: 30px;
+  width: 30px;
+  border-radius: 4px;
+}
+
+.ii-content {
+  float: right;
+
+}
+
+.index-items {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  margin-left: 350px;
+  margin-top: 50px;
+  width: 600px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  font-size: 15px;
+}
+.ii-content-and-ll {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ii-name{
+  color: #0073bb;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.ii-name:hover {
+  text-decoration: underline;
+}
+
+
+.ii-lat-lng {
+  display: flex;
+  flex-direction: column;
+  float: right;
+}
+.lng {
+  justify-content: flex-end;
+  display: flex;
+  padding: 5px;
+}
+
+.lat {
+  justify-content: flex-end;
+  display: flex;
+  padding: 5px;
+}
+
+.ii-previews {
+  margin: 10px;
+}
+
+.ii-review {
+
+  font-size: 13px;
+}

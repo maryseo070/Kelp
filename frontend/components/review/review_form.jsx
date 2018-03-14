@@ -67,14 +67,14 @@ class ReviewForm extends React.Component {
   }
 
   changeColor() {
-    this.setState({buttonColor: "purple" })
+    this.setState({buttonColor: "purple" });
   }
 
 
   ratingStars() {
 
       return (
-        <div className="rating-stars" onClick={this.changeColor()}>
+        <div className="rating-stars">
           <option onClick={this.updateField("rating")} className="star-1" value="1" >★</option>
           <option onClick={this.updateField("rating")} className="star-2" value="2" >★</option>
           <option onClick={this.updateField("rating")} className="star-3" value="3" >★</option>
