@@ -14,7 +14,7 @@ class ReefIndex extends React.Component {
   }
 
   render() {
-    let indexInfo = [];
+    let indexInfo;
     if (this.props.reefs) {
       indexInfo = this.props.reefs.map( (reef) => (
       <ReefIndexItem key={reef.id} reef={reef}/>));

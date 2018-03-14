@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import ReefIndex from './reef_index.jsx';
 
 const msp = (state) => {
+  debugger
   return {
     reefs: Object.values(state.entities.reefs)
   };

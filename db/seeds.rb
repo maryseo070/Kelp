@@ -263,7 +263,7 @@ p9 = Photo.create(
 )
 p10 = Photo.create(
   review_id: r10.id,
-  image: File.open("app/assets/images/reef.jpg")
+  image: File.open("app/assets/images/p20.jpg")
 )
 p11 = Photo.create(
   review_id: r11.id,
@@ -289,11 +289,11 @@ p15 = Photo.create(
 )
 p16 = Photo.create(
   review_id: r16.id,
-  image: File.open("app/assets/images/p16.jpg")
+  image: File.open("app/assets/images/p14.jpg")
 )
 p17 = Photo.create(
   review_id: r17.id,
-  image: File.open("app/assets/images/p17.jpg")
+  image: File.open("app/assets/images/p6.jpg")
 )
 p18 = Photo.create(
   review_id: r18.id,

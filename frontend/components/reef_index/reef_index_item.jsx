@@ -32,18 +32,21 @@ import {Link} from 'react-router-dom';
 
 
 const ReefIndexItem = ({reef}) => {
+
   let indexItem;
   if (reef) {
     indexItem =
     <div className="index-items">
       <div className="ii-content-and-ll">
+        {
+          reef.photo ? <img className="ii-sample-pic" src={reef.photo.image_url} /> : null
+        }
 
-      <img className="ii-sample-pic" src={reef.photo.image_url} />
 
       <div className='ii-content'>
 
         <div className="ii-left">
-          <Link className="ii-name" to={`/reefs/${reef.id}`} >{reef.name}</Link>
+          <Link to={`/reefs/${reef.id}`} className="ii-name"  >{reef.name}</Link>
           <div className="ii-revs-ratings">
             <div className="ii-rating">{ratingStars(Math.round(reef.avg_rating))}</div>
             <div className="ii-rev-preview">{reef.review_count} Reviews</div>

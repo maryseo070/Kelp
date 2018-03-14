@@ -15,9 +15,6 @@ class ReefShowItem extends React.Component {
     this.reviewIndex = this.reviewIndex.bind(this);
   }
 
-  componentDidMount() {
-
-  }
 
   grow(e) {
     $(e.target).addClass("reef-pic-big");
