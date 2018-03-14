@@ -9,6 +9,7 @@
 User.destroy_all
 Reef.destroy_all
 Review.destroy_all
+Photo.destroy_all
 
 u1 = User.create(
   first_name: "Ursala",
@@ -89,7 +90,7 @@ r1 = Review.create(
   rating: 5,
   author_id: u1.id,
   reef_id: reef3.id,
-  date: '09/03/2018'
+  date: Date.new(2017, 12, 12)
 )
 
 r2 =Review.create(
@@ -97,22 +98,22 @@ r2 =Review.create(
   rating: 5,
   author_id: u1.id,
   reef_id: reef2.id,
-  date: '09/03/2018'
+  date: Date.new(2011, 5, 8)
 )
-
+#
 r3 =Review.create(
   body: "Nunc fringilla lectus ut leo ultricies, ac venenatis justo cursus. Pellentesque venenatis nulla urna, nec lacinia risus feugiat a. Integer mattis scelerisque purus a auctor.",
   rating: 5,
   author_id: u2.id,
   reef_id: reef1.id,
-  date: '09/03/2018'
+  date: Date.new(2012, 1, 25)
 )
 r4 = Review.create(
   body: "The seaweed is always greener in sombody else's lake. You dream about going up there well that is a big mistake. Just look at the world around you right here on the ocean floor. Such wonderful things surround you. What more are you looking for?",
   rating: 4,
   author_id: u1.id,
   reef_id: reef1.id,
-  date: '4/3/2018'
+  date: Date.new(2012, 8, 16)
 )
 
 r5 = Review.create(
@@ -120,21 +121,21 @@ r5 = Review.create(
   rating: 3,
   author_id: u2.id,
   reef_id: reef1.id,
-  date: '1/9/2018'
+  date: Date.new(2018, 1, 2)
 )
 r6 = Review.create(
   body: "Morbi arcu arcu, lobortis ut mollis eu, sollicitudin vitae neque. Quisque hendrerit condimentum faucibus. Etiam congue egestas elit a malesuada. Suspendisse potenti. Pellentesque venenatis bibendum massa et consectetur. ",
   rating: 2,
   author_id: u1.id,
   reef_id: reef2.id,
-  date: '3/2/2018'
+  date: Date.new(2012, 1, 25)
 )
 r7 = Review.create(
   body: "Aenean ac sapien orci. Nunc volutpat tempor pellentesque. Sed lacus diam, pulvinar nec rhoncus posuere, vestibulum sed odio.",
   rating: 1,
   author_id: u2.id,
   reef_id: reef3.id,
-  date: '09/03/2018'
+  date: Date.new(2014, 9, 15)
 )
 
 r8 = Review.create(
@@ -142,7 +143,7 @@ r8 = Review.create(
   rating: 2,
   author_id: u3.id,
   reef_id: reef3.id,
-  date: '09/18/2016'
+  date: Date.new(2015, 10, 25)
 )
 
 r9 = Review.create(
@@ -150,30 +151,76 @@ r9 = Review.create(
   rating: 1,
   author_id: u1.id,
   reef_id: reef2.id,
-  date: '12/01/2010'
+  date: Date.new(2018, 1, 6)
 )
 
 r10 = Review.create(
-  body: "Nulla aliquam odio vitae leo consectetur mollis. Morbi cursus, orci nec blandit consequat, tellus massa hendrerit tortor, ut blandit urna sapien non mauris. Phasellus id odio odio. Cras et semper turpis. ",
+  body: "Duis efficitur dictum nibh, at rutrum ipsum aliquam placerat. Etiam ac leo sit amet justo euismod suscipit quis sed felis. Phasellus quis mauris in tellus ultrices sagittis. Morbi vehicula a metus non interdum. Praesent aliquet semper ligula. Etiam id vestibulum leo.",
   rating: 4,
   author_id: u6.id,
   reef_id: reef4.id,
-  date: '1/3/2012'
+  date: Date.new(2018, 1, 6)
 )
 r11 = Review.create(
-  body: "Nulla aliquam odio vitae leo consectetur mollis. Morbi cursus, orci nec blandit consequat, tellus massa hendrerit tortor, ut blandit urna sapien non mauris. Phasellus id odio odio. Cras et semper turpis. ",
+  body: "Suspendisse viverra, augue eget convallis rutrum, felis nibh viverra lectus, ac dictum ligula nulla ac ante. Ut auctor sem vel lectus aliquam, pharetra imperdiet tellus tempus.",
   rating: 2,
   author_id: u4.id,
   reef_id: reef4.id,
-  date: '06/15/2018'
+  date: Date.new(2017, 6, 13)
 )
+
 r12 = Review.create(
-  body: "Nulla aliquam odio vitae leo consectetur mollis. Morbi cursus, orci nec blandit consequat, tellus massa hendrerit tortor, ut blandit urna sapien non mauris. Phasellus id odio odio. Cras et semper turpis. ",
+  body: "Curabitur vestibulum odio elit, fermentum feugiat dui scelerisque interdum. Sed aliquet diam diam, mattis commodo augue imperdiet et. Morbi varius augue non ipsum pulvinar ullamcorper.",
   rating: 3,
   author_id: u5.id,
   reef_id: reef4.id,
-  date: '07/01/2017'
+  date: Date.new(2012, 1, 25)
 )
+
+r13 = Review.create(
+  body: "Aliquam eu ipsum quis augue sagittis cursus. Morbi rutrum libero non aliquam congue. Proin vehicula ipsum elit, in accumsan nulla faucibus quis.",
+  rating: 4,
+  author_id: u2.id,
+  reef_id: reef5.id,
+  date: Date.new(2017, 12, 16)
+)
+
+r14 = Review.create(
+  body: "Nulla non aliquet erat. In rutrum mollis turpis vitae pharetra. Pellentesque pretium mauris in dolor lacinia ornare. Phasellus ac tincidunt mauris.",
+  rating: 3,
+  author_id: u1.id,
+  reef_id: reef5.id,
+  date: Date.new(2014, 1, 20)
+)
+r15 = Review.create(
+  body: "ed aliquet diam diam, mattis commodo augue imperdiet et. Morbi varius augue non ipsum pulvinar ullamcorper. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+  rating: 3,
+  author_id: u6.id,
+  reef_id: reef5.id,
+  date: Date.new(2017, 11, 25)
+)
+r16 = Review.create!(
+  body: "Duis hendrerit arcu venenatis rutrum tempus. Nulla non aliquet erat. In rutrum mollis turpis vitae pharetra. Pellentesque pretium mauris in dolor lacinia ornare. Phasellus ac tincidunt mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+  rating: 5,
+  author_id: u3.id,
+  reef_id: reef6.id,
+  date: Date.new(2018, 2, 25)
+)
+r17 = Review.create!(
+  body: "Proin vehicula ipsum elit, in accumsan nulla faucibus quis. Etiam euismod, erat ac venenatis efficitur, dui ex lobortis ligula, mollis ullamcorper sem eros a velit.",
+  rating: 4,
+  author_id: u2.id,
+  reef_id: reef6.id,
+  date: Date.new(2018, 3, 9)
+)
+r18 = Review.create!(
+  body: "Nulla non aliquet erat. In rutrum mollis turpis vitae pharetra. Pellentesque pretium mauris in dolor lacinia ornare. Phasellus ac tincidunt mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas porta blandit turpis, ac pharetra metus cursus in. Aliquam eu ipsum quis augue sagittis cursus. Morbi rutrum libero non aliquam congue. Proin vehicula ipsum elit, in accumsan nulla faucibus quis. Etiam euismod, erat ac venenatis efficitur, dui ex lobortis ligula, mollis ullamcorper sem eros a velit.",
+  rating: 1,
+  author_id: u5.id,
+  reef_id: reef6.id,
+  date: Date.new(2014, 8, 12)
+)
+
 
 p1 = Photo.create(
   review_id: r1.id,
@@ -213,4 +260,42 @@ p8 = Photo.create(
 p9 = Photo.create(
   review_id: r9.id,
   image: File.open("app/assets/images/p9.jpg")
+)
+p10 = Photo.create(
+  review_id: r10.id,
+  image: File.open("app/assets/images/reef.jpg")
+)
+p11 = Photo.create(
+  review_id: r11.id,
+  image: File.open("app/assets/images/reef1.jpg")
+)
+p12 = Photo.create(
+  review_id: r12.id,
+  image: File.open("app/assets/images/reef2.jpg")
+)
+p13 = Photo.create(
+  review_id: r13.id,
+  image: File.open("app/assets/images/p13.jpg")
+)
+
+p14 = Photo.create(
+  review_id: r14.id,
+  image: File.open("app/assets/images/p14.jpg")
+)
+
+p15 = Photo.create(
+  review_id: r15.id,
+  image: File.open("app/assets/images/p15.jpg")
+)
+p16 = Photo.create(
+  review_id: r16.id,
+  image: File.open("app/assets/images/p16.jpg")
+)
+p17 = Photo.create(
+  review_id: r17.id,
+  image: File.open("app/assets/images/p17.jpg")
+)
+p18 = Photo.create(
+  review_id: r18.id,
+  image: File.open("app/assets/images/p18.jpg")
 )

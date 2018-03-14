@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import GreetingContainer from '../greeting/greeting_container';
 
 const IndexHeader = () => {
   return(
@@ -17,6 +18,9 @@ const IndexHeader = () => {
             <input type="text" className="show-input" placeholder="Near..."></input>
             <input type="submit" value="search" className="show-submit"/>
           </form>
+          <div className="greeting-buttons">
+            <GreetingContainer />
+          </div>
       </div>
 
     </div>

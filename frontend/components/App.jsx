@@ -15,8 +15,8 @@ const App = () => {
       <Route exact path="/reefs/:reefId" component={ReefShowContainer} />
       <ProtectedRoute path="/reefs/:reefId/writeReview" component={ReviewFormContainer}/>
       <AuthRoute path="/login" component={LoginFormContainer} />
+      <Route exact path="/" component={ReefIndexContainer}/>
       <AuthRoute path="/signup" component={SignUpFormContainer} />
-      <Route exact path="/" component={GreetingContainer}/>
       <Route exact path="/reefs" component={ReefIndexContainer}/>
       <Route path="/map" component={SearchContainer} />
     </div>

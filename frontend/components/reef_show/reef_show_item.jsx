@@ -37,8 +37,10 @@ class ReefShowItem extends React.Component {
           <li className="right-nav-list-items">Accepts Credit Cards</li>
           <li className="right-nav-list-items">Gender Inclusive Bathrooms</li>
           <li className="right-nav-list-items">Happy Hour</li>
+          <li>Coral Diversity</li>
           <li className="right-nav-list-items">Wi-Fi</li>
           <li className="right-nav-list-items">Has Pool Table</li>
+          <li>Sea Anemones</li>
         </ul>
       </div>
     );
@@ -74,6 +76,7 @@ class ReefShowItem extends React.Component {
     }
       return (
       <div className='show-imgs'>
+
         <img className="reef-pic-small" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={pics[0]} />
         <img className="reef-pic-default" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={pics[1]} />
         <img className="reef-pic-small" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={pics[2]} />
