@@ -25,7 +25,6 @@ const IndexHeader = () => {
         <li>
           <Link to="/reefs" className="show-links">Coral Reefs</Link>
         </li>
-        <li></li>
       </ul>
       </div>
     </div>

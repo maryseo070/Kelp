@@ -102,5 +102,3 @@ class ReviewIndex extends React.Component {
 
 
 export default ReviewIndex;
-
-            // <li className="username">{review.author.first_name}</li>
