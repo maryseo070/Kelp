@@ -5,7 +5,17 @@ import MarkerManager from '../../util/marker_manager.js';
 
 const mapOptions = {
   center: { lat: 40.749138, lng: -73.986385 },
-  zoom: 0
+  zoom: 0,
+  mapTypeControlOptions: {
+    mapTypeIds: [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.HYBRID]
+  }, 
+    disableDefaultUI: true, // a way to quickly hide all controls
+    mapTypeControl: false,
+    scaleControl: true,
+    zoomControl: true,
+    zoomControlOptions: {
+      style: google.maps.ZoomControlStyle.LARGE
+    },
 };
 
 const getCoordsObj = latLng => ({
@@ -52,18 +62,9 @@ class ReefMap extends React.Component {
         southWest: { lat: south, lng: west } };
       }
     );
-    // google.maps.event.addListener(this.map, 'click', (event) => {
-    //   const coords = getCoordsObj(event.latLng);
-    //   this.handleClick(coords);
-    // });
+
   }
 
-  // handleClick(coords) {
-  //   this.props.history.push({
-  //     pathname: 'reefs/new',
-  //     search: `lat=${coords.lat}&lng=${coords.lng}`
-  //   });
-  // }
 
   handleMarkerClick(reef) {
     this.props.history.push(`/reefs/${reef.id}`);

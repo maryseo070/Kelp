@@ -95,7 +95,7 @@ class ReefShowItem extends React.Component {
       <div className="biz-page-header">
 
         <div className="general-info-box">
-          <h1 className="show-title">{this.props.reef.name}</h1>
+          <h1 className="show-title">{this.props.reef[0].name}</h1>
         </div>
 
       {this.writeReviewButton()}
@@ -111,7 +111,7 @@ class ReefShowItem extends React.Component {
 
       </div>
 
-      <h3 className="rev-title"> Recommended Reviews for the {this.props.reef.name}</h3>
+      <h3 className="rev-title"> Recommended Reviews for the {this.props.reef[0].name}</h3>
 
       <div className="show-bottom">
         <div>{this.reviewIndex()}</div>
