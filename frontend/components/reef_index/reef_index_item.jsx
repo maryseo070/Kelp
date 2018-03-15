@@ -32,14 +32,13 @@ import {Link} from 'react-router-dom';
 
 
 const ReefIndexItem = ({reef}) => {
-
   let indexItem;
   if (reef) {
     indexItem =
     <div className="index-items">
       <div className="ii-content-and-ll">
         {
-          reef.photo ? <img className="ii-sample-pic" src={reef.photo.image_url} /> : null
+          reef.photo ? <img className="ii-sample-pic" src={reef.photo} /> : null
         }
 
 
