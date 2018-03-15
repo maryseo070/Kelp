@@ -7,7 +7,10 @@ class IndexItem extends React.Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
-
+  componentDidMount () {
+    console.log(this.props);
+    this.props.fetchReefs();
+  }
   handleClick() {
     const reefId = this.props.reef.id;
     this.props.history.push(`/reefs/${reefId}`);

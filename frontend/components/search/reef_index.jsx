@@ -9,11 +9,3 @@ const ReefIndex = ({ reefs }) => (
 );
 
 export default ReefIndex;
-
-//
-// { reefs.map( (reef) => (
-//   <ReefIndexItem
-//     reef={reef}
-//     key={reef.id}
-//     />
-// ))}

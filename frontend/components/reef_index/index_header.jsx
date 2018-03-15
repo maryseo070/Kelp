@@ -13,14 +13,16 @@ const IndexHeader = () => {
           <img className="thanks-elliot"src={window.logo} />
         </a>
 
+        <div className="greeting-buttons">
           <form className="show-form">
             <input type="text" className="show-input" placeholder="Find Coral Reefs"></input>
             <input type="text" className="show-input" placeholder="Near..."></input>
             <input type="submit" value="search" className="show-submit"/>
           </form>
-          <div className="greeting-buttons">
+          <div>
             <GreetingContainer />
           </div>
+        </div>
       </div>
 
     </div>

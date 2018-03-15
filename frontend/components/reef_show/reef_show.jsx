@@ -30,7 +30,7 @@ class ReefShow extends React.Component {
     // debugger
     let reefShowItem;
     let reviews;
-    if (this.props.reef) {
+    if (this.props.reef[0] !== undefined) {
       reviews = Object.values(this.props.reviews);
       reefShowItem = <ReefShowItem authors={this.props.authors} reefId={this.props.match.params.reefId} reef={this.props.reef} reviews={this.props.reviews} />;
     }

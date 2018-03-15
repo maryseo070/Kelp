@@ -3,29 +3,72 @@ import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router-dom';
 import MarkerManager from '../../util/marker_manager.js';
 
+const mapOptions = {
+  center: { lat: 40.749138, lng: -73.986385 },
+  zoom: 0
+};
+
+const getCoordsObj = latLng => ({
+  lat: latLng.lat(),
+  lng: latLng.lng()
+});
+
+
 class ReefMap extends React.Component {
   constructor(props){
     super(props);
+    this.handleMarkerClick = this.handleMarkerClick.bind(this);
   }
+
   componentDidMount() {
-    console.log(this.props);
-    const mapOptions = {
-      center: { lat: 40.749138, lng: -73.986385 },
-      zoom: 13
-    };
+    const map = this.refs.map;
     this.map = new google.maps.Map(this.mapNode, mapOptions);
-    this.MarkerManager = new MarkerManager(this.map);
-    this.MarkerManager.updateMarkers();
+    this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick);
+    this.registerListeners();
+    if (this.props.singleReef) {
+      // const targetReefKey = Object.keys(this.props.reefs[0]);
+      // const targetReef = this.props.reefs[targetReefKey];
+      this.MarkerManager.updateMarkers(this.props.reef);
+    } else {
+      this.MarkerManager.updateMarkers(this.props.reefs);
+    }
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.reefs !== this.props.reefs) {
-      this.MarkerManager.updateMarkers();
-    }
-    else {
-      return;
+    if (this.props.singleReef) {
+      // const targetReefKey = Object.keys(this.props.reefs[0]);
+      // const targetReef = this.props.reefs[targetReefKey];
+      this.MarkerManager.updateMarkers(this.props.reef);
+    } else {
+      this.MarkerManager.updateMarkers(this.props.reefs);
     }
   }
+
+  registerListeners() {
+    google.maps.event.addListener(this.map, 'idle', () => {
+      const {north, south, east, west} = this.map.getBounds().toJSON();
+      const bounds = {
+        northEast: { lat: north, lng: east },
+        southWest: { lat: south, lng: west } };
+      }
+    );
+    // google.maps.event.addListener(this.map, 'click', (event) => {
+    //   const coords = getCoordsObj(event.latLng);
+    //   this.handleClick(coords);
+    // });
+  }
+
+  // handleClick(coords) {
+  //   this.props.history.push({
+  //     pathname: 'reefs/new',
+  //     search: `lat=${coords.lat}&lng=${coords.lng}`
+  //   });
+  // }
+
+  handleMarkerClick(reef) {
+    this.props.history.push(`/reefs/${reef.id}`);
+  }
+
 
   render() {
     return(
@@ -34,4 +77,4 @@ class ReefMap extends React.Component {
   }
 }
 
-export default ReefMap;
+export default withRouter(ReefMap);

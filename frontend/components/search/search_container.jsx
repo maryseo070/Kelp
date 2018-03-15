@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Search from './search';
-// import {fetchReefs} from '../../action/reef_actions.js'
+import {fetchReefs} from '../../actions/reef_actions.js';
 
 const mapStateToProps = state => {
   return {

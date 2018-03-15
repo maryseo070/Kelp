@@ -13,6 +13,8 @@ class ReefIndex extends React.Component {
     this.props.fetchReefs();
   }
 
+
+
   render() {
     let indexInfo;
     if (this.props.reefs) {
@@ -28,7 +30,7 @@ class ReefIndex extends React.Component {
             {indexInfo}
           </div>
           <div className="reef-map-index">
-            <ReefMap />
+            <ReefMap reefs={this.props.reefs} singleReef={false}/>
           </div>
         </div>
       </div>

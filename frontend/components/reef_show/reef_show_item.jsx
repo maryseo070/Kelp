@@ -3,7 +3,7 @@ import ReefShowContainer from './reef_show_container';
 import ReviewIndex from './review_index';
 import { Route } from 'react-router';
 import {Link} from 'react-router-dom';
-import SearchContainer from '../search/search.jsx';
+import ReefMap from '../reef_map/reef_map.jsx';
 
 
 
@@ -105,7 +105,7 @@ class ReefShowItem extends React.Component {
 
       <div className="showcase-container" >
 
-        <SearchContainer className='show-map'reefs={this.props.reefs}/>
+        <ReefMap className='show-map' reef={this.props.reef} singleReef={true}/>
 
           {this.displayPhotos()}
 
