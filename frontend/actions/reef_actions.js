@@ -6,13 +6,18 @@ export const CLEAR_ERRORS = "CLEAR_ERRORS";
 export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
 export const RECEIVE_PHOTO = "RECEIVE_PHOTO";
 
+export const searchReefs = query => dispatch => {
+  return ReefApiUtil.searchReefs(query).then(
+    (reefs) => dispatch(receiveReefs(reefs)) );
+};
+
+
 export const receivePhoto = (photo) => {
   return {
     type: RECEIVE_PHTOTO,
     photo
   };
 };
-
 
 export const createPhoto = (photo) => dispatch => {
   // debugger

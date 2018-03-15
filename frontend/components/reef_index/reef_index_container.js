@@ -1,6 +1,7 @@
 import { fetchReefs } from '../../actions/reef_actions.js';
 import {connect} from 'react-redux';
 import ReefIndex from './reef_index.jsx';
+import {withRouter} from 'react-router-dom';
 
 const msp = (state) => {
   return {
@@ -14,4 +15,4 @@ const mdp = dispatch => {
   };
 };
 
-export default connect(msp, mdp)(ReefIndex);
+export default withRouter(connect(msp, mdp)(ReefIndex));

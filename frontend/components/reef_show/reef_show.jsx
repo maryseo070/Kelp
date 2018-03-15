@@ -13,11 +13,14 @@ class ReefShow extends React.Component {
   }
 
   componentWillReceiveProps(nextProps){
-    console.log(nextProps)
     if (this.props.match.params.reefId !== nextProps.match.params.reefId) {
       this.props.fetchReef(nextProps.match.params.reefId);
     }
   }
+
+  // componentDidUpdate(prevProps, prevState) {
+  //   console.log(prevProps)
+  // }
   // componentDidUpdate () {
   //   console.log(this.props)
   // }

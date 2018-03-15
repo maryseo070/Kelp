@@ -17,6 +17,7 @@ const App = () => {
       <Route exact path="/" component={ReefIndexContainer}/>
       <AuthRoute path="/signup" component={SignUpFormContainer} />
       <Route exact path="/reefs" component={ReefIndexContainer}/>
+      <Route path='/test' component={GreetingContainer} />
     </div>
   );
 };

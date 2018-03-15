@@ -68,7 +68,7 @@ class ReefShowItem extends React.Component {
     let pics = [];
     if (this.props.reviews) {
       this.props.reviews.map( (review) => (
-        review.photos.image_url ? pics.push(review.photos.image_url) : null
+        review.photos ? pics.push(review.photos.image_url) : null
       ));
     }
       return (

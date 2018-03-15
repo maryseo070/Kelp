@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import GreetingContainer from '../greeting/greeting_container';
+import ReefSearchContainer from '../search/reef_search_container';
 
 const IndexHeader = () => {
   return(
@@ -14,11 +15,9 @@ const IndexHeader = () => {
         </a>
 
         <div className="greeting-buttons">
-          <form className="show-form">
-            <input type="text" className="show-input" placeholder="Find Coral Reefs"></input>
-            <input type="text" className="show-input" placeholder="Near..."></input>
-            <input type="submit" value="search" className="show-submit"/>
-          </form>
+
+            <ReefSearchContainer />
+
           <div>
             <GreetingContainer />
           </div>

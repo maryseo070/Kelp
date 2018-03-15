@@ -14,11 +14,21 @@ class Reef < ApplicationRecord
     through: :reviews,
     source: :user
 
+# refactor to accept list of reefs to find averages of
   def self.find_average_ratings
     return Reef.joins(:reviews).
     group("reef_id").
     select("reefs.*").
     average("rating")
+  end
+  # instance method to find avg rating of one reef
+
+  def find_avg_rating(id)
+    averages = Reef.joins(:reviews).
+    group("reef_id").
+    select("reefs.*").
+    average("rating")
+    return averages[id]
   end
 
   def find_photo(reef)

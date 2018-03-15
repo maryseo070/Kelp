@@ -13,6 +13,10 @@ class ReefIndex extends React.Component {
     this.props.fetchReefs();
   }
 
+  // componentWillReceiveProps(nextProps){
+  //   console.log(this.props)
+  //   console.log(nextProps)
+  // }
 
 
   render() {
