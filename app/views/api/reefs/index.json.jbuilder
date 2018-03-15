@@ -2,7 +2,7 @@
   json.set! reef.id do
     json.partial! 'reef', reef: reef
     json.avg_rating @ratings[reef.id]
-    json.set! :photo do
+    json.set! photo do
       json.partial! 'photo', photo: reef.photos.first
     end
     json.review_preview reef.reviews.first.body[0..120]
