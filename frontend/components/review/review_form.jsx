@@ -20,14 +20,13 @@ class ReviewForm extends React.Component {
     this.updateFile = this.updateFile.bind(this);
     this.ratingStars = this.ratingStars.bind(this);
   }
-
-  componentDidUpdate() {
-    console.log(this.state);
-  }
+  //
+  // componentDidUpdate() {
+  //   console.log(this.state);
+  // }
 
   componentDidMount () {
     this.props.fetchReef(this.props.match.params.reefId);
-    // debugger
   }
 
 
@@ -35,7 +34,6 @@ class ReviewForm extends React.Component {
     e.preventDefault();
     const file = this.state.imageFile;
     const review = new FormData();
-
     const reefId = this.props.reef.id;
     review.append("review[photos_attributes][][image]", file);
     review.append("review[body]", this.state.body);
