@@ -5,7 +5,7 @@ const reviewsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_REEF:
-      return merge({}, state, action.payload.reviews);
+      return action.payload.reviews;
     case RECEIVE_REVIEW:
       return merge({}, state, {[action.review.id]: action.review});
     default:

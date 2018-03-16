@@ -223,7 +223,7 @@ r18 = Review.create!(
 
 p1 = Photo.create(
   review_id: r1.id,
-  image: File.open("app/assets/images/fish1.jpg")
+  image: File.open("app/assets/images/p22.jpg")
 )
 
 p2 = Photo.create(
@@ -292,7 +292,7 @@ p16 = Photo.create(
 )
 p17 = Photo.create(
   review_id: r17.id,
-  image: File.open("app/assets/images/p6.jpg")
+  image: File.open("app/assets/images/p23.jpg")
 )
 p18 = Photo.create(
   review_id: r18.id,
