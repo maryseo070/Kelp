@@ -45,8 +45,10 @@ class ReviewForm extends React.Component {
   }
 
   updateField(field){
+    console.log(this.state);
     return (e) => {
       this.setState({[field]: e.target.value});
+      document.getElementById(e.target.className).selected = true;
     };
   }
 
@@ -64,20 +66,16 @@ class ReviewForm extends React.Component {
     }
   }
 
-  changeColor() {
-    this.setState({buttonColor: "purple" });
-  }
-
 
   ratingStars() {
 
       return (
         <div className="rating-stars">
-          <option onClick={this.updateField("rating")} className="star-1" value="1" >★</option>
-          <option onClick={this.updateField("rating")} className="star-2" value="2" >★</option>
-          <option onClick={this.updateField("rating")} className="star-3" value="3" >★</option>
-          <option onClick={this.updateField("rating")} className="star-4" value="4" >★</option>
-          <option onClick={this.updateField("rating")} className="star-5" value="5" >★</option>
+          <option id="star-1" onClick={this.updateField("rating")} className="star-1" value="1" >★</option>
+          <option id="star-2" onClick={this.updateField("rating")} className="star-2" value="2" >★</option>
+          <option id="star-3" onClick={this.updateField("rating")} className="star-3" value="3" >★</option>
+          <option id="star-4" onClick={this.updateField("rating")} className="star-4" value="4" >★</option>
+          <option id="star-5" onClick={this.updateField("rating")} className="star-5" value="5" >★</option>
         </div>
       );
     }
@@ -126,7 +124,7 @@ class ReviewForm extends React.Component {
               <input autoComplete="on" type="date" value={this.state.date} onChange={this.updateField("date")}/>
             </div>
 
-            <input className="rev-text" type="textbox" value={this.state.body} onChange={this.updateField("body")}/>
+            <textarea className="rev-text" value={this.state.body} onChange={this.updateField("body")} />
             <div>
               <input type="file" onChange={this.updateFile}></input>
             </div>

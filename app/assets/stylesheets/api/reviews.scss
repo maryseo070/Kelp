@@ -146,6 +146,12 @@
   text-shadow: 1px 0 1px hsl(0, 0%, 70%);
   cursor: pointer;
 }
+
+.rating-stars option:checked {
+  border-color: #d90007;
+  background: #d90007;
+}
+
 .rating {
   margin: 10px 0;
   font-size: 20px;

@@ -85,3 +85,5 @@ handleSubmit(e) {
   this.props.createReview(review).then( () => this.props.history.push(`/reefs/${reefId}`));
 }
 ```
+## Future
+-  Filtered search
