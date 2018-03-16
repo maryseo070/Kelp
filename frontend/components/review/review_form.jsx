@@ -105,7 +105,7 @@ class ReviewForm extends React.Component {
     return (
       <div>
         <div className="rev-header-wrapper">
-          <a href="/" className="rev-kelp-logo" >
+          <a href="#/reefs" className="rev-kelp-logo" >
             <img className="thanks-elliot"src={window.logo} />
           </a>
           <div className="rev-heading">Write a Review</div>

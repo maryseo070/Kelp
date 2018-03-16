@@ -23,13 +23,13 @@ class Reef < ApplicationRecord
   end
   # instance method to find avg rating of one reef
 
-  def find_avg_rating(id)
-    averages = Reef.joins(:reviews).
-    group("reef_id").
-    select("reefs.*").
-    average("rating")
-    return averages[id]
-  end
+  # return Reef.joins(:reviews).
+  # group("reef_id").
+  # select("reefs.*").
+  # average("rating").
+  # having("AVG('rating') > ?", 2)
+
+
 
   def find_photo(reef)
     reef.reviews.each do |review|

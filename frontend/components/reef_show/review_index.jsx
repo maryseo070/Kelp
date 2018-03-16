@@ -62,6 +62,7 @@ class ReviewIndex extends React.Component {
   reviewIndexItem () {
     let reviews;
     if (this.props.reef && this.props.reviews) {
+      debugger
       reviews = (this.props.reviews).map( (review) =>
 
       <ul className="review-all" key={Math.floor(Math.random() * 500)}>

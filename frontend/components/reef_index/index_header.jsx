@@ -10,7 +10,7 @@ const IndexHeader = () => {
 
       <div className="show-header">
 
-        <a href="/" className="kelp-logo" >
+        <a href="#/reefs" className="kelp-logo" >
           <img className="thanks-elliot"src={window.logo} />
         </a>
 

@@ -27,7 +27,7 @@
   border-color: #8d0005;
   box-shadow: 0 1px 1px rgba(0,0,0,.3);
   cursor: pointer;
-  height: 30px;
+  height: 32px;
   width: 100px;
   position: relative;
 }
@@ -85,20 +85,52 @@
 .greeting-buttons {
   display: flex;
   align-items: flex-start;
+  align-items: center;
 }
 
 .logout-button {
-  font-weight: bold;
-  background-color: #d32323;
-  color: white;
+  color: #fff;
+  display: block;
+  padding: 6px 18px;
+  font-weight: 700;
+  text-align: center;
+  font-size: 14px;
+  line-height: 24px;
   border-radius: 4px;
-  font-size: 12px;
-  border-color: #8d0005;
-  box-shadow: 0 1px 1px rgba(0,0,0,.3);
-  margin-left: 150px;
-  min-height: 30px;
+  text-decoration: none;
+  background: #bd1f1f;
+  margin: 0 0 15px 35px;
+  border: none;
+}
+
+.logout-button:hover{
+  background-color: #8d0005
+}
+
+.header-links-container{
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+  height: inherit;
+  margin-left: 25px;
 }
 
 .header-links{
-  
+  color: #fff;
+  display: block;
+  padding: 6px 18px;
+  font-weight: 700;
+  text-align: center;
+  font-size: 14px;
+  line-height: 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  background: #bd1f1f;
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+
+.header-links:hover {
+  background-color: #8d0005
 }

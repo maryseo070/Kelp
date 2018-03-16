@@ -271,7 +271,7 @@ p11 = Photo.create(
 )
 p12 = Photo.create(
   review_id: r12.id,
-  image: File.open("app/assets/images/reef2.jpg")
+  image: File.open("app/assets/images/p19.jpg")
 )
 p13 = Photo.create(
   review_id: r13.id,

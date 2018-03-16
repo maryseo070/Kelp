@@ -26,7 +26,7 @@ class SessionForm extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(() => this.props.history.push('/reefs'));
+    this.props.processForm(user).then(() => this.props.history.push('/'));
   }
 
   updateEmail(e){
@@ -82,7 +82,7 @@ class SessionForm extends React.Component{
 
     <div>
       <div className="main-header-wrapper">
-        <a href="/" className="kelp-logo" >
+        <a href="#/reefs" className="kelp-logo" >
           <img className="thanks-elliot"src={window.logo} />
         </a>
       </div>
