@@ -1,6 +1,5 @@
 class Api::PhotosController < ApplicationController
   def create
-    debugger
     @photo = Photo.new(photo_params)
     if @photo.save
       render :show

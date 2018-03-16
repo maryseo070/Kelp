@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route, Link, withRouter } from 'react-router-dom';
-
+import {merge} from 'lodash';
 
 class SessionForm extends React.Component{
   constructor(props){
@@ -8,8 +8,8 @@ class SessionForm extends React.Component{
     this.state = {
       email: "",
       password: "",
-      firstName: "",
-      lastName: ""
+      first_name: "",
+      last_name: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,7 +26,9 @@ class SessionForm extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(() => this.props.history.push('/'));
+    // let user = Object.assign({}, this.state);
+    // const user = this.state;
+    this.props.processForm(user).then(() => this.props.history.push('/#/reefs'));
   }
 
   updateEmail(e){
@@ -38,11 +40,11 @@ class SessionForm extends React.Component{
   }
 
   updateFirstName(e){
-    this.setState({firstName: e.currentTarget.value});
+    this.setState({first_name: e.currentTarget.value});
   }
 
   updateLastName(e){
-    this.setState({lastName: e.currentTarget.value});
+    this.setState({last_name: e.currentTarget.value});
   }
 
   renderErrors() {
@@ -62,21 +64,21 @@ class SessionForm extends React.Component{
     let title;
     let question;
     let buttonVal;
-    let firstName;
-    let lastName;
+    let first_name;
+    let last_name;
 
     if (this.props.formType === 'login') {
       title = "Log In to Kelp";
       question = "New to Kelp?";
       buttonVal = "Log In";
-      firstName = "";
-      lastName = "";
+      first_name = "";
+      last_name = "";
     } else if (this.props.formType === 'signup') {
         title = "Sign Up for Kelp";
         question = "Already on Kelp?";
         buttonVal = "Sign Up";
-        firstName = <input className="session-input" placeholder="First Name" type="text" value={ this.state.firstName } onChange={ this.updateFirstName } />;
-        lastName = <input className="session-input" placeholder="Last Name" type="text" value={ this.state.lastName } onChange={ this.updateLastName } />;
+        first_name = <input className="session-input" placeholder="First Name" type="text" value={ this.state.first_name } onChange={ this.updateFirstName } />;
+        last_name = <input className="session-input" placeholder="Last Name" type="text" value={ this.state.last_name } onChange={ this.updateLastName } />;
     }
     return (
 
@@ -103,8 +105,8 @@ class SessionForm extends React.Component{
                 {question} {this.props.navLink}
               </h3>
 
-              {firstName}
-              {lastName}
+              {first_name}
+              {last_name}
               <input className="session-input" placeholder="Email" type="text" value={ this.state.email } onChange={ this.updateEmail } />
 
               <input className="session-input" placeholder="Password" type="password" value={ this.state.password } onChange={ this.updatePassword } />
@@ -135,7 +137,7 @@ class SessionForm extends React.Component{
 
 
 
-export default SessionForm;
+export default withRouter(SessionForm);
 
 
 // <span className="guest" onClick={this.props.guestLogin}>

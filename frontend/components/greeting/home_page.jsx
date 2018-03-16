@@ -2,6 +2,7 @@ import React from 'react';
 import ReefSearchContainer from '../search/reef_search_container';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
+import {logout} from '../../actions/session_actions.js';
 
 const msp = state => {
   return {
@@ -9,6 +10,11 @@ const msp = state => {
   };
 };
 
+const mdp = dispatch => {
+  return {
+    logout: dispatch(logout())
+  };
+};
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -28,7 +34,7 @@ class HomePage extends React.Component {
     else {
       return (
       <div>
-        <Link to='/reefs' className="greeting-links-1">Log Out</Link>
+        <Link onClick={this.props.logout} to='/reefs' className="greeting-links-1">Log Out</Link>
       </div> );
     }
 

@@ -221,7 +221,6 @@ r18 = Review.create!(
   date: Date.new(2014, 8, 12)
 )
 
-
 p1 = Photo.create(
   review_id: r1.id,
   image: File.open("app/assets/images/fish1.jpg")

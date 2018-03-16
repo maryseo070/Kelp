@@ -10,7 +10,7 @@ export const clearErrors = (errors) => {
   };
 };
 
-export const receiveCurrentUser = (user) =>{
+export const receiveCurrentUser = (user) => {
   return {
     type: RECEIVE_CURRENT_USER,
     user: user

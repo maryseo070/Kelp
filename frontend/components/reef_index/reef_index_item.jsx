@@ -36,6 +36,8 @@ const ReefIndexItem = ({reef}) => {
   if (reef) {
     indexItem =
     <div className="index-items">
+
+
       <div className="ii-content-and-ll">
         {
           reef.photo ? <img className="ii-sample-pic" src={reef.photo} /> : null

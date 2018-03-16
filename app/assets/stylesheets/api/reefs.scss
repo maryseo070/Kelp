@@ -292,8 +292,9 @@
 }
 
 .ii-content {
-  float: right;
-
+  float: left;
+  justify-content: flex-start;
+  flex-grow: 1;
 }
 
 .index-items {
@@ -309,6 +310,7 @@
 }
 .ii-content-and-ll {
   display: flex;
+  width: 100%;
   justify-content: space-between;
 }
 
@@ -328,16 +330,17 @@
   flex-direction: column;
   float: right;
 }
+
 .lng {
-  justify-content: flex-end;
   display: flex;
   padding: 5px;
+  float: right;
 }
 
 .lat {
-  justify-content: flex-end;
   display: flex;
   padding: 5px;
+  float: right;
 }
 
 .ii-previews {
@@ -345,6 +348,6 @@
 }
 
 .ii-review {
-
+  display: block;
   font-size: 13px;
 }
