@@ -3,7 +3,6 @@ class Api::ReefsController < ApplicationController
   def index
     @reefs = Reef.all
     @ratings = Reef.find_average_ratings
-
   end
 
   def show
@@ -14,15 +13,21 @@ class Api::ReefsController < ApplicationController
     @reefs = Reef.all
     query_params = params[:query]
     # {query => {state}}
+    # debugger
     if query_params[:name].present?
       @reefs = Reef.where("name ILIKE ?", "%#{query_params[:name]}%")
       @reefs.each do |reef|
         @ratings = Reef.find_average_ratings
       end
+        if query_params[:continent].present?
+          # debugger
+          @reefs = @reefs.where("continent ILIKE ?", "%#{query_params[:continent]}%")
+          @reefs.each do |reef|
+            @ratings = Reef.find_average_ratings
+          end
+        end
 
-      # @reefs = Reef.where('name ~ ?', query_params[:name])
-      # @reefs = Reef.where('name ~ ?', query_params[:name])
-      # @ratings = Reef.find_average_ratings
+
       # if query_params[:rating]
       # @reefs where ratings > query_params[:rating]
     else
@@ -30,8 +35,11 @@ class Api::ReefsController < ApplicationController
     end
     render :index
   end
-
 end
+
+
+
+
 
 
 

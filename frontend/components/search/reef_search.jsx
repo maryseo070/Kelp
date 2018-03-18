@@ -6,15 +6,20 @@ class ReefSearch extends React.Component {
     super();
     this.state = {
       name: '',
-      rating: ''
+      rating: '',
+      continent: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
   }
 
 
-  handleInput(e) {
-      this.setState({name: e.target.value});
+
+
+  handleInput(field) {
+    return(e) => {
+      this.setState({[field]: e.target.value});
+    }
   }
 
   handleSubmit(e) {
@@ -36,8 +41,8 @@ class ReefSearch extends React.Component {
     return(
       <div>
         <form onSubmit={this.handleSubmit} className="show-form">
-          <input onChange={this.handleInput} type="text" className="show-input" placeholder="Find Coral Reefs"></input>
-          <input type="text" className="show-input" placeholder="Near..."></input>
+          <input onChange={this.handleInput("name")} type="text" className="show-input" placeholder="Find Coral Reefs"></input>
+          <input onChange={this.handleInput("continent")}type="text" className="show-input" placeholder="Near..."></input>
           <input type="submit" value="search" className="show-submit"/>
         </form>
       </div>

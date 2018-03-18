@@ -1,6 +1,6 @@
 class Reef < ApplicationRecord
   validates :lat, :lng, :name, presence: true, uniqueness: true
-
+  validates :continent, presence: true
 
   has_many :reviews,
     foreign_key: :reef_id,

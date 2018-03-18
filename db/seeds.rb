@@ -54,34 +54,40 @@ u6 = User.create(
 reef1 = Reef.create(
   name: "Australian Ningaloo Reef",
   lat: -22.001639,
-  lng: 114.122436
+  lng: 114.122436,
+  continent: "Austraila"
 )
 
 reef2 = Reef.create(
   name: "Tubbataha",
   lat: 8.8500,
-  lng: 119.9333
+  lng: 119.9333,
+  continent: "Asia"
 )
 
 reef3 = Reef.create(
   name: "Amazon Reef",
   lat: -2.163106,
-  lng: -55.126648
+  lng: -55.126648,
+  continent: "South America"
 )
 reef4 = Reef.create(
   name: "Apo Reef",
   lat: 12.675800,
-  lng: 120.474998
+  lng: 120.474998,
+  continent: "Asia"
 )
 reef5 = Reef.create(
   name: "Pickles Reef",
   lat: 	24.989298,
-  lng: 	-80.416443
+  lng: 	-80.416443,
+  continent: "North America"
 )
 reef6 = Reef.create(
   name: "Aliwal Shoal",
   lat: -30.250000,
-  lng: 30.816668
+  lng: 30.816668,
+  continent: "Africa"
 )
 
 

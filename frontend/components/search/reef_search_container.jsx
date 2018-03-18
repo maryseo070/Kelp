@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import ReefSearch from './reef_search';
-import { searchReefs } from '../../actions/reef_actions';
+import { searchReefs, fetchReefs } from '../../actions/reef_actions';
 
 const msp = (state) => {
   return {
@@ -10,7 +10,8 @@ const msp = (state) => {
 
 const mdp = dispatch => {
   return {
-    searchReefs: (input) => dispatch(searchReefs(input))
+    searchReefs: (input) => dispatch(searchReefs(input)),
+    fetchReefs: () => dispatch(fetchReefs())
   };
 };
 

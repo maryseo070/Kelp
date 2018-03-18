@@ -13,6 +13,11 @@ class ReefIndex extends React.Component {
     this.props.fetchReefs();
   }
 
+  // componentWillUnmount() {
+  //   this.props.fetchReefs()
+  //   console.log("UNMOUNTED!!!!!")
+  // }
+
   // componentWillReceiveProps(nextProps){
   //   console.log(this.props)
   //   console.log(nextProps)
