@@ -87,3 +87,5 @@ handleSubmit(e) {
 ```
 ## Future
 -  Filtered search
+-  Modals for logging in/signing up
+-  Map markers that render reef details on hover

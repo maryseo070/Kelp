@@ -1,5 +1,6 @@
 import * as ReefApiUtil from '../../util/reef_api_util.js';
 import React from 'react';
+import {withRouter} from 'react-router-dom';
 
 class ReefSearch extends React.Component {
   constructor(el) {
@@ -13,6 +14,17 @@ class ReefSearch extends React.Component {
     this.handleInput = this.handleInput.bind(this);
   }
 
+  // componentDidUpdate() {
+  //   // debugger
+  // }
+  //
+  // componentWillReceiveProps() {
+  //   // if (this.props.reefs !== nextProps.reefs) {
+  //   //
+  //   // }
+  //   // this.props.hitory.push('/reefs')
+  //   // debugger
+  // }
 
 
 
@@ -24,7 +36,13 @@ class ReefSearch extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.searchReefs(this.state);
+    // debugger
+    // this.props.history.push('/reefs')
+    // this.props.searchReefs(this.state)
+    // debugger
+    // this.props.history.push({
+    //   pathname: '/reefs', state: {reefs: "HELLo"}
+    })
   }
 
   renderResults(reefs) {
@@ -50,4 +68,4 @@ class ReefSearch extends React.Component {
     );
   }
 }
-export default ReefSearch;
+export default withRouter(ReefSearch);

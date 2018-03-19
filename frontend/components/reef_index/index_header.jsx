@@ -26,7 +26,7 @@ class IndexHeader extends React.Component {
 
           <div className="show-header">
 
-            <a href="#/reefs" onClick={() => (this.props.fetchReefs())} className="kelp-logo" >
+            <a href="/" onClick={() => (this.props.fetchReefs())} className="kelp-logo" >
               <img className="thanks-elliot"src={window.logo} />
               </a>
 
