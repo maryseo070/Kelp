@@ -12,10 +12,16 @@ class ReefIndex extends React.Component {
   componentDidMount() {
     // debugger
     // console.log(this.props.reefs)
-    this.props.fetchReefs();
-    if (this.props.reefs) {
-      this.props.reefs.map( (reef) => this.props.fetchReef(reef.id));
+    if (!this.props.reefs) {
+      this.props.fetchReefs();
     }
+    if (this.props.reefs) {
+      // console.log(this.props.fetchReefs())
+      // this.props.reefs.map( (reef) => this.props.fetchReef(reef.id));
+      return this.props.reefs;
+    }
+
+
   }
 
 
@@ -31,7 +37,6 @@ class ReefIndex extends React.Component {
 
 
   render() {
-    console.log(this.props.reefs)
     let indexInfo;
     if (this.props.reefs) {
       indexInfo = this.props.reefs.map( (reef) => (
