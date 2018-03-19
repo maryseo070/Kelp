@@ -1,4 +1,4 @@
-import { fetchReefs } from '../../actions/reef_actions.js';
+import { fetchReefs, fetchReef } from '../../actions/reef_actions.js';
 import {connect} from 'react-redux';
 import ReefIndex from './reef_index.jsx';
 import {withRouter} from 'react-router-dom';
@@ -11,7 +11,8 @@ const msp = (state) => {
 
 const mdp = dispatch => {
   return{
-    fetchReefs: () => dispatch(fetchReefs())
+    fetchReefs: () => dispatch(fetchReefs()),
+    fetchReef: (id) => dispatch(fetchReef(id))
   };
 };
 

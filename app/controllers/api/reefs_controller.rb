@@ -13,8 +13,7 @@ class Api::ReefsController < ApplicationController
     @reefs = Reef.all
     query_params = params[:query]
     # {query => {state}}
-    # debugger
-    if query_params[:name].present?
+    if (query_params[:name].present? && query_params[:name] != "")
       @reefs = Reef.where("name ILIKE ?", "%#{query_params[:name]}%")
       @reefs.each do |reef|
         @ratings = Reef.find_average_ratings
@@ -26,7 +25,11 @@ class Api::ReefsController < ApplicationController
             @ratings = Reef.find_average_ratings
           end
         end
-
+      elsif query_params[:continent].present?
+        @reefs = Reef.where("continent ILIKE ?", "%#{query_params[:continent]}%")
+        @reefs.each do |reef|
+          @ratings = Reef.find_average_ratings
+        end
 
       # if query_params[:rating]
       # @reefs where ratings > query_params[:rating]

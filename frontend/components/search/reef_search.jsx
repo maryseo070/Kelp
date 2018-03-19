@@ -38,11 +38,15 @@ class ReefSearch extends React.Component {
     e.preventDefault();
     // debugger
     // this.props.history.push('/reefs')
-    // this.props.searchReefs(this.state)
+    this.props.reefs.push(this.props.searchReefs(this.state))
+    this.props.searchReefs(this.state).then(
+      () =>  this.props.history.push('/reefs'))
+    // console.log(this.state)
     // debugger
     // this.props.history.push({
-    //   pathname: '/reefs', state: {reefs: "HELLo"}
-    })
+    //   pathname: '/reefs',
+    //   state: {reefs: this.props.searchReefs(this.state)}
+    // })
   }
 
   renderResults(reefs) {
