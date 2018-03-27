@@ -10,16 +10,12 @@ class ReefIndex extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
     if (this.props.reefs.length < 1) {
-      // debugger
       this.props.fetchReefs();
     }
     if (this.props.reefs) {
-      // debugger
       return this.props.reefs;
     }
-    // debugger
     this.props.fetchReefs();
   }
 
