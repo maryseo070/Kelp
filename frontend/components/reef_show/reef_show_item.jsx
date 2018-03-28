@@ -45,7 +45,7 @@ class ReefShowItem extends React.Component {
   writeReviewButton() {
     return(
       <div className="show-buttons">
-        <Link to={`/reefs/${this.props.reefId}/writeReview`} className="review-button">Write a Review</Link>
+        <Link to={`/reefs/${this.props.reefId}/writeReview`} className="review-button"> ★ Write a Review</Link>
       </div>
     );
   }

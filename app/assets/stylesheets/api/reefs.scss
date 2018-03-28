@@ -259,16 +259,16 @@
 // --------------------- REEF INDEX TODO
 .reef-index {
   background-color: white;
-
 }
 
 .reef-map-index{
   justify-content: flex-end;
-  margin: 100px;
-  position: fixed;
-  top: 0;
-  right: 0;
-
+  // position: relative;
+  // margin: 100px;
+  // position: sticky;
+  // top: 0;
+  // right: 0;
+  height: 100vh;
 }
 
 .items-and-map {
@@ -301,8 +301,8 @@
   justify-content: space-between;
   display: flex;
   flex-direction: row;
-  margin-left: 350px;
-  margin-top: 50px;
+  margin-left: 70%;
+  margin-top: 20px;
   width: 600px;
   border-top: 1px solid #ccc;
   padding-top: 10px;
@@ -329,6 +329,13 @@
   display: flex;
   flex-direction: column;
   float: right;
+  width: 120px;
+  color: #333;
+  margin-left: 8px;
+}
+
+.ii-continent {
+  padding: 5px;
 }
 
 .lng {
@@ -350,4 +357,5 @@
 .ii-review {
   display: block;
   font-size: 13px;
+  width: 350px;
 }

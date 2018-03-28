@@ -338,4 +338,5 @@ html{
 #map-container {
   height: 350px;
   width: 300px;
+	position: sticky;
 }

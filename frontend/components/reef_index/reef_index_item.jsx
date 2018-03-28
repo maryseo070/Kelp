@@ -63,7 +63,7 @@ const ReefIndexItem = ({reef}) => {
       </div>
 
       <div className="ii-lat-lng">
-        <div>{reef.continent}</div>
+        <div className="ii-continent">{reef.continent}</div>
         <div className="lat">Latitude: {reef.lat}</div>
         <div className="lng">Longitude: {reef.lng}</div>
       </div>
