@@ -263,10 +263,10 @@
 
 .reef-map-index{
   justify-content: flex-end;
-  // position: relative;
+  margin-left: 35%;
   // margin: 100px;
   // position: sticky;
-  // top: 0;
+  top: 10;
   // right: 0;
   height: 100vh;
 }
@@ -358,4 +358,11 @@
   display: block;
   font-size: 13px;
   width: 350px;
+}
+//
+#map-container {
+  height: 350px;
+  width: 300px;
+  position: sticky !important;
+  top: 20px;
 }

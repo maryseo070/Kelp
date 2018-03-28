@@ -8,7 +8,7 @@ const mapOptions = {
   zoom: 0,
   mapTypeControlOptions: {
     mapTypeIds: [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.HYBRID]
-  }, 
+  },
     disableDefaultUI: true, // a way to quickly hide all controls
     mapTypeControl: false,
     scaleControl: true,
@@ -73,7 +73,7 @@ class ReefMap extends React.Component {
 
   render() {
     return(
-      <div id='map-container' ref={ map => this.mapNode = map}></div>
+    <div id='map-container' ref={ map => this.mapNode = map}></div>
     );
   }
 }
