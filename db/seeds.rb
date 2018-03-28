@@ -92,7 +92,7 @@ reef6 = Reef.create(
 
 
 r1 = Review.create(
-  body: "Fusce id imperdiet nunc, nec congue dolor. Duis lacus lacus, mattis eu mi pellentesque, rutrum pellentesque arcu. Phasellus quis magna eget justo aliquam feugiat vel sed ligula. ",
+  body: "The Amazon Reef forms an extensive system composed of corals, sponges and rhodoliths. Its features and the inhospitable region make this ecosystem unique. The reef lies at the mouth of the Amazon River basin, along the northern coast of Brazil, extending from Brazil’s border with French Guiana to the state of Maranhão.",
   rating: 5,
   author_id: u1.id,
   reef_id: reef3.id,
@@ -100,7 +100,7 @@ r1 = Review.create(
 )
 
 r2 =Review.create(
-  body: "Good service, clean water",
+  body: "The Tubbataha Reefs Natural Park (Filipino: Bahurang Tubbataha) is a protected area of the Philippines located in the middle of the Sulu Sea. The marine and bird sanctuary consists of two huge atolls (named the North Atoll and South Atoll) and the smaller Jessie Beazley Reef covering a total area of 97,030 hectares",
   rating: 5,
   author_id: u1.id,
   reef_id: reef2.id,
@@ -108,14 +108,14 @@ r2 =Review.create(
 )
 #
 r3 =Review.create(
-  body: "Nunc fringilla lectus ut leo ultricies, ac venenatis justo cursus. Pellentesque venenatis nulla urna, nec lacinia risus feugiat a. Integer mattis scelerisque purus a auctor.",
+  body: "Ningaloo Marine Park is a World Heritage-listed site found half way up the West Australian coastline. The crystalline water harbours the world’s largest fringing reef, a 260 kilometre (162 mile) long coral reef swarming with turtles, tropical fish, manta rays, humpback whales and the elusive whale shark. ",
   rating: 5,
   author_id: u2.id,
   reef_id: reef1.id,
   date: Date.new(2012, 1, 25)
 )
 r4 = Review.create(
-  body: "The seaweed is always greener in sombody else's lake. You dream about going up there well that is a big mistake. Just look at the world around you right here on the ocean floor. Such wonderful things surround you. What more are you looking for?",
+  body: "The coast and reef draw their name from the Australian Aboriginal Wajarri language word ningaloo meaning promontory, deepwater, or high land jutting into the sea. The Yamatji peoples of the Baiyungu and Yinigudura clans have inhabited the area for over 30,000 years.",
   rating: 4,
   author_id: u1.id,
   reef_id: reef1.id,
@@ -123,21 +123,21 @@ r4 = Review.create(
 )
 
 r5 = Review.create(
-  body: "I must be a mermaid, Rango. I have no fear of depths and a great fear of shallow living",
+  body: "The World Heritage status of the region was created and negotiated in 2011, and the adopted boundary included the Ningaloo Marine Park (Commonwealth Waters), Ningaloo Marine Park (State Waters) and Muiron Islands Marine Management Area (including the Muiron Islands), Jurabi Coastal Park, Bundegi Coastal Park, Cape Range National Park, and the Learmonth Air Weapons Range.",
   rating: 3,
   author_id: u2.id,
   reef_id: reef1.id,
   date: Date.new(2018, 1, 2)
 )
 r6 = Review.create(
-  body: "Morbi arcu arcu, lobortis ut mollis eu, sollicitudin vitae neque. Quisque hendrerit condimentum faucibus. Etiam congue egestas elit a malesuada. Suspendisse potenti. Pellentesque venenatis bibendum massa et consectetur. ",
+  body: "In December 1993, the UNESCO declared the Tubbataha Reefs National Park as a World Heritage Site as a unique example of an atoll reef with a very high density of marine species; the North Islet serving as a nesting site for birds and marine turtles. The site is an excellent example of a pristine coral reef with a spectacular 100-m perpendicular wall, extensive lagoons and two coral islands.",
   rating: 2,
   author_id: u1.id,
   reef_id: reef2.id,
   date: Date.new(2012, 1, 25)
 )
 r7 = Review.create(
-  body: "Aenean ac sapien orci. Nunc volutpat tempor pellentesque. Sed lacus diam, pulvinar nec rhoncus posuere, vestibulum sed odio.",
+  body: "The Amazon Reef ecosystem is already considered to be under threat from nearby oil exploration. The companies BP and Total are trying to obtain environmental licenses from the Brazilian government to start drilling for oil at the mouth of the Amazon River basin in 2018.",
   rating: 1,
   author_id: u2.id,
   reef_id: reef3.id,
@@ -145,7 +145,7 @@ r7 = Review.create(
 )
 
 r8 = Review.create(
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tristique nisi dolor, vitae aliquet elit dictum eget. Duis a neque in nibh tristique gravida id non ipsum. Praesent et turpis tincidunt, varius magna id, congue ipsum. Proin consequat finibus imperdiet.",
+  body: "World Amazon Reef Day is celebrated on January 28. It was on this day, in 2017, that the first images of the reef system were released.Evidence of the reef’s existence has been known since the 1950s, but only in 2016 was it actually proven, a discovery held up by experts as one of the great finds in marine biology of the last few decades.",
   rating: 2,
   author_id: u3.id,
   reef_id: reef3.id,
@@ -153,7 +153,7 @@ r8 = Review.create(
 )
 
 r9 = Review.create(
-  body: "Nulla aliquam odio vitae leo consectetur mollis. Morbi cursus, orci nec blandit consequat, tellus massa hendrerit tortor, ut blandit urna sapien non mauris. Phasellus id odio odio. Cras et semper turpis. ",
+  body: "The national park and the rest of the Philippine archipelago is part of the Coral Triangle, recognized as a center of marine biodiversity containing 75% of the described coral species and 40% of the world's reef fish. The area is under a grave threat due to overfishing and destructive fishing practices.",
   rating: 1,
   author_id: u1.id,
   reef_id: reef2.id,
@@ -161,14 +161,14 @@ r9 = Review.create(
 )
 
 r10 = Review.create(
-  body: "Duis efficitur dictum nibh, at rutrum ipsum aliquam placerat. Etiam ac leo sit amet justo euismod suscipit quis sed felis. Phasellus quis mauris in tellus ultrices sagittis. Morbi vehicula a metus non interdum. Praesent aliquet semper ligula. Etiam id vestibulum leo.",
+  body: "Apo Reef is a coral reef system in the Philippines situated on the western waters of Occidental Mindoro province in the Mindoro Strait. Encompassing 34 square kilometres (13 sq mi), it is the world's second-largest contiguous coral reef system and the largest in the country.",
   rating: 4,
   author_id: u6.id,
   reef_id: reef4.id,
   date: Date.new(2018, 1, 6)
 )
 r11 = Review.create(
-  body: "Suspendisse viverra, augue eget convallis rutrum, felis nibh viverra lectus, ac dictum ligula nulla ac ante. Ut auctor sem vel lectus aliquam, pharetra imperdiet tellus tempus.",
+  body: "Apo Reef can be found around 15 nautical miles (28 km; 17 mi) west of the nearest coast of the Philippine island of Mindoro. It is separated from main island by the Apo East Pass of the Mindoro Strait. Politically, the reef lies within the jurisdiction of the Province of Occidental Mindoro in Region IV-B of the Philippines and more accurately of the Municipality of Sablayan.",
   rating: 2,
   author_id: u4.id,
   reef_id: reef4.id,
@@ -176,7 +176,7 @@ r11 = Review.create(
 )
 
 r12 = Review.create(
-  body: "Curabitur vestibulum odio elit, fermentum feugiat dui scelerisque interdum. Sed aliquet diam diam, mattis commodo augue imperdiet et. Morbi varius augue non ipsum pulvinar ullamcorper.",
+  body: "The main geographical feature of Apo Reef is submerged, but three islands mark it on the surface: the Apo Island, Apo Menor (locally known as Binangaan) and Cayos del Bajo (Keys of the bank, locally known as Tinangkapan).",
   rating: 3,
   author_id: u5.id,
   reef_id: reef4.id,
@@ -184,7 +184,7 @@ r12 = Review.create(
 )
 
 r13 = Review.create(
-  body: "Aliquam eu ipsum quis augue sagittis cursus. Morbi rutrum libero non aliquam congue. Proin vehicula ipsum elit, in accumsan nulla faucibus quis.",
+  body: "Pickles Reef is a small coral reef located within the Florida Keys National Marine Sanctuary. It lies to the southeast of Key Largo, to the south the Key Largo Existing Management Area and John Pennekamp Coral Reef State Park. Unlike many reefs within the Sanctuary, this reef is not within a Sanctuary Preservation Area (SPA)",
   rating: 4,
   author_id: u2.id,
   reef_id: reef5.id,
@@ -192,35 +192,35 @@ r13 = Review.create(
 )
 
 r14 = Review.create(
-  body: "Nulla non aliquet erat. In rutrum mollis turpis vitae pharetra. Pellentesque pretium mauris in dolor lacinia ornare. Phasellus ac tincidunt mauris.",
+  body: "The name comes from cement-filled pickle barrels sunk here during the Civil War, roughly throughout the 1860s. These barrels came from all sorts of things back then, such as shipwrecks. These barrels are now covered with the largest pillar corals in the Keys.",
   rating: 3,
   author_id: u1.id,
   reef_id: reef5.id,
   date: Date.new(2014, 1, 20)
 )
 r15 = Review.create(
-  body: "ed aliquet diam diam, mattis commodo augue imperdiet et. Morbi varius augue non ipsum pulvinar ullamcorper. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+  body: "Numerous ledges and crevasses attract juvenile and tropical fish of many species. Visiting these locations is extraordinary in the sense that it has lots of history laid away on the bottom of the reef.",
   rating: 3,
   author_id: u6.id,
   reef_id: reef5.id,
   date: Date.new(2017, 11, 25)
 )
 r16 = Review.create!(
-  body: "Duis hendrerit arcu venenatis rutrum tempus. Nulla non aliquet erat. In rutrum mollis turpis vitae pharetra. Pellentesque pretium mauris in dolor lacinia ornare. Phasellus ac tincidunt mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+  body: "The Aliwal Shoal is a rocky reef which is the remains of an ancient sand dune approximately 5 kilometres (3.1 mi) off the coast of KwaZulu-Natal, South Africa. The reef is inhabited by many kinds of hard and soft corals and a variety of tropical and subtropical fish species.",
   rating: 5,
   author_id: u3.id,
   reef_id: reef6.id,
   date: Date.new(2018, 2, 25)
 )
 r17 = Review.create!(
-  body: "Proin vehicula ipsum elit, in accumsan nulla faucibus quis. Etiam euismod, erat ac venenatis efficitur, dui ex lobortis ligula, mollis ullamcorper sem eros a velit.",
+  body: " Aliwal Shoal was named after the near-sinking of the 3 Masted vessel 'Aliwal', captained by James Anderson, in 1849. There are two wrecks near the reef that are popular recreational dive sites. ",
   rating: 4,
   author_id: u2.id,
   reef_id: reef6.id,
   date: Date.new(2018, 3, 9)
 )
 r18 = Review.create!(
-  body: "Nulla non aliquet erat. In rutrum mollis turpis vitae pharetra. Pellentesque pretium mauris in dolor lacinia ornare. Phasellus ac tincidunt mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas porta blandit turpis, ac pharetra metus cursus in. Aliquam eu ipsum quis augue sagittis cursus. Morbi rutrum libero non aliquam congue. Proin vehicula ipsum elit, in accumsan nulla faucibus quis. Etiam euismod, erat ac venenatis efficitur, dui ex lobortis ligula, mollis ullamcorper sem eros a velit.",
+  body: "Aliwal shoal is a subtidal, algal-dominated subtropical reef in the transitional region between the warm-temperate reefs of Pondoland and the tropical to subtropical reefs of Maputaland.[3] The benthic communities are dominated by algae and sponges, but various soft and hard corals, echinoderms and ascidians are also present.",
   rating: 1,
   author_id: u5.id,
   reef_id: reef6.id,
