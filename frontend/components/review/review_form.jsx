@@ -12,8 +12,7 @@ class ReviewForm extends React.Component {
       date: "",
       rating: "",
       imageUrl: "",
-      imageFile: "",
-      buttonColor: "#d90007"
+      imageFile: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateField = this.updateField.bind(this);
@@ -48,6 +47,7 @@ class ReviewForm extends React.Component {
     console.log(this.state);
     return (e) => {
       this.setState({[field]: e.target.value});
+      this.setState({date: new Date()});
       document.getElementById(e.target.className).selected = true;
     };
   }
@@ -63,6 +63,19 @@ class ReviewForm extends React.Component {
       reader.readAsDataURL(file);
     } else {
       this.setState({ imageUrl: "", imageFile: null });
+    }
+  }
+
+  colorChange(e) {
+    $(e.target).addClass("rating-stars-hover");
+  }
+
+  toggle(e) {
+    if (this.state.rating === e.target.value) {
+
+    }
+    else {
+      this.setState({rating: e.target.value})
     }
   }
 
@@ -118,11 +131,7 @@ class ReviewForm extends React.Component {
 
           <form className="rev-form" onSubmit={this.handleSubmit}>
 
-
             {this.ratingStars()}
-            <div className="rev-form-date">
-              <input autoComplete="on" type="date" value={this.state.date} onChange={this.updateField("date")}/>
-            </div>
 
             <textarea className="rev-text" value={this.state.body} onChange={this.updateField("body")} />
             <div>
