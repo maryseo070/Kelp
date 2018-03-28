@@ -12,7 +12,8 @@ class ReviewForm extends React.Component {
       date: "",
       rating: "",
       imageUrl: "",
-      imageFile: ""
+      imageFile: "",
+      active: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateField = this.updateField.bind(this);
@@ -47,8 +48,10 @@ class ReviewForm extends React.Component {
     console.log(this.state);
     return (e) => {
       this.setState({[field]: e.target.value});
+      // let parent = e.target.parent()
+      debugger
       this.setState({date: new Date()});
-      document.getElementById(e.target.className).selected = true;
+      // document.getElementById(e.target.className).selected = true;
     };
   }
 
@@ -66,19 +69,13 @@ class ReviewForm extends React.Component {
     }
   }
 
-  colorChange(e) {
-    $(e.target).addClass("rating-stars-hover");
+  insertClass() {
+    return (this.state.rating === x) ? "inactive-rating-star" : "active-rating-star";
   }
 
-  toggle(e) {
-    if (this.state.rating === e.target.value) {
-
-    }
-    else {
-      this.setState({rating: e.target.value})
-    }
+  handleClick(e) {
+    this.setState({rating: e.target.value, active: e.target.value});
   }
-
 
   ratingStars() {
 
