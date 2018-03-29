@@ -118,11 +118,32 @@
   flex-direction: row;
 }
 
-.rating-stars option:hover {
+.rating-stars .star-4-selected{
+  background: #f26a2c;
+  border-color: #f26a2c;
+}
+.rating-stars .star-5-selected{
   border-color: #d90007;
   background: #d90007;
 }
+.rating-stars .star-3-selected{
+  border-color: #f0991e;
+  background: #f0991e;
+}
 
+.rating-stars .star-2-selected{
+  border-color: #dcb228;
+  background: #dcb228;
+}
+
+.rating-stars .star-1-selected{
+  border-color: #cc8b1f;
+  background: #cc8b1f;
+}
+.rating-stars option:checked {
+  border-color: #d90007;
+  background: #d90007;
+}
 
 
 .rev-kelp-logo{
@@ -142,12 +163,6 @@
   text-indent: -0.5em;
   text-shadow: 1px 0 1px hsl(0, 0%, 70%);
   cursor: pointer;
-}
-
-.rating-stars option:checked {
-
-  border-color: #d90007;
-  background: #d90007;
 }
 
 .rating {
