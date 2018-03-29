@@ -137,12 +137,14 @@
 }
 
 .rating-stars .star-1-selected{
-  border-color: #cc8b1f;
-  background: #cc8b1f;
+  --one-starcolor: #cc8b1f;
+  border-color: var(--one-starcolor);
+  background: var(--one-starcolor);
 }
-.rating-stars option:checked {
-  border-color: #d90007;
-  background: #d90007;
+
+.rating-stars option:checked{
+  border-color: var();
+  background: var();
 }
 
 

@@ -27,7 +27,6 @@ class ReviewForm extends React.Component {
     this.ratingStars = this.ratingStars.bind(this);
     this.starChange = this.starChange.bind(this);
     this.resetStars = this.resetStars.bind(this);
-    this.resetStar = this.resetStar.bind(this);
   }
 
 
@@ -91,25 +90,23 @@ class ReviewForm extends React.Component {
     this.setState({ratingStars: newRatingState});
   }
 
-  resetStar(star) {
-    const newRating = merge({}, this.state.ratingStars);
-    newRating[star] = `star-${star}`;
-  }
-
   resetStars() {
-    let star = this.state.rating;
-    const stars = this.state.ratingStars;
-    const ratingKeys = Object.keys(stars);
-    const newRatingState = merge({}, stars);
-    ratingKeys.forEach( (key)=> {
-      if (key <= star) {
-        newRatingState[key] = "selected-star";
-      }
-      else {
-        newRatingState[key] = "star-5";
-      }
-    });
-    this.setState({ratingStars: newRatingState});
+    if (!this.state.rating) {
+      let star = this.state.rating;
+      const stars = this.state.ratingStars;
+      const ratingKeys = Object.keys(stars);
+      const newRatingState = merge({}, stars);
+      ratingKeys.forEach( (key)=> {
+        if (key <= star) {
+          newRatingState[key] = `star-${key}`;
+        }
+        else {
+          newRatingState[key] = "star-6";
+        }
+      });
+      this.setState({ratingStars: newRatingState});
+    }
+
   }
 
 
@@ -120,7 +117,7 @@ class ReviewForm extends React.Component {
         <option id="star-2" onMouseEnter={() => this.starChange(2)} onClick={this.updateField("rating")} className={this.state.ratingStars[2]} value="2" >★</option>
         <option id="star-3" onMouseEnter={() => this.starChange(3)} onClick={this.updateField("rating")} className={this.state.ratingStars[3]} value="3" >★</option>
         <option id="star-4" onMouseEnter={() => this.starChange(4)} onClick={this.updateField("rating")} className={this.state.ratingStars[4]} value="4" >★</option>
-        <option id="star-5" onMouseLeave={() => this.resetStar(5)} onMouseEnter={() => this.starChange(5)} onClick={this.updateField("rating")} className={this.state.ratingStars[5]} value="5" >★</option>
+        <option id="star-5" onMouseEnter={() => this.starChange(5)} onClick={this.updateField("rating")} className={this.state.ratingStars[5]} value="5" >★</option>
       </div>
     );
   }
