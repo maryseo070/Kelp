@@ -5,7 +5,7 @@ import MarkerManager from '../../util/marker_manager.js';
 
 const mapOptions = {
   center: { lat: 40.749138, lng: -73.986385 },
-  zoom: 0,
+  zoom: 1,
   mapTypeControlOptions: {
     mapTypeIds: [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.HYBRID]
   },

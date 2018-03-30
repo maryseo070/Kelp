@@ -53,16 +53,14 @@ class PicModal extends React.Component {
     $(e.target).removeClass("reef-pic-big");
   }
 
+
   nextPic() {
     let pics = [];
     if (this.props.reviews) {
       this.props.reviews.map( (review) => (
         review.photos ? pics.push(review.photos.image_url) : null
       ));
-      for (let i = 1; i < pics.length; i++) {
-        return <img src={pics[i]}></img>
-      }
-
+    return pics[1]
   }}
 
   render() {
@@ -93,8 +91,8 @@ class PicModal extends React.Component {
        >
 
         <h2 ref={subtitle => this.subtitle = subtitle}></h2>
-        <img className="modal-pic" src={pics[0]}/>
-        <button onClick={() => this.nextPic()}> > </button>
+        <img className="modal-pic" src={this.nextPic()} onClick={this.nextPic()}></img>
+        <button onClick={this.nextPic()}> > </button>
         <button onClick={this.closeModal}>close</button>
 
        </Modal>
@@ -103,4 +101,5 @@ class PicModal extends React.Component {
  }
 }
 
+// <img className="modal-pic" src={pics[0]}/>
 export default PicModal;
