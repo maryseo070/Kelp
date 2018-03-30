@@ -18,14 +18,6 @@ class ReefShow extends React.Component {
       this.props.fetchReef(nextProps.match.params.reefId);
     }
   }
-
-  // componentDidUpdate(prevProps, prevState) {
-  //   console.log(prevProps)
-  // }
-  // componentDidUpdate () {
-  //   console.log(this.props)
-  // }
-
   // if (this.props.reef === undefined) {
   //   return(
   //     <div>Loading...</div>

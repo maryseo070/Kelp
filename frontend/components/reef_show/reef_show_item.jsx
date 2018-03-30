@@ -4,7 +4,7 @@ import ReviewIndex from './review_index';
 import { Route } from 'react-router';
 import {Link} from 'react-router-dom';
 import ReefMap from '../reef_map/reef_map.jsx';
-
+import PicModal from './photos_modal.jsx';
 
 
 class ReefShowItem extends React.Component {
@@ -72,22 +72,13 @@ class ReefShowItem extends React.Component {
       ));
     }
       return (
-      <div className='show-imgs'>
-
-        <img className="reef-pic-small" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={pics[0]} />
-        <img className="reef-pic-default" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={pics[1]} />
-        <img className="reef-pic-small" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={pics[2]} />
-      </div>
-    );
+        <div>
+          <PicModal reef={this.props.reef} reviews={this.props.reviews}></PicModal>
+        </div>
+      );
   }
 
-
-  // return pics.map((pic) => (
-  //   <img className="reef-pic-small" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={pic} />
-  // ))
-
   render () {
-    // debuggers
 
     return (
       <div className="top-shelf">

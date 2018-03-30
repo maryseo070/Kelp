@@ -79,7 +79,6 @@ class ReviewForm extends React.Component {
     let stars = this.state.ratingStars;
     let newRatingState = {};
     for (let i = 1; i <= Object.keys(stars).length; i++) {
-      // debugger
       if (i <= star) {
         newRatingState[i] = `star-${star}-selected`;
       }

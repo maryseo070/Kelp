@@ -14,20 +14,6 @@ class ReefSearch extends React.Component {
     this.handleInput = this.handleInput.bind(this);
   }
 
-  // componentDidUpdate() {
-  //   // debugger
-  // }
-  //
-  // componentWillReceiveProps() {
-  //   // if (this.props.reefs !== nextProps.reefs) {
-  //   //
-  //   // }
-  //   // this.props.hitory.push('/reefs')
-  //   // debugger
-  // }
-
-
-
   handleInput(field) {
     return(e) => {
       this.setState({[field]: e.target.value});
@@ -36,29 +22,15 @@ class ReefSearch extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // debugger
-    // this.props.history.push('/reefs')
     this.props.reefs.push(this.props.searchReefs(this.state))
     this.props.searchReefs(this.state).then(
       () =>  this.props.history.push('/reefs'))
-    // console.log(this.state)
-    // debugger
-    // this.props.history.push({
-    //   pathname: '/reefs',
-    //   state: {reefs: this.props.searchReefs(this.state)}
-    // })
+
   }
 
   renderResults(reefs) {
   }
 
-  // for (let i = 0; i < reefs.length; i++) {
-  //   const reef = reefs[i];
-  //
-  //   let $a = $('<a></a>');
-  //   $a.text(`@${reef.reefname}`);
-  //   $a.attr('href', `/reefs/${reef.id}`);
-  // }
   render () {
     return(
       <div>
