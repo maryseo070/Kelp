@@ -10,7 +10,8 @@ const customStyles = {
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    transform             : 'translate(-50%, -50%)',
+    backgroundColor       : 'rgba(0,0,0,0.7)'
   }
 };
 
@@ -58,30 +59,20 @@ class PicModal extends React.Component {
 
 
   nextPic() {
-    debugger
     let allPhotos = this.props.photos;
     let targetPhoto;
     if (allPhotos) {
-      allPhotos.map( (photo, i) => {
-        if (i === this.state.imgIdx) {
-          debugger
-          targetPhoto = allPhotos[(i + 1) % allPhotos.length];
-        }
-        else {
-          targetPhoto =  photo;
-        }
-      });
+      targetPhoto = allPhotos[(this.state.imgIdx + 1) % allPhotos.length]
+      this.setState({imgUrl: targetPhoto.image_url, imgIdx: this.state.imgIdx + 1});
     }
-    debugger
-    this.setState({imgUrl: targetPhoto.image_url})
   }
 
   render() {
     let pics = [];
-    let allPhotos = this.props.photos
+    let allPhotos = this.props.photos;
     if (allPhotos) {
       allPhotos.map( (photo) => (
-        pics.push(photo.image_url) : null
+        pics.push(photo.image_url)
       ));
     }
    return (
@@ -115,5 +106,4 @@ class PicModal extends React.Component {
  }
 }
 
-// <img className="modal-pic" src={pics[0]}/>
 export default PicModal;
