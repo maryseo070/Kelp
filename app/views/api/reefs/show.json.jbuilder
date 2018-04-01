@@ -25,6 +25,16 @@ json.set! "reviews" do
   end
 end
 
+json.set! "photos" do
+  @reef.reviews.each do |review|
+    review.photos.each do |photo|
+      json.set! photo.id do
+        json.partial! 'api/reefs/photo', photo: photo
+      end
+    end
+  end
+end 
+
 
 json.set! "authors" do
   @reef.reviews.each do |review|

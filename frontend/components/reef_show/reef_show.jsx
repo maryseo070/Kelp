@@ -13,23 +13,21 @@ class ReefShow extends React.Component {
   }
 
   componentWillReceiveProps(nextProps){
-    // debugger
     if (this.props.match.params.reefId !== nextProps.match.params.reefId) {
       this.props.fetchReef(nextProps.match.params.reefId);
     }
   }
-  // if (this.props.reef === undefined) {
-  //   return(
-  //     <div>Loading...</div>
-  //   );
-  // }
+
   render () {
-    // debugger
     let reefShowItem;
     let reviews;
     if (this.props.reef[0] !== undefined) {
       reviews = Object.values(this.props.reviews);
-      reefShowItem = <ReefShowItem authors={this.props.authors} reefId={this.props.match.params.reefId} reef={this.props.reef} reviews={this.props.reviews} />;
+      reefShowItem = <ReefShowItem authors={this.props.authors}
+                                  reefId={this.props.match.params.reefId}
+                                  reef={this.props.reef}
+                                  reviews={this.props.reviews}
+                                  photos={this.props.photos}/>;
     }
     else {
       reefShowItem = "";

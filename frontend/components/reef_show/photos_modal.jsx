@@ -23,7 +23,9 @@ class PicModal extends React.Component {
   constructor() {
     super();
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
+      imgUrl: "",
+      imgIdx: 0
     };
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
@@ -33,9 +35,10 @@ class PicModal extends React.Component {
     this.nextPic = this.nextPic.bind(this);
     }
 
-  openModal() {
-    this.setState({modalIsOpen: true});
+  openModal(url, idx) {
+    this.setState({modalIsOpen: true, imgUrl: url, imgIdx: idx});
   }
+
 
   afterOpenModal() {
     this.subtitle.style.color = '#f00';
@@ -55,27 +58,38 @@ class PicModal extends React.Component {
 
 
   nextPic() {
-    let pics = [];
-    if (this.props.reviews) {
-      this.props.reviews.map( (review) => (
-        review.photos ? pics.push(review.photos.image_url) : null
-      ));
-    return pics[1]
-  }}
+    debugger
+    let allPhotos = this.props.photos;
+    let targetPhoto;
+    if (allPhotos) {
+      allPhotos.map( (photo, i) => {
+        if (i === this.state.imgIdx) {
+          debugger
+          targetPhoto = allPhotos[(i + 1) % allPhotos.length];
+        }
+        else {
+          targetPhoto =  photo;
+        }
+      });
+    }
+    debugger
+    this.setState({imgUrl: targetPhoto.image_url})
+  }
 
   render() {
     let pics = [];
-    if (this.props.reviews) {
-      this.props.reviews.map( (review) => (
-        review.photos ? pics.push(review.photos.image_url) : null
+    let allPhotos = this.props.photos
+    if (allPhotos) {
+      allPhotos.map( (photo) => (
+        pics.push(photo.image_url) : null
       ));
     }
    return (
      <div>
        <div className='show-imgs'>
-         <img className="reef-pic-small" onClick={ () => this.openModal() } onMouseEnter={this.grow} onMouseLeave={this.shrink} src={pics[0]} />
-         <img className="reef-pic-default" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={pics[1]} />
-         <img className="reef-pic-small" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={pics[2]} />
+         <img className="reef-pic-small" onClick={ () => this.openModal(pics[0], 0) } onMouseEnter={this.grow} onMouseLeave={this.shrink} src={pics[0]} />
+         <img className="reef-pic-default" onClick={ () => this.openModal(pics[1], 1) } onMouseEnter={this.grow} onMouseLeave={this.shrink} src={pics[1]} />
+         <img className="reef-pic-small" onClick={ () => this.openModal(pics[2], 2) } onMouseEnter={this.grow} onMouseLeave={this.shrink} src={pics[2]} />
        </div>
        <Modal
          isOpen={this.state.modalIsOpen}
@@ -91,8 +105,8 @@ class PicModal extends React.Component {
        >
 
         <h2 ref={subtitle => this.subtitle = subtitle}></h2>
-        <img className="modal-pic" src={this.nextPic()} onClick={this.nextPic()}></img>
-        <button onClick={this.nextPic()}> > </button>
+        <img className="modal-pic" src={this.state.imgUrl} ></img>
+        <button onClick={() => this.nextPic()}> > </button>
         <button onClick={this.closeModal}>close</button>
 
        </Modal>

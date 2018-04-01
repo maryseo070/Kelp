@@ -24,7 +24,6 @@ class ReefShowItem extends React.Component {
     $(e.target).removeClass("reef-pic-big");
   }
 
-
   reefRightNav () {
     return (
       <div className="right-nav">
@@ -51,7 +50,6 @@ class ReefShowItem extends React.Component {
   }
 
   reviewIndex () {
-    // debugger
     let reviews;
 
     if (this.props.reviews) {
@@ -59,7 +57,10 @@ class ReefShowItem extends React.Component {
     }
     return (
       <div className="review-index">
-        <ReviewIndex authors={this.props.authors} reef={this.props.reef} reviews={this.props.reviews} key={this.props.reef.id}/>
+        <ReviewIndex authors={this.props.authors}
+                      reef={this.props.reef}
+                      reviews={this.props.reviews}
+                      key={this.props.reef.id}/>
       </div>
     );
   }
@@ -73,7 +74,7 @@ class ReefShowItem extends React.Component {
     }
       return (
         <div>
-          <PicModal reef={this.props.reef} reviews={this.props.reviews}></PicModal>
+          <PicModal reef={this.props.reef} reviews={this.props.reviews} photos={this.props.photos}></PicModal>
         </div>
       );
   }
