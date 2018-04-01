@@ -4,23 +4,43 @@ import ReactDOM from 'react-dom';
 
 
 const customStyles = {
+  overlay: {
+    backgroundColor       : 'rgba(0,0,0,0.7)',
+    position              : 'fixed',
+    top                   : 0,
+    left                  : 0,
+    right                 : 0,
+    bottom                : 0,
+
+  },
   content : {
+    position              : 'absolute',
     top                   : '50%',
     left                  : '50%',
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
-    backgroundColor       : 'rgba(0,0,0,0.7)'
+    border                : '1px solid #ccc',
+    overflow              : 'auto',
   }
 };
+      //
+      // top: '40px',
+      // left: '40px',
+      // right: '40px',
+      // bottom: '40px',
+      // background: '#fff',
+      // WebkitOverflowScrolling: 'touch',
+      // borderRadius: '4px',
+      // outline: 'none',
+      // padding: '20px'
 
 // Modal.setAppElement('root');
 Modal.setAppElement(document.getElementById('root'));
 
 
 class PicModal extends React.Component {
-  //props: reef, reviews (reviews have photo image url)
   constructor() {
     super();
     this.state = {
