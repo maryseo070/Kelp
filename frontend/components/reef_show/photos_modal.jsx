@@ -11,7 +11,7 @@ const customStyles = {
     left                  : 0,
     right                 : 0,
     bottom                : 0,
-
+    border                : 'none'
   },
   content : {
     position              : 'absolute',
@@ -21,20 +21,11 @@ const customStyles = {
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
-    border                : '1px solid #ccc',
     overflow              : 'auto',
-  }
+    backgroundColor       : 'black'
+  },
 };
-      //
-      // top: '40px',
-      // left: '40px',
-      // right: '40px',
-      // bottom: '40px',
-      // background: '#fff',
-      // WebkitOverflowScrolling: 'touch',
-      // borderRadius: '4px',
-      // outline: 'none',
-      // padding: '20px'
+
 
 // Modal.setAppElement('root');
 Modal.setAppElement(document.getElementById('root'));
@@ -54,6 +45,7 @@ class PicModal extends React.Component {
     this.grow = this.grow.bind(this);
     this.shrink = this.shrink.bind(this);
     this.nextPic = this.nextPic.bind(this);
+    this.prevPic = this.prevPic.bind(this);
     }
 
   openModal(url, idx) {
@@ -87,6 +79,17 @@ class PicModal extends React.Component {
     }
   }
 
+  prevPic() {
+    let allPhotos = this.props.photos;
+    let targetPhoto;
+    let numPhotos = allPhotos.length;
+    let newPos = (numPhotos + (this.state.imgIdx - 1)) % numPhotos;
+    if (allPhotos) {
+      targetPhoto = allPhotos[newPos];
+      this.setState({imgUrl: targetPhoto.image_url, imgIdx: newPos});
+    }
+  }
+
   render() {
     let pics = [];
     let allPhotos = this.props.photos;
@@ -102,6 +105,7 @@ class PicModal extends React.Component {
          <img className="reef-pic-default" onClick={ () => this.openModal(pics[1], 1) } onMouseEnter={this.grow} onMouseLeave={this.shrink} src={pics[1]} />
          <img className="reef-pic-small" onClick={ () => this.openModal(pics[2], 2) } onMouseEnter={this.grow} onMouseLeave={this.shrink} src={pics[2]} />
        </div>
+
        <Modal
          isOpen={this.state.modalIsOpen}
          ariaHideApp={false}
@@ -113,12 +117,26 @@ class PicModal extends React.Component {
          onRequestClose={this.closeModal}
          style={customStyles}
          contentLabel="Example Modal"
+         className="modal-all"
        >
 
+       <a className="modal-close-button" onClick={this.closeModal}>Close</a>
         <h2 ref={subtitle => this.subtitle = subtitle}></h2>
-        <img className="modal-pic" src={this.state.imgUrl} ></img>
-        <button onClick={() => this.nextPic()}> > </button>
-        <button onClick={this.closeModal}>close</button>
+          <a className="modal-next-button" onClick={() => this.prevPic()}>
+            <img className="modal-next-button" src={window.leftArrow}></img>
+          </a>
+
+          <div className="modal-pic-box">
+            <img className="modal-pic" src={this.state.imgUrl} onClick={() => this.nextPic()}></img>
+          </div>
+
+          <a className="modal-next-button" onClick={() => this.nextPic()}>
+            <img className="modal-next-button" src={window.rightArrow}></img>
+          </a>
+
+          <div className="modal-info">
+            <p></p>
+          </div>
 
        </Modal>
      </div>

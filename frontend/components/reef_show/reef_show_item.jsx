@@ -74,7 +74,10 @@ class ReefShowItem extends React.Component {
     }
       return (
         <div>
-          <PicModal reef={this.props.reef} reviews={this.props.reviews} photos={this.props.photos}></PicModal>
+          <PicModal reef={this.props.reef}
+                    reviews={this.props.reviews}
+                    photos={this.props.photos}>
+          </PicModal>
         </div>
       );
   }

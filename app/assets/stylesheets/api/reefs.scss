@@ -101,6 +101,7 @@
   display: flex;
   float: right;
   align-items: center;
+  margin-top: 30px;
 }
 
 .show-map {
@@ -367,10 +368,4 @@
   width: 300px;
   position: sticky !important;
   top: 20px;
-}
-
-.modal-pic {
-  height: 40%;
-  width: 40%;
-  max-height: 500px;
 }
