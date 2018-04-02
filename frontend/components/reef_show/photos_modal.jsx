@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import ReactDOM from 'react-dom';
-
+import PicModalSidebar from './photos_modal_sidebar.jsx';
 
 const customStyles = {
   overlay: {
@@ -71,7 +71,7 @@ class PicModal extends React.Component {
 
 
   nextPic() {
-    let allPhotos = this.props.photos;
+    let allPhotos = Object.values(this.props.photos);
     let targetPhoto;
     if (allPhotos) {
       targetPhoto = allPhotos[(this.state.imgIdx + 1) % allPhotos.length]
@@ -80,7 +80,7 @@ class PicModal extends React.Component {
   }
 
   prevPic() {
-    let allPhotos = this.props.photos;
+    let allPhotos = Object.values(this.props.photos);
     let targetPhoto;
     let numPhotos = allPhotos.length;
     let newPos = (numPhotos + (this.state.imgIdx - 1)) % numPhotos;
@@ -92,7 +92,7 @@ class PicModal extends React.Component {
 
   render() {
     let pics = [];
-    let allPhotos = this.props.photos;
+    let allPhotos = Object.values(this.props.photos);
     if (allPhotos) {
       allPhotos.map( (photo) => (
         pics.push(photo.image_url)
@@ -135,7 +135,7 @@ class PicModal extends React.Component {
           </a>
 
           <div className="modal-info">
-            <p></p>
+            <PicModalSidebar className="modal-sidebar" reviews={this.props.reviews}/>
           </div>
 
        </Modal>

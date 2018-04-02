@@ -12,7 +12,7 @@ const msp = (state, ownProps) => {
     errors: state.errors.session,
     reviews: Object.values(state.entities.reviews),
     authors: state.entities.authors,
-    photos: Object.values(state.entities.photos)
+    photos: state.entities.photos
   };
 };
 

@@ -6,9 +6,10 @@
   display: flex;
   justify-content: center;
   flex-direction: row;
-  height: 60%;
-  width: 60%;
+  height: 80%;
+  width: 80%;
   border-radius: 4px;
+  height: auto;
 }
 
 .modal-all:focus{
@@ -25,7 +26,7 @@
 
 .modal-pic-box {
   margin-right: 10%;
-  height: 100%;
+  // height: 100%;
   width: 100%;
   background-color: black;
   overflow: hidden;
@@ -34,8 +35,9 @@
 .modal-info {
   justify-content: flex-end;
   background-color: white;
-  height: 100%;
-  width: 20%
+  height: auto;
+  width: 30%;
+  z-index: 2000;
 }
 
 .modal-next-button{
@@ -58,4 +60,9 @@
   color: grey;
   height: 15px;
   width: 15px;
+}
+
+.modal-sidebar{
+  height: 100%;
+  width: 100%;
 }
