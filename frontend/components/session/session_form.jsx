@@ -17,7 +17,6 @@ class SessionForm extends React.Component{
     this.updatePassword = this.updatePassword.bind(this);
     this.updateFirstName = this.updateFirstName.bind(this);
     this.updateLastName = this.updateLastName.bind(this);
-    this.guestLogin = this.guestLogin.bind(this);
   }
 
   componentWillUnmount() {
@@ -28,12 +27,6 @@ class SessionForm extends React.Component{
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(() => this.props.history.push('/reefs'));
-  }
-
-  guestLogin(e) {
-    const user = {email: "guest@gmail.com", password: "starwars"};
-    // debugger
-    this.props.processForm(user).then( () => this.props.history.push("/reefs"));
   }
 
   updateEmail(e){
@@ -127,7 +120,7 @@ class SessionForm extends React.Component{
               </div>
             </form>
 
-            <button className="guest" onClick={() => this.guestLogin()}>Guest Login</button>
+            <button className="guest" onClick={() => this.props.guestLogin()}>Guest Login</button>
         </div>
 
         <img src={window.reef} alt="reef-illustration" className="login-image" />

@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import {merge} from 'lodash';
-
+import LogInModal from '../session/login_modal';
 
 class ReviewForm extends React.Component {
   constructor(props){
@@ -27,6 +27,7 @@ class ReviewForm extends React.Component {
     this.ratingStars = this.ratingStars.bind(this);
     this.starChange = this.starChange.bind(this);
     this.resetStars = this.resetStars.bind(this);
+    this.modal = this.modal.bind(this);
   }
 
 
@@ -121,6 +122,13 @@ class ReviewForm extends React.Component {
     );
   }
 
+  modal() {
+    // if (!this.props.currentUser) {
+    //   return {
+    //     <LogInModal reef={this.props.reef}/>
+    //   }
+    // }
+  }
 
   render () {
 
@@ -166,7 +174,7 @@ class ReviewForm extends React.Component {
               <input type="file" onChange={this.updateFile}></input>
             </div>
 
-            <input className="rev-form-submit" type="submit" value="Post Review"></input>
+            <input className="rev-form-submit" type="submit" value="Post Review" onClick={() => this.modal}></input>
 
           </form>
 

@@ -45,7 +45,7 @@ class ReefShowItem extends React.Component {
     return(
       <div className="show-buttons">
         <Link to={`/reefs/${this.props.reefId}/writeReview`} className="review-button"> ★ Write a Review</Link>
-        
+
       </div>
     );
   }
@@ -109,7 +109,7 @@ class ReefShowItem extends React.Component {
           {this.displayPhotos()}
 
       </div>
-
+      <div className="line-break"></div>
       <h3 className="rev-title"> Recommended Reviews for the {this.props.reef[0].name}</h3>
 
       <div className="show-bottom">
