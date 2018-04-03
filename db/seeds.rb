@@ -229,7 +229,8 @@ r18 = Review.create!(
 
 p1 = Photo.create(
   review_id: r1.id,
-  image: File.open("app/assets/images/p22.jpg")
+  image: File.open("app/assets/images/p22.jpg"),
+  caption: "Amazing view of the Amazon Reef!"
 )
 
 p2 = Photo.create(

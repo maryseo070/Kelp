@@ -7,6 +7,8 @@ import ReefShowContainer from './reef_show/reef_show_container';
 import ReviewFormContainer from './review/review_form_container';
 import ReefIndexContainer from './reef_index/reef_index_container';
 import HomePage from './greeting/home_page';
+import UploadPhotoContainer from './review/upload_photo_container';
+
 
 const App = () => {
   return(
@@ -17,6 +19,7 @@ const App = () => {
       <AuthRoute path="/signup" component={SignUpFormContainer} />
       <Route exact path="/reefs" component={ReefIndexContainer}/>
       <Route exact path="/" component={HomePage} />
+      <ProtectedRoute path="/reefs/:reefId/uploadPhoto" component={UploadPhotoContainer} />
     </div>
   );
 };

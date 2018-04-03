@@ -5,6 +5,8 @@
 
 // SHOW TODO
 
+
+
 .reef-pic {
   height: 250px;
   width: 250px;
@@ -14,12 +16,11 @@
   color: #333;
   font-size: 30px;
   font-weight: bold;
-  padding-top: 6px;
+  padding-top: 2px;
   margin-top: 10px;
   line-height: 1.16667em;
   text-shadow: 0 1px rgba(255,255,255,0.7);
   display: inline;
-  padding-bottom: 20px;
 }
 
 .biz-page-header {
@@ -32,8 +33,23 @@
 
 .general-info-box {
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   /* float: left; */
+}
+
+.show-rating-stars {
+  margin: 10px;
+}
+.show-review-num {
+  color: #666;
+  font-size: 18px;
+  margin-left: 12px;
+}
+.show-rating-and-review{
+  display: flex;
+  flex-direction: row;
+  padding: 15px 15px 15px 0;
 }
 
 .show-buttons {
@@ -259,25 +275,55 @@
 }
 
 
+[class*="show-star"] {
+  display: inline-block;
+  background-image: image-url('show-stars.png');
+  background-size: 135px 561px;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  overflow: hidden;
+  height: 24px;
+  width: 135px;
+}
+
+.show-star-5{
+  background-position: 0 -217px;
+}
+.show-star-4{
+  background-position: 0 -168px;
+}
+.show-star-3 {
+  background-position: 0 -120px;
+}
+.show-star-2 {
+  background-position: 0 -72px;
+}
+.show-star-1 {
+  background-position: 0 -24px;
+}
+
 // --------------------- REEF INDEX TODO
 .reef-index {
   background-color: white;
 }
 
+.reef-index-items {
+  flex-direction: row;
+}
+
 .reef-map-index{
   justify-content: flex-end;
-  margin-left: 35%;
-  // margin: 100px;
-  // position: sticky;
-  top: 10;
-  // right: 0;
+  margin-top: 10;
   height: 100vh;
+  margin-left: 15px;
 }
 
 .items-and-map {
   display: flex;
   flex-direction: row;
   height: 100%;
+  width: 100%;
+  justify-content: center;
 }
 
 .ii-sample-pic {
@@ -304,7 +350,6 @@
   justify-content: space-between;
   display: flex;
   flex-direction: row;
-  margin-left: 70%;
   margin-top: 20px;
   width: 600px;
   border-top: 1px solid #ccc;
@@ -367,5 +412,5 @@
   height: 350px;
   width: 300px;
   position: sticky !important;
-  top: 20px;
+  margin-top: 20px;
 }

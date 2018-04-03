@@ -6,13 +6,9 @@ class PicModalSidebar extends React.Component {
     this.state = {}
   }
 
-  componentDidMount() {
-    console.log(this.props)
-  }
-
   showReview() {
     let reviews = this.props.reviews;
-    
+
   }
 
  render() {

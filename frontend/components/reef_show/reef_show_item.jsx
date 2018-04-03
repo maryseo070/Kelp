@@ -5,6 +5,7 @@ import { Route } from 'react-router';
 import {Link} from 'react-router-dom';
 import ReefMap from '../reef_map/reef_map.jsx';
 import PicModal from './photos_modal.jsx';
+import ShowRatingStars from './show_rating_stars.jsx';
 
 
 class ReefShowItem extends React.Component {
@@ -14,7 +15,6 @@ class ReefShowItem extends React.Component {
     this.shrink = this.shrink.bind(this);
     this.reviewIndex = this.reviewIndex.bind(this);
   }
-
 
   grow(e) {
     $(e.target).addClass("reef-pic-big");
@@ -45,6 +45,7 @@ class ReefShowItem extends React.Component {
     return(
       <div className="show-buttons">
         <Link to={`/reefs/${this.props.reefId}/writeReview`} className="review-button"> ★ Write a Review</Link>
+        
       </div>
     );
   }
@@ -83,7 +84,6 @@ class ReefShowItem extends React.Component {
   }
 
   render () {
-
     return (
       <div className="top-shelf">
 
@@ -91,6 +91,10 @@ class ReefShowItem extends React.Component {
 
         <div className="general-info-box">
           <h1 className="show-title">{this.props.reef[0].name}</h1>
+          <div className="show-rating-and-review">
+            <ShowRatingStars className="show-rating-stars"reef={this.props.reef} />
+            <p className="show-review-num">{this.props.reef[0].review_count} Reviews</p>
+          </div>
         </div>
 
       {this.writeReviewButton()}
@@ -121,7 +125,3 @@ class ReefShowItem extends React.Component {
 
 
 export default ReefShowItem;
-//
-// <img className="reef-pic-small" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={window.reef1} />
-// <img className="reef-pic-default" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={window.reef3} />
-// <img className="reef-pic-small" onMouseEnter={this.grow} onMouseLeave={this.shrink} src={window.reef4} />

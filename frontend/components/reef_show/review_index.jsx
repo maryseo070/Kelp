@@ -10,12 +10,6 @@ class ReviewIndex extends React.Component {
     this.reviewPhotos = this.reviewPhotos.bind(this);
   }
 
-  // this.props.reviews.map((review) => (Array(review.photos).map(
-  //   (photo) => console.log(photo.image_url))));
-  // componentDidMount() {
-  //   console.log(this.props);
-  // }
-
 
   ratingStars (n) {
     if (n === 5) {

@@ -29,14 +29,15 @@ class ReefIndex extends React.Component {
     return (
       <div className="reef-index">
         <IndexHeader />
-        <div className="items-and-map">
-          <div className="reef-index-items">
-            {indexInfo}
-          </div>
-          <div className="reef-map-index">
-            <ReefMap reefs={this.props.reefs} singleReef={false}/>
-          </div>
+          <div className="items-and-map">
+            <div className="reef-index-items">
+              {indexInfo}
+            </div>
+            <div className="reef-map-index">
+              <ReefMap reefs={this.props.reefs} singleReef={false}/>
+            </div>
         </div>
+
       </div>
     );
   }

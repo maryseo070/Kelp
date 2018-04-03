@@ -32,6 +32,7 @@ class SessionForm extends React.Component{
 
   guestLogin(e) {
     const user = {email: "guest@gmail.com", password: "starwars"};
+    // debugger
     this.props.processForm(user).then( () => this.props.history.push("/reefs"));
   }
 

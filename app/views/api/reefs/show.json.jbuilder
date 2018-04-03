@@ -1,6 +1,7 @@
 json.set! "reef" do
+  json.avg_rating @ratings[@reef.id]
   json.partial! 'api/reefs/reef', reef: @reef
-  # json.array reef review id
+  json.review_count @reef.reviews.length
   json.set! "reviewIds" do
     @reef.reviews.each do |review|
       review_ids = []
@@ -33,7 +34,7 @@ json.set! "photos" do
       end
     end
   end
-end 
+end
 
 
 json.set! "authors" do

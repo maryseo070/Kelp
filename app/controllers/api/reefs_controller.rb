@@ -7,6 +7,7 @@ class Api::ReefsController < ApplicationController
 
   def show
     @reef = Reef.find(params[:id])
+    @ratings = Reef.find_average_ratings
   end
 
   def search
