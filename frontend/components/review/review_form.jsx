@@ -11,7 +11,7 @@ class ReviewForm extends React.Component {
       body: "",
       date: "",
       rating: "",
-      imageUrl: "",
+      imageUrl: null,
       imageFile: "",
       ratingStars: {
           1: "star-1",
@@ -27,7 +27,7 @@ class ReviewForm extends React.Component {
     this.ratingStars = this.ratingStars.bind(this);
     this.starChange = this.starChange.bind(this);
     this.resetStars = this.resetStars.bind(this);
-    this.modal = this.modal.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
 
@@ -61,7 +61,6 @@ class ReviewForm extends React.Component {
     };
   }
 
-
   updateFile(e) {
     const reader = new FileReader();
     const file = e.currentTarget.files[0];
@@ -70,11 +69,11 @@ class ReviewForm extends React.Component {
 
     if (file) {
       reader.readAsDataURL(file);
-    } else {
-      this.setState({ imageUrl: "", imageFile: null });
     }
+    // else {
+    //   this.setState({ imageUrl: "", imageFile: null });
+    // }
   }
-
 
   starChange(star) {
     let stars = this.state.ratingStars;
@@ -122,12 +121,20 @@ class ReviewForm extends React.Component {
     );
   }
 
-  modal() {
-    // if (!this.props.currentUser) {
-    //   return {
-    //     <LogInModal reef={this.props.reef}/>
-    //   }
-    // }
+  renderErrors() {
+    debugger
+    if (this.props.errors) {
+      debugger
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li className="rendered-errors" key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
   }
 
   render () {
@@ -140,13 +147,7 @@ class ReviewForm extends React.Component {
       reefName = this.props.reef.name;
       reefId = this.props.reef.id;
     }
-    if (!this.props.currentUser) {
-      buttons = (
-        <div>
-          <Link to="/login" className="rev-link1" >Log In</Link>
-          <Link to="/signup" className="rev-link2" >Sign Up</Link>
-        </div>);
-    }
+
     return (
       <div>
         <div className="rev-header-wrapper">
@@ -172,6 +173,10 @@ class ReviewForm extends React.Component {
             <textarea className="rev-text" value={this.state.body} onChange={this.updateField("body")} />
             <div>
               <input type="file" onChange={this.updateFile}></input>
+            </div>
+
+            <div>
+              {this.renderErrors()}
             </div>
 
             <input className="rev-form-submit" type="submit" value="Post Review" onClick={() => this.modal}></input>

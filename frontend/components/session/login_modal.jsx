@@ -1,7 +1,8 @@
 import React from 'react';
 import Modal from 'react-modal';
 import ReactDOM from 'react-dom';
-
+import {Link} from 'react-router-dom';
+import {login, clearErrors} from '../../actions/session_actions';
 
 const customStyles = {
   overlay: {
@@ -22,7 +23,7 @@ const customStyles = {
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
     overflow              : 'auto',
-    backgroundColor       : 'black'
+    backgroundColor       : 'white'
   },
 };
 
@@ -43,6 +44,7 @@ class LogInModal extends React.Component {
     }
 
   openModal(url, idx) {
+    console.log(this.props);
     this.setState({modalIsOpen: true, imgUrl: url, imgIdx: idx});
   }
 
@@ -55,17 +57,18 @@ class LogInModal extends React.Component {
     this.setState({modalIsOpen: false});
   }
 
-
   render() {
     let title = "Log In to Kelp";
     let question = "New to Kelp?";
     let buttonVal = "Log In";
     let first_name = "";
     let last_name = "";
-
+// to={`/reefs/${this.props.reefId}/writeReview`}
    return (
-     <div>
-
+     <div className="login-modal-all">
+       <div className="show-buttons">
+         <button onClick={() => this.openModal()} className="review-button"> ★ Write a Review</button>
+       </div>
        <Modal
          isOpen={this.state.modalIsOpen}
          ariaHideApp={false}
@@ -77,17 +80,17 @@ class LogInModal extends React.Component {
          onRequestClose={this.closeModal}
          style={customStyles}
          contentLabel="Example Modal"
-         className="modal-all"
+         className="login-modal-all"
        >
 
        <a className="modal-close-button" onClick={this.closeModal}>Close</a>
         <h2 ref={subtitle => this.subtitle = subtitle}></h2>
 
-          <div className='entire-session-form'>
+          <div className='modal-session-form'>
 
             <div className="form-col">
 
-                <form onSubmit={this.handleSubmit} className="session-form">
+                <form onSubmit={this.handleSubmit} className="modal-inner-session-form">
                   <div className="login-header">
                     <h1>
                       {title}
@@ -95,7 +98,7 @@ class LogInModal extends React.Component {
                   </div>
 
                   <h3 className="login-header2">
-                    {question} {this.props.navLink}
+                    {question} <Link to="/signup" className="navLink" >Sign Up</Link>
                   </h3>
 
                   {first_name}
@@ -107,23 +110,16 @@ class LogInModal extends React.Component {
                   <input className="login-button" type="submit" value={buttonVal} ></input>
 
                   <div className="signup-link">
-                    {question}  {this.props.navLink}
+                    {question}  <Link to="/signup" className="navLink" >Sign Up</Link>
                   </div>
 
-                  <div>
-                    {this.renderErrors()}
-                  </div>
+
                 </form>
 
-                <button className="guest" onClick={() => this.props.guestLogin()}>Guest Login</button>
+                <button className="guest" onClick={() => this.props.guestLogin() } >Guest Login</button>
             </div>
 
-            <img src={window.reef} alt="reef-illustration" className="login-image" />
-
-
             </div>
-
-
 
        </Modal>
      </div>

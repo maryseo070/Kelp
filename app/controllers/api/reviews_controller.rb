@@ -11,7 +11,7 @@ class Api::ReviewsController < ApplicationController
     if @review.save
       render template: "api/reviews/show.json.jbuilder"
     else
-      render json: @review, status: :unprocessable_entity
+      render json: ["Reviews must have content and a rating"], status: 403
     end
   end
 

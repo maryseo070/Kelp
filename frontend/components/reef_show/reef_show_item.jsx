@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 import ReefMap from '../reef_map/reef_map.jsx';
 import PicModal from './photos_modal.jsx';
 import ShowRatingStars from './show_rating_stars.jsx';
-
+import {LogInModalContainer} from '../session/login_form_container.jsx';
 
 class ReefShowItem extends React.Component {
   constructor(props){
@@ -42,11 +42,29 @@ class ReefShowItem extends React.Component {
     );
   }
   writeReviewButton() {
+    let modalOrForm;
+    if (this.props.currentUser) {
+      modalOrForm = (
+        <div className="login-modal-all">
+          <div className="show-buttons">
+            <Link to={`/reefs/${this.props.reefId}/writeReview`} className="review-button"> ★ Write a Review</Link>
+          </div>
+        </div>
+      )
+    }
+    else {
+      modalOrForm = (
+        <div className="login-modal-all">
+          <div className="show-buttons">
+            <LogInModalContainer reef={this.props.reef}
+                        currentUser={this.props.currentUser}>
+            </LogInModalContainer>
+          </div>
+        </div>
+      )
+    }
     return(
-      <div className="show-buttons">
-        <Link to={`/reefs/${this.props.reefId}/writeReview`} className="review-button"> ★ Write a Review</Link>
-
-      </div>
+      modalOrForm
     );
   }
 
@@ -68,9 +86,10 @@ class ReefShowItem extends React.Component {
 
   displayPhotos () {
     let pics = [];
-    if (this.props.reviews) {
-      this.props.reviews.map( (review) => (
-        review.photos ? pics.push(review.photos.image_url) : null
+    let photos = Object.values(this.props.photos);
+    if (photos) {
+      photos.map( (photo) => (
+        pics.push(photo.image_url)
       ));
     }
       return (

@@ -27,7 +27,8 @@ class ReefShow extends React.Component {
                                   reefId={this.props.match.params.reefId}
                                   reef={this.props.reef}
                                   reviews={this.props.reviews}
-                                  photos={this.props.photos}/>;
+                                  photos={this.props.photos}
+                                  currentUser={this.props.currentUser}/>;
     }
     else {
       reefShowItem = "";

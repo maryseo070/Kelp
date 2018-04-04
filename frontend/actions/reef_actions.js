@@ -5,6 +5,7 @@ export const RECEIVE_REEF_ERRORS = "RECEIVE_REEF_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
 export const RECEIVE_PHOTO = "RECEIVE_PHOTO";
+export const RECEIVE_REVIEW_ERRORS = "RECEIVE_REVIEW_ERRORS";
 
 export const searchReefs = query => dispatch => {
   return ReefApiUtil.searchReefs(query).then(
@@ -14,16 +15,23 @@ export const searchReefs = query => dispatch => {
 
 export const receivePhoto = (photo) => {
   return {
-    type: RECEIVE_PHTOTO,
+    type: RECEIVE_PHOTO,
     photo
   };
 };
 
 export const createPhoto = (photo) => dispatch => {
-  // debugger
   return ReefApiUtil.createPhoto(photo).then(
     (photo) => dispatch(receivePhoto(photo)));
 };
+
+export const receiveReviewErrors = (errors) => {
+  return {
+    type: RECEIVE_REVIEW_ERRORS,
+    errors
+  };
+}
+
 
 export const receiveReview = (review) => {
   return {
@@ -34,7 +42,9 @@ export const receiveReview = (review) => {
 
 export const createReview = (review) => dispatch => {
   return ReefApiUtil.createReview(review).then(
-    (review) => dispatch(receiveReview(review)));
+    (review) => dispatch(receiveReview(review)),
+    (errors) => dispatch(receiveReviewErrors(errors))
+  );
 };
 
 

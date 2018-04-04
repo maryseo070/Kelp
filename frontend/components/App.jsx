@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router';
-import LoginFormContainer from './session/login_form_container';
+import {SessionFormContainer} from './session/login_form_container';
 import SignUpFormContainer from './session/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util.jsx';
 import ReefShowContainer from './reef_show/reef_show_container';
@@ -14,8 +14,8 @@ const App = () => {
   return(
     <div className="app-container">
       <Route exact path="/reefs/:reefId" component={ReefShowContainer} />
-      <ProtectedRoute path="/reefs/:reefId/writeReview" component={ReviewFormContainer}/>
-      <AuthRoute path="/login" component={LoginFormContainer} />
+      <Route path="/reefs/:reefId/writeReview" component={ReviewFormContainer}/>
+      <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SignUpFormContainer} />
       <Route exact path="/reefs" component={ReefIndexContainer}/>
       <Route exact path="/" component={HomePage} />

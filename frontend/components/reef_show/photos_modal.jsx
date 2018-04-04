@@ -72,9 +72,18 @@ class PicModal extends React.Component {
 
   nextPic() {
     let allPhotos = Object.values(this.props.photos);
+    // debugger
+    for (let i = allPhotos.length - 1; i > 0; i--) {
+      if (allPhotos[i].image_url === "") {
+        allPhotos.splice(i, 1)
+      }
+
+    }
     let targetPhoto;
     if (allPhotos) {
       targetPhoto = allPhotos[(this.state.imgIdx + 1) % allPhotos.length]
+      // console.log(targetPhoto)
+      // console.log(allPhotos)
       this.setState({imgUrl: targetPhoto.image_url, imgIdx: this.state.imgIdx + 1});
     }
   }

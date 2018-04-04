@@ -7,7 +7,8 @@ const msp = (state, ownProps) => {
   // debugger
   return {
     reef: state.entities.reefs[ownProps.match.params.reefId],
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    errors: state.errors.review
   };
 };
 
