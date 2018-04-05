@@ -122,9 +122,7 @@ class ReviewForm extends React.Component {
   }
 
   renderErrors() {
-    debugger
     if (this.props.errors) {
-      debugger
       return(
         <ul>
           {this.props.errors.map((error, i) => (

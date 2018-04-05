@@ -41,10 +41,10 @@ class LogInModal extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
     }
 
   openModal(url, idx) {
-    console.log(this.props);
     this.setState({modalIsOpen: true, imgUrl: url, imgIdx: idx});
   }
 
@@ -56,6 +56,19 @@ class LogInModal extends React.Component {
   closeModal() {
     this.setState({modalIsOpen: false});
   }
+
+  renderErrors() {
+
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li className="rendered-errors" key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
 
   render() {
     let title = "Log In to Kelp";
@@ -107,6 +120,10 @@ class LogInModal extends React.Component {
 
                   <input className="session-input" placeholder="Password" type="password" value={ this.state.password } onChange={ this.updatePassword } />
 
+
+                  <div>
+                    {this.renderErrors()}
+                  </div>
                   <input className="login-button" type="submit" value={buttonVal} ></input>
 
                   <div className="signup-link">
