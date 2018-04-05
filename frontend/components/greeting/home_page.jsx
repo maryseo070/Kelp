@@ -42,7 +42,6 @@ class HomePage extends React.Component {
   }
   render () {
     return(
-      <div className="home-page-all">
         <div className="greeting-page">
 
           <div className='div-break'></div>
@@ -68,11 +67,12 @@ class HomePage extends React.Component {
       </div>
 
 
-      <HomeBottom />
 
-      </div>
     );
   }
 }
 
+// <div className="home-page-all">
+// </div>
+// <HomeBottom />
 export default connect(msp)(HomePage);
