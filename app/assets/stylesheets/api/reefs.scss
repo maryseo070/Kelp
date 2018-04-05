@@ -417,7 +417,8 @@
   height: 350px;
   width: 300px;
   position: sticky !important;
-  margin: 20px 0 20px 0;
+  top: 0;
+  margin-top: 20px;
 }
 
 .line-break{
@@ -444,3 +445,21 @@
 .login-modal-all:focus{
   outline: 0;
 }
+
+// .index-map-and-links {
+//   display: flex;
+//   flex-direction: columnl
+// }
+//
+// .link-description{
+//   font-size: 12px;
+//   width: 300px;
+//   display: flex;
+//   color: #555555
+// }
+// .below-map-links{
+//   font-size: 1
+//   color: #3b65a7;
+//   font-weight: bold;
+//   text-decoration: none;
+// }

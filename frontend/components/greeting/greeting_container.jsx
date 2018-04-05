@@ -1,5 +1,5 @@
 import React from 'react';
-import {logout} from '../../actions/session_actions';
+import {logout, fetchReefs} from '../../actions/session_actions';
 import Greeting from './greeting';
 import {connect} from 'react-redux';
 
@@ -11,7 +11,8 @@ const mapStateToProps = (state) =>{
 
 const mapDispatchToProps = (dispatch) =>{
   return {
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    fetchReefs: () => dispatch(fetchReefs())
   };
 };
 

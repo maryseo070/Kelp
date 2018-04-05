@@ -3,6 +3,7 @@ import ReefSearchContainer from '../search/reef_search_container';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {logout} from '../../actions/session_actions.js';
+import HomeBottom from './home_bottom.jsx';
 
 const msp = state => {
   return {
@@ -41,22 +42,33 @@ class HomePage extends React.Component {
   }
   render () {
     return(
-      <div className="greeting-page">
+      <div className="home-page-all">
+        <div className="greeting-page">
 
-        <div className='div-break'></div>
+          <div className='div-break'></div>
 
-        <div className='home-header-nav'>
-          <ul className="signup-login-links">
-            {this.renderButtons()}
+          <div className='home-header-nav'>
+            <ul className="signup-login-links">
+              {this.renderButtons()}
+            </ul>
+          </div>
+
+          <div className="home-hero">
+            <a href="#/reefs" className="kelp-logo" >
+              <img className="thanks-elliot-2"src={window.logo} />
+            </a>
+            <ReefSearchContainer />
+          </div>
+
+          <ul className="show-link-holder">
+            <li>
+              <Link to="/reefs" onClick={() => (this.props.fetchReefs())} className="show-links">Coral Reefs</Link>
+            </li>
           </ul>
-        </div>
+      </div>
 
-        <div className="home-hero">
-          <a href="#/reefs" className="kelp-logo" >
-            <img className="thanks-elliot-2"src={window.logo} />
-          </a>
-          <ReefSearchContainer />
-        </div>
+
+      <HomeBottom />
 
       </div>
     );

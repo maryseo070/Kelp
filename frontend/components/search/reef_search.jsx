@@ -36,7 +36,7 @@ class ReefSearch extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit} className="show-form">
           <input onChange={this.handleInput("name")} type="text" className="show-input" placeholder="Find Coral Reefs"></input>
-          <input onChange={this.handleInput("continent")}type="text" className="show-input" placeholder="Near..."></input>
+          <input onChange={this.handleInput("continent")}type="text" className="show-input" placeholder="Continent Search"></input>
           <input type="submit" value="search" className="show-submit"/>
         </form>
       </div>
