@@ -37,7 +37,7 @@ class ReefIndex extends React.Component {
               <div className="links-sticky">
               <ReefMap reefs={this.props.reefs} singleReef={false}/>
                 <div className="conservation-links">
-                  <p className="link-description">Want to learn how to help conserve Coral Reefs? Follow the links below</p>
+                  <p className="link-description">Want to learn how you can help protect coral reefs? Follow the links below</p>
                   <a className="below-map-links" href="https://www.nature.org/ourinitiatives/urgentissues/oceans/coral-reefs/ways-to-help-coral-reefs/index.htm" target="_blank">The Nature Conservancy: 10 Steps to Help Protect Coral Reefs</a>
                   <br></br>
                   <a className="below-map-links" href="https://oceanservice.noaa.gov/facts/thingsyoucando.html" target="_blank">National Ocean Service</a>
