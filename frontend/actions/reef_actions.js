@@ -6,6 +6,7 @@ export const CLEAR_ERRORS = "CLEAR_ERRORS";
 export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
 export const RECEIVE_PHOTO = "RECEIVE_PHOTO";
 export const RECEIVE_REVIEW_ERRORS = "RECEIVE_REVIEW_ERRORS";
+export const RECEIVE_THREE_REEFS = "RECEIVE_THREE_REEFS";
 
 export const searchReefs = query => dispatch => {
   return ReefApiUtil.searchReefs(query).then(
@@ -76,9 +77,22 @@ export const receiveReef = payload => {
   };
 };
 
+export const receiveThreeReefs = payload => {
+  return {
+    type: RECEIVE_THREE_REEFS,
+    payload
+  }
+}
+
+export const fetchThreeReefs = () => dispatch => {
+  return ReefApiUtil.fetchThreeReefs().then(
+    payload => dispatch(receiveThreeReefs(payload))
+  )
+}
+
 export const fetchReefs = () => dispatch => {
   return ReefApiUtil.fetchReefs().then(
-    reefs => dispatch(receiveReefs(reefs))
+    payload => dispatch(receiveReefs(payload))
   );
 };
 

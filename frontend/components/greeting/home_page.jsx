@@ -3,17 +3,21 @@ import ReefSearchContainer from '../search/reef_search_container';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {logout} from '../../actions/session_actions.js';
+import {fetchReefs, fetchThreeReefs} from '../../actions/reef_actions.js'
 import HomeBottom from './home_bottom.jsx';
 
 const msp = state => {
   return {
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    reefs: Object.values(state.entities.reefs)
   };
 };
 
 const mdp = dispatch => {
   return {
-    logout: dispatch(logout())
+    logout: () => dispatch(logout()),
+    fetchReefs: () => dispatch(fetchReefs()),
+    fetchThreeReefs: () => dispatch(fetchThreeReefs())
   };
 };
 
@@ -22,6 +26,9 @@ class HomePage extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.fetchThreeReefs();
+  }
 
   renderButtons() {
     let buttons;
@@ -67,7 +74,7 @@ class HomePage extends React.Component {
           </ul>
       </div>
 
-        <HomeBottom />
+        <HomeBottom reefs={this.props.reefs} />
       </div>
 
 
@@ -75,4 +82,4 @@ class HomePage extends React.Component {
   }
 }
 
-export default connect(msp)(HomePage);
+export default connect(msp, mdp)(HomePage);

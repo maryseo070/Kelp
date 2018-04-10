@@ -1,3 +1,10 @@
+export const fetchThreeReefs = () => {
+  return $.ajax({
+    url: '/api/reefs',
+    method: "GET"
+  })
+}
+
 
 export const searchReefs = query => {
     return $.ajax({
