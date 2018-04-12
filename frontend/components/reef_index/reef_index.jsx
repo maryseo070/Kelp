@@ -10,7 +10,7 @@ class ReefIndex extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.reefs.length < 1) {
+    if (this.props.reefs.length < 4) {
       this.props.fetchReefs();
     }
     if (this.props.reefs) {
