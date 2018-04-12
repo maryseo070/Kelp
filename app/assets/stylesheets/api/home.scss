@@ -44,13 +44,17 @@
   text-decoration: none;
   color:#0073bb;
   font-weight: bold;
+  margin: 5px 0 5px 0;
+}
+.li-link:hover{
+  text-decoration: underline;
 }
 .li-stars-and-reviews {
   display: flex;
   flex-direction: row;
-  padding-left: 10px;
   font-size: 14px;
 }
 .li-review-count{
   color: #666;
+  margin-left: 10px;
 }
