@@ -28,7 +28,7 @@ import {Link} from 'react-router-dom';
         <div className='icon-one'></div>
       );
     }
-}
+};
 
 
 const ReefIndexItem = ({reef}) => {

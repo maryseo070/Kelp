@@ -45,14 +45,14 @@ class HomeBottom extends React.Component {
       reefInfo = reefs.map((reef) => {
         return (
             <ul className="ul-three-show-items">
-              <img src={reef.photo} className="home-item-photo"></img>
+              <Link to={`/reefs/${reef.id}`}><img src={reef.photo} className="home-item-photo"></img></Link>
               <div className="home-bottom-info">
                 <Link className="li-link" to={`/reefs/${reef.id}`}>{reef.name}</Link>
                 <div className="li-stars-and-reviews">
                   <li>{this.ratingStars(Math.floor(reef.avg_rating))}</li>
                   <li className="li-review-count">{reef.review_count} Reviews</li>
                 </div>
-                <li>{reef.continent}</li>
+                <li className="li-continent">{reef.continent}</li>
               </div>
             </ul>
       );
