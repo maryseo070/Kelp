@@ -419,6 +419,7 @@
   position: sticky !important;
   top: 0;
   margin-top: 20px;
+  border: 1px solid #ccc;
 }
 
 .line-break{
@@ -446,10 +447,6 @@
   outline: 0;
 }
 
-// .index-map-and-links {
-//   display: flex;
-//   flex-direction: columnl
-// }
 
 .link-description{
   font-size: 12px;
@@ -482,4 +479,8 @@
   width: 300px;
   display: flex;
   flex-direction: column;
+}
+
+.white{
+  background-color: white;
 }

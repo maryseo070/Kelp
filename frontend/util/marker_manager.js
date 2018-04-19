@@ -26,6 +26,7 @@ class MarkerManager {
       reefId: reef.id
     });
     marker.addListener('click', () => this.handleMarkerClick(reef));
+    marker.addListener("mouseover", () => marker.addClass("white"))
     this.markers[marker.reefId] = marker;
   }
 

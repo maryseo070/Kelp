@@ -32,12 +32,18 @@ class ReefMap extends React.Component {
 
   componentDidMount() {
     const map = this.refs.map;
+    let lat;
+    let lng;
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick);
     this.registerListeners();
-    if (this.props.singleReef) {
-      // const targetReefKey = Object.keys(this.props.reefs[0]);
-      // const targetReef = this.props.reefs[targetReefKey];
+
+    if (this.props.singleReef && this.props.reef) {
+      lat = this.props.reef[0].lat;
+      lng = this.props.reef[0].lng;
+      this.MarkerManager.updateMarkers(this.props.reef);
+      this.map.setCenter({lng, lat});
+    } else if (this.props.singleReef) {
       this.MarkerManager.updateMarkers(this.props.reef);
     } else {
       this.MarkerManager.updateMarkers(this.props.reefs);
@@ -65,11 +71,9 @@ class ReefMap extends React.Component {
 
   }
 
-
   handleMarkerClick(reef) {
     this.props.history.push(`/reefs/${reef.id}`);
   }
-
 
   render() {
     return(
