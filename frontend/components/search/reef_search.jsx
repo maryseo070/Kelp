@@ -17,15 +17,14 @@ class ReefSearch extends React.Component {
   handleInput(field) {
     return(e) => {
       this.setState({[field]: e.target.value});
-    }
+    };
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.reefs.push(this.props.searchReefs(this.state))
+    this.props.reefs.push(this.props.searchReefs(this.state));
     this.props.searchReefs(this.state).then(
-      () =>  this.props.history.push('/reefs'))
-
+      () =>  this.props.history.push('/reefs'));
   }
 
   renderResults(reefs) {
