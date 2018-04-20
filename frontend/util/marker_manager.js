@@ -23,10 +23,15 @@ class MarkerManager {
     const marker = new google.maps.Marker({
       position,
       map: this.map,
-      reefId: reef.id
+      reefId: reef.id,
+      animation: google.maps.Animation.DROP
     });
     marker.addListener('click', () => this.handleMarkerClick(reef));
-    marker.addListener("mouseover", () => marker.addClass("white"))
+    marker.addListener("mouseover", function(evt) {
+      var label = this.getLabel();
+      label.color="white";
+      this.setLabel(label);
+    })
     this.markers[marker.reefId] = marker;
   }
 

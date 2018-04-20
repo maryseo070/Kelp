@@ -52,8 +52,6 @@ class ReefMap extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.singleReef) {
-      // const targetReefKey = Object.keys(this.props.reefs[0]);
-      // const targetReef = this.props.reefs[targetReefKey];
       this.MarkerManager.updateMarkers(this.props.reef);
     } else {
       this.MarkerManager.updateMarkers(this.props.reefs);
