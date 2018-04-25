@@ -13,12 +13,12 @@ import UploadPhotoContainer from './review/upload_photo_container';
 const App = () => {
   return(
     <div className="app-container">
+      <Route exact path="/" component={HomePage} />
       <Route exact path="/reefs/:reefId" component={ReefShowContainer} />
       <Route path="/reefs/:reefId/writeReview" component={ReviewFormContainer}/>
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SignUpFormContainer} />
       <Route exact path="/reefs" component={ReefIndexContainer}/>
-      <Route exact path="/" component={HomePage} />
       <ProtectedRoute path="/reefs/:reefId/uploadPhoto" component={UploadPhotoContainer} />
     </div>
   );
