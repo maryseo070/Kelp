@@ -30,11 +30,9 @@ class ReviewForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
-
   componentDidMount () {
     this.props.fetchReef(this.props.match.params.reefId);
   }
-
 
   handleSubmit(e) {
     e.preventDefault();
