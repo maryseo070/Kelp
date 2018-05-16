@@ -3,7 +3,7 @@ import {login, clearErrors} from '../../actions/session_actions';
 import SessionForm from './session_form.jsx';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import LogInModal from './login_modal.jsx'
+import LogInModal from './login_modal.jsx';
 
 const mapStateToProps = ({errors}) => {
   return ({

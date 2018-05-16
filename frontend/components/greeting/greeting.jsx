@@ -3,6 +3,13 @@ import {Link} from 'react-router-dom';
 
 
 class Greeting extends React.Component {
+  constructor(props){
+    super(props);
+  }
+
+  componentDidMount() {
+    console.log(this.props.currentUser)
+  }
 
   render () {
     if (this.props.currentUser) {

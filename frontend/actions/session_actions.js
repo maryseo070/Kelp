@@ -11,6 +11,7 @@ export const clearErrors = (errors) => {
 };
 
 export const receiveCurrentUser = (user) => {
+  // debugger
   return {
     type: RECEIVE_CURRENT_USER,
     user: user
@@ -26,7 +27,8 @@ export const receiveErrors = (errors) =>{
 
 export const signup = (user) => (dispatch) => {
   return APIUtil.signup(user).then(
-    (user) => dispatch(receiveCurrentUser(user)),
+    (user) => {
+      return dispatch(receiveCurrentUser(user))},
     (errors) => dispatch(receiveErrors(errors))
   );
 };
