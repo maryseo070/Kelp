@@ -1,6 +1,4 @@
 import React from 'react';
-import {Route, Link, withRouter } from 'react-router-dom';
-import {merge} from 'lodash';
 
 class SessionForm extends React.Component{
   constructor(props){

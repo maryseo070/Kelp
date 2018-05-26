@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
   // store = configureStore();
-  window.searchReefs = searchReefs
+  window.searchReefs = searchReefs;
   window.fetchReefs = fetchReefs;
   window.fetchReef = fetchReef;
   window.getState = store.getState;
